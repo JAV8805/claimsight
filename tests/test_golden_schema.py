@@ -32,7 +32,7 @@ VALID_CASE = {
         "vin_format_valid": True,
         "external_vehicle": CAMRY,
         "declared_matches_external": True,
-        "weather_supports_claim": True,
+        "weather_verdict": "inconclusive",
         "fraud_flag": False,
         "routing": "adjuster_review",
     },
@@ -56,6 +56,17 @@ def test_vehicle_not_externally_verifiable_is_accepted_without_fraud() -> None:
     assert GoldenCase.model_validate(case).expected.fraud_flag is False
 
 
+def test_dry_day_hail_case_is_accepted_with_weather_mismatch() -> None:
+    """FR-06: a dry day (< 0.1 mm) does not support a hail claim and raises weather_mismatch."""
+    case = make_case(
+        weather_verdict="does_not_support",
+        fraud_flag=True,
+        fraud_signals=["weather_mismatch"],
+        routing="adjuster_review",
+    )
+    assert GoldenCase.model_validate(case).expected.fraud_signals == ["weather_mismatch"]
+
+
 def test_vin_mismatch_case_is_accepted_when_labeled_consistently() -> None:
     case = make_case(
         vin_matches_policy=False,
@@ -70,7 +81,15 @@ def test_vin_mismatch_case_is_accepted_when_labeled_consistently() -> None:
 @pytest.mark.parametrize(
     "overrides",
     [
-        {"weather_supports_claim": None},  # weather event without weather label
+        {"weather_verdict": None},  # weather event without weather label
+        {"weather_verdict": "maybe"},  # not a verdict value
+        {"weather_verdict": "does_not_support"},  # dry day without weather_mismatch
+        {"fraud_flag": True, "fraud_signals": ["weather_mismatch"]},  # signal, inconclusive
+        {  # signal with supporting weather
+            "weather_verdict": "supports",
+            "fraud_flag": True,
+            "fraud_signals": ["weather_mismatch"],
+        },
         {"fraud_flag": True},  # fraud without signals
         {"fraud_signals": ["late_report"]},  # signals without fraud flag
         {"routing": "siu_referral"},  # SIU without fraud

@@ -14,6 +14,7 @@ import httpx2
 from claimsight.evals.enrich import same_vehicle, vehicle_from_vpic
 from claimsight.evals.schema import VehicleInfo
 from claimsight.evals.vin import VIN_RE, synthesize
+from claimsight.rules.weather import weather_verdict
 
 VPIC_URL = "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/{vin}"
 METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
@@ -80,6 +81,7 @@ def build_draft(seed: dict[str, str], client: httpx2.Client) -> dict:
         "facts": {
             "vpic": {k: vpic.get(k) for k in ("ErrorCode", "Make", "Model", "ModelYear")},
             "weather": weather,
+            "weather_rule": weather_verdict(seed["claimed_event"], weather["precipitation_sum"]),
             "sources": ["NHTSA vPIC DecodeVinValues", "Open-Meteo archive (ERA5)"],
         },
         "expected": {
@@ -88,7 +90,7 @@ def build_draft(seed: dict[str, str], client: httpx2.Client) -> dict:
             "vin_format_valid": bool(VIN_RE.match(claim_vin)),
             "external_vehicle": external.model_dump() if external else None,
             "declared_matches_external": same_vehicle(vehicle, external) if external else None,
-            "weather_supports_claim": None,  # HUMAN: apply spec 5.1 to facts.weather
+            "weather_verdict": None,  # HUMAN: review facts.weather_rule (spec 5.2)
             "fraud_flag": None,  # HUMAN
             "fraud_signals": [] if vin_matches else ["vin_mismatch"],
             "routing": None,  # HUMAN
@@ -117,7 +119,7 @@ def main(seeds_path: Path, out_dir: Path) -> int:
             print(
                 f"{seed['case_id']}: external={'verified' if ext else 'not verifiable'} "
                 f"weather_code={w['weather_code']} precip={w['precipitation_sum']}mm "
-                f"gust={w['wind_gusts_10m_max']}km/h"
+                f"gust={w['wind_gusts_10m_max']}km/h weather_rule={draft['facts']['weather_rule']}"
             )
     return 1 if errors else 0
 

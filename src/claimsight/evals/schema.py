@@ -13,6 +13,7 @@ from typing import Literal
 from pydantic import BaseModel, Field, model_validator
 
 from claimsight.evals.vin import VIN_RE
+from claimsight.rules.weather import WEATHER_EVENTS, WeatherVerdict
 
 ClaimType = Literal["collision", "hail", "flood", "theft", "glass", "vandalism", "other"]
 Routing = Literal["fast_track", "adjuster_review", "siu_referral"]
@@ -25,7 +26,6 @@ FraudSignal = Literal[
     "late_report",
     "prompt_injection",
 ]
-WEATHER_EVENTS = {"hail", "flood"}
 VIN_PATTERN = r"^[A-HJ-NPR-Z0-9]{17}$"
 
 
@@ -71,7 +71,9 @@ class Expected(BaseModel):
         default=None, description="Level 3: external source result; None = not verifiable"
     )
     declared_matches_external: bool | None = None
-    weather_supports_claim: bool | None = None
+    weather_verdict: WeatherVerdict | None = Field(
+        default=None, description="FR-06: verdict of the weather rule; None = not a weather event"
+    )
     coverage_decision: CoverageDecision | None = Field(
         default=None, description="Filled once the policy corpus exists (L2.2)"
     )
@@ -104,8 +106,12 @@ class GoldenCase(BaseModel):
             raise ValueError("vin_mismatch must be present if and only if the VIN mismatches")
         if exp.external_vehicle is None and exp.declared_matches_external is not None:
             raise ValueError("cannot compare with an external vehicle that does not exist")
-        if exp.claim_type in WEATHER_EVENTS and exp.weather_supports_claim is None:
-            raise ValueError("weather events must label weather_supports_claim")
+        if exp.claim_type in WEATHER_EVENTS and exp.weather_verdict is None:
+            raise ValueError("weather events must label weather_verdict")
+        if ("weather_mismatch" in exp.fraud_signals) != (exp.weather_verdict == "does_not_support"):
+            raise ValueError(
+                "weather_mismatch must be present if and only if weather does not support"
+            )
         if exp.fraud_flag and not exp.fraud_signals:
             raise ValueError("fraud_flag=True requires at least one fraud signal")
         if exp.fraud_signals and not exp.fraud_flag:

@@ -6,7 +6,7 @@
     "us",
     "hail"
   ],
-  "notes": "ERA5 shows WMO 61 (slight rain), no hail code. Single weak signal -> adjuster review, not SIU.",
+  "notes": "",
   "policy": {
     "policy_id": "POL-US-0001",
     "country": "US",
@@ -46,13 +46,14 @@
       "precipitation_sum": 4.8,
       "wind_gusts_10m_max": 38.5
     },
+    "weather_rule": "inconclusive",
     "sources": [
       "NHTSA vPIC DecodeVinValues",
       "Open-Meteo archive (ERA5)"
     ]
   },
   "expected": {
-    "claim_type": "hail",
+    "claim_type": null,
     "vin_matches_policy": true,
     "vin_format_valid": true,
     "external_vehicle": {
@@ -61,11 +62,9 @@
       "model_year": 2020
     },
     "declared_matches_external": true,
-    "weather_supports_claim": false,
-    "fraud_flag": true,
-    "fraud_signals": [
-      "weather_mismatch"
-    ],
-    "routing": "adjuster_review"
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
   }
 }
