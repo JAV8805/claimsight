@@ -5,24 +5,33 @@ from pydantic import ValidationError
 
 from claimsight.evals.schema import GoldenCase
 
-# Format-valid sample. The VIN is the widely published check-digit example,
-# used here only to exercise the format rule.
+CAMRY = {"make": "TOYOTA", "model": "Camry", "model_year": 2020}
+SYNTHETIC_VIN = "4T1G11AK8LU000001"  # real Camry pattern + invented serial
+
 VALID_CASE = {
     "case_id": "GC-0001",
-    "language": "es",
+    "language": "en",
+    "policy": {
+        "policy_id": "AUTO-TEST-001",
+        "country": "US",
+        "insured_vin": SYNTHETIC_VIN,
+        "insured_vehicle": CAMRY,
+    },
     "inputs": {
-        "narrative": "Granizada fuerte mientras el carro estaba parqueado en la calle.",
-        "vin": "1M8GDM9AXKP042788",
-        "declared_vehicle": {"make": "Motor Coach", "model": "Bus", "model_year": 1989},
-        "incident_date": "2026-04-10",
-        "location": {"address": "Bogota, Colombia", "latitude": 4.711, "longitude": -74.072},
+        "narrative": "Hail hit the car while it was parked on the street.",
+        "vin": SYNTHETIC_VIN,
+        "declared_vehicle": CAMRY,
+        "incident_date": "2025-05-20",
+        "location": {"address": "Houston, TX", "latitude": 29.76, "longitude": -95.37},
         "claimed_event": "hail",
         "policy_id": "AUTO-TEST-001",
     },
     "expected": {
         "claim_type": "hail",
-        "vehicle": {"make": "Motor Coach", "model": "Bus", "model_year": 1989},
-        "vin_matches_declared": True,
+        "vin_matches_policy": True,
+        "vin_format_valid": True,
+        "external_vehicle": CAMRY,
+        "declared_matches_external": True,
         "weather_supports_claim": True,
         "fraud_flag": False,
         "routing": "adjuster_review",
@@ -40,6 +49,24 @@ def test_valid_case_is_accepted() -> None:
     assert GoldenCase.model_validate(VALID_CASE).case_id == "GC-0001"
 
 
+def test_vehicle_not_externally_verifiable_is_accepted_without_fraud() -> None:
+    """FR-10: a vehicle outside the external source's coverage is not suspicious by itself."""
+    case = make_case(external_vehicle=None, declared_matches_external=None)
+    case["policy"]["country"] = "CO"
+    assert GoldenCase.model_validate(case).expected.fraud_flag is False
+
+
+def test_vin_mismatch_case_is_accepted_when_labeled_consistently() -> None:
+    case = make_case(
+        vin_matches_policy=False,
+        fraud_flag=True,
+        fraud_signals=["vin_mismatch"],
+        routing="siu_referral",
+    )
+    case["inputs"]["vin"] = "4T1G11AK0LU000002"
+    assert GoldenCase.model_validate(case).expected.routing == "siu_referral"
+
+
 @pytest.mark.parametrize(
     "overrides",
     [
@@ -49,7 +76,10 @@ def test_valid_case_is_accepted() -> None:
         {"routing": "siu_referral"},  # SIU without fraud
         {"fraud_flag": True, "fraud_signals": ["late_report"], "routing": "fast_track"},
         {"coverage_decision": "covered"},  # covered without a cited clause
-        {"fraud_flag": True, "fraud_signals": ["vin_mismatch"]},  # contradicts VIN match
+        {"vin_matches_policy": False},  # contradicts identical VINs
+        {"fraud_flag": True, "fraud_signals": ["vin_mismatch"]},  # signal without mismatch
+        {"vin_format_valid": False},  # contradicts a well-formed VIN
+        {"external_vehicle": None},  # comparison with a vehicle that does not exist
     ],
 )
 def test_inconsistent_labels_are_rejected(overrides) -> None:
@@ -57,8 +87,8 @@ def test_inconsistent_labels_are_rejected(overrides) -> None:
         GoldenCase.model_validate(make_case(**overrides))
 
 
-def test_invalid_vin_is_rejected() -> None:
+def test_policy_id_mismatch_is_rejected() -> None:
     case = copy.deepcopy(VALID_CASE)
-    case["inputs"]["vin"] = "1M8GDM9AXKP04278O"  # contains the letter O
+    case["inputs"]["policy_id"] = "AUTO-OTHER"
     with pytest.raises(ValidationError):
         GoldenCase.model_validate(case)
