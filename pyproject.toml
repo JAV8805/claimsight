@@ -7,7 +7,10 @@ authors = [
     { name = "JoseA", email = "jose.angarita11@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.143.2",
+    "uvicorn>=0.54.0",
+]
 
 [project.scripts]
 claimsight = "claimsight:main"
@@ -18,6 +21,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pre-commit>=4.7.0",
     "pytest>=9.1.1",
     "ruff>=0.17.1",
@@ -30,4 +34,5 @@ line-length = 100
 select = ["E", "F", "I", "B", "UP"]
 
 [tool.pytest.ini_options]
+pythonpath = ["src"]
 testpaths = ["tests"]
