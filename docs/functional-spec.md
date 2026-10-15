@@ -1,6 +1,6 @@
 # ClaimSight — Functional Specification
 
-Version 0.3 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
+Version 0.4 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
 
 ## 1. Purpose and scope
 
@@ -52,8 +52,8 @@ ClaimSight is a copilot for **auto claims triage at first notice of loss (FNOL)*
 | FR-03 | **Routing values:** fast track, adjuster review or SIU referral. Fast track is forbidden when fraud is flagged; SIU referral requires a fraud flag | Planned (L5.1) |
 | FR-04 | **Fraud with evidence.** Flagging fraud requires at least one signal; any signal implies a fraud flag | Planned (L5.3) |
 | FR-05 | **Country-independent three-level vehicle verification** (see 5.1). Level 1, primary: the claim VIN must match the insured VIN in the policy; otherwise a "VIN mismatch" signal. Level 2: VIN format (global) and check digit where mandatory. Level 3, optional: external enrichment under the acceptance rule | Planned (L2.1) |
-| FR-06 | **Weather verification.** For hail and flood, historical weather (Open-Meteo) is checked for the incident date and location. Weather is a **signal for the adjuster, not proof**. If it does not support the claim, a "weather mismatch" signal is raised | Planned (L2.1); thresholds to be calibrated |
-| FR-07 | **Weather in the brief.** The brief of every hail or flood claim states the weather check result: supports, does not support, or no data | Planned (L2.1) |
+| FR-06 | **Weather verdict** (see 5.2). For hail and flood, the daily precipitation of the incident date and location (Open-Meteo historical archive) gives a verdict: supports, does not support or inconclusive. Weather is a **signal for the adjuster, not proof**. Only "does not support" raises a "weather mismatch" signal. The source cannot see hail, so weather never confirms a hail claim; it can only rule out a storm on a dry day. Other events get no verdict | Rule implemented (`claimsight.rules.weather`); pipeline integration planned (L2.1); flood thresholds provisional |
+| FR-07 | **Weather in the brief.** The brief of every hail or flood claim states the weather verdict: supports, does not support or inconclusive (including missing data) | Planned (L2.1) |
 | FR-08 | **Privacy.** Personal data is anonymized before it is sent to any LLM or written to logs | Planned (L3.4) |
 | FR-09 | **Data minimization.** The system stores and sends only the data each step needs. Non-production environments use synthetic VINs: real pattern (positions 1–11), invented serial and recomputed check digit | Implemented in non-production data (L1.3) |
 | FR-10 | **No discrimination by data origin.** Being unable to verify a vehicle in an external source (for example, a vehicle outside the US market) is never, on its own, a fraud signal or a reason for worse treatment | Planned (L2.1) |
@@ -72,19 +72,23 @@ The external source is an interchangeable component (adapter): connecting RUNT o
 
 **External enrichment acceptance rule (level 3):** an external result is used only when the source reports a clean decode (NHTSA: `ErrorCode 0`) and returns make, model and model year. Otherwise the vehicle is recorded as "not externally verifiable" and is **not compared** with the declared vehicle.
 
-### 5.2 Weather interpretation criteria (FR-06)
+### 5.2 Weather verdict (FR-06)
 
-WMO codes returned by Open-Meteo:
+The verdict uses the daily accumulated precipitation (`precipitation_sum`) of the incident date at the incident location:
 
-| Code | Meaning | Supports hail |
-| --- | --- | --- |
-| 0–3 | Clear to overcast | No |
-| 51–55 | Drizzle | No |
-| 61–67, 80–82 | Rain, showers | No |
-| 95 | Thunderstorm | Possible (hail may not be recorded) |
-| 96, 99 | Thunderstorm with hail | Yes |
+| Event | Daily precipitation | Verdict | Signal |
+| --- | --- | --- | --- |
+| Hail | Under 0.1 mm (dry day) | Does not support | Weather mismatch |
+| Hail | 0.1 mm or more | Inconclusive | None |
+| Flood | 50 mm or more | Supports | None |
+| Flood | 10 mm to under 50 mm | Inconclusive | None |
+| Flood | Under 10 mm | Does not support | Weather mismatch |
+| Hail or flood | No data | Inconclusive | None |
+| Any other event | Not used | No verdict | None |
 
-For flood, the daily accumulated precipitation (`precipitation_sum`) is used; the threshold will be calibrated with real cases in L2.1 and recorded here.
+Hail never gets "supports". The flood thresholds are provisional and will be calibrated with real cases in L2.1.
+
+**Source limitation:** Open-Meteo's historical archive comes from a reanalysis model that cannot estimate thunderstorms or hail. Its weather codes for thunderstorms (WMO 95–99) never appear, so the weather code is not used and weather can never confirm hail. A dry day is the only evidence against a hail claim.
 
 **Limitation:** the data comes from gridded weather models, not from a station at the exact point. Hail is very local and may not appear even if it fell. That is why the rule raises a signal and never rejects a claim on its own.
 
@@ -131,6 +135,7 @@ Injury claims, claims in litigation, complex multi-party liability, total-loss v
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.4 | 2026-10-15 | FR-06 rewritten as a weather verdict (supports, does not support, inconclusive) from daily precipitation; 5.2 replaces the WMO code table with the verdict table, because the historical source never reports thunderstorm or hail codes; FR-07 aligned with the verdict values |
 | 0.3 | 2026-10-15 | Test evidence moved to the validation log; external enrichment acceptance rule added to FR-05; FR-07 and FR-09 rewritten as system behavior; rule status now tracks system implementation |
 | 0.2 | 2026-10-15 | FR-05 redesigned as three country-independent levels (policy, format, optional external enrichment); new FR-10 on no discrimination by data origin; sources: policy record and RUNT |
 | 0.1 | 2026-10-15 | First version: scope, inputs, outputs, rules FR-01 to FR-09, weather criteria, fraud signals, data sources |
