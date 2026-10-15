@@ -14,3 +14,22 @@ test:
 
 run:
 > uv run uvicorn claimsight.api.main:app --app-dir src --reload
+
+COMPOSE = docker compose -f infra/docker-compose.yml --env-file .env
+
+.PHONY: up down ps psql
+up:
+> $(COMPOSE) up -d --wait
+
+down:
+> $(COMPOSE) down
+
+ps:
+> $(COMPOSE) ps
+
+psql:
+> $(COMPOSE) exec postgres psql -U claimsight -d claimsight
+
+.PHONY: redis-cli
+redis-cli:
+> $(COMPOSE) exec redis redis-cli
