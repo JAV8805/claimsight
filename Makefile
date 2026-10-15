@@ -33,3 +33,7 @@ psql:
 .PHONY: redis-cli
 redis-cli:
 > $(COMPOSE) exec redis redis-cli
+
+.PHONY: check-vins
+check-vins:
+> uv run python scripts/check_vin_patterns.py
