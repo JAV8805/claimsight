@@ -1,0 +1,22 @@
+{
+  "GC-0001": {
+    "expected": {
+      "claim_type": "hail",
+      "weather_supports_claim": false,
+      "fraud_flag": true,
+      "fraud_signals": ["weather_mismatch"],
+      "routing": "adjuster_review"
+    },
+    "notes": "ERA5 shows WMO 61 (slight rain), no hail code. Single weak signal -> adjuster review, not SIU."
+  },
+  "GC-0002": {
+    "expected": {
+      "claim_type": "collision",
+      "weather_supports_claim": null,
+      "fraud_flag": false,
+      "fraud_signals": [],
+      "routing": "fast_track"
+    },
+    "notes": "Non-US vehicle, not externally verifiable (NHTSA ErrorCode 8). FR-10: no penalty."
+  }
+}

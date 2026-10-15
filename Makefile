@@ -40,3 +40,6 @@ check-vins:
 
 golden-drafts:
 > uv run python scripts/build_golden_drafts.py
+
+golden:
+> uv run python scripts/compile_golden.py
