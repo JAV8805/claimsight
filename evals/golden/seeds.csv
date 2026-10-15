@@ -1,0 +1,3 @@
+case_id,language,adversarial,tags,country,pattern,serial,make,model,model_year,claim_vin,incident_date,address,latitude,longitude,claimed_event,narrative
+GC-0001,en,false,us|hail,US,4T1G11AKXLU,1,TOYOTA,Camry,2020,,2025-05-20,"Houston, TX, US",29.76,-95.37,hail,"Hail hit my car while it was parked on the street. The hood and roof have dozens of dents."
+GC-0002,es,false,co|not_verifiable,CO,VF1RJL006TC,1,RENAULT,Arkana,2026,,2026-09-10,"Bogotá, Colombia",4.71,-74.07,collision,"Otro carro me golpeó la puerta trasera derecha en un parqueadero. Tengo fotos del daño."

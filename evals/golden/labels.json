@@ -1,0 +1,22 @@
+{
+  "GC-0001": {
+    "expected": {
+      "claim_type": "hail",
+      "weather_verdict": "inconclusive",
+      "fraud_flag": false,
+      "fraud_signals": [],
+      "routing": "adjuster_review"
+    },
+    "notes": "4.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+  },
+  "GC-0002": {
+    "expected": {
+      "claim_type": "collision",
+      "weather_verdict": null,
+      "fraud_flag": false,
+      "fraud_signals": [],
+      "routing": "fast_track"
+    },
+    "notes": "Non-US vehicle, not externally verifiable (NHTSA ErrorCode 8). FR-10: no penalty."
+  }
+}

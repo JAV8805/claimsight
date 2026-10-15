@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0001",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0001",
+    "country": "US",
+    "insured_vin": "4T1G11AK8LU000001",
+    "insured_vehicle": {
+      "make": "TOYOTA",
+      "model": "Camry",
+      "model_year": 2020
+    }
+  },
+  "inputs": {
+    "narrative": "Hail hit my car while it was parked on the street. The hood and roof have dozens of dents.",
+    "vin": "4T1G11AK8LU000001",
+    "declared_vehicle": {
+      "make": "TOYOTA",
+      "model": "Camry",
+      "model_year": 2020
+    },
+    "incident_date": "2025-05-20",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0001"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "TOYOTA",
+      "Model": "Camry",
+      "ModelYear": "2020"
+    },
+    "weather": {
+      "weather_code": 61,
+      "precipitation_sum": 4.8,
+      "wind_gusts_10m_max": 38.5
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "TOYOTA",
+      "model": "Camry",
+      "model_year": 2020
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}
