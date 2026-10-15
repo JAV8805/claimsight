@@ -37,3 +37,6 @@ redis-cli:
 .PHONY: check-vins
 check-vins:
 > uv run python scripts/check_vin_patterns.py
+
+golden-drafts:
+> uv run python scripts/build_golden_drafts.py
