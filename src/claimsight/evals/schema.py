@@ -123,8 +123,9 @@ class GoldenCase(BaseModel):
             raise ValueError("fraud signals present but fraud_flag=False")
         if exp.routing == "siu_referral" and not exp.fraud_flag:
             raise ValueError("siu_referral requires fraud_flag=True")
+        distinct_signals = set(exp.fraud_signals)
         if exp.routing == "siu_referral" and not (
-            len(exp.fraud_signals) >= SIU_MIN_SIGNALS or "prompt_injection" in exp.fraud_signals
+            len(distinct_signals) >= SIU_MIN_SIGNALS or "prompt_injection" in distinct_signals
         ):
             raise ValueError("siu_referral requires at least 2 fraud signals or prompt_injection")
         if exp.routing == "fast_track" and exp.fraud_flag:

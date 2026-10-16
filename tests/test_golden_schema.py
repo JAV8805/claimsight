@@ -109,6 +109,14 @@ def test_siu_referral_with_two_signals_is_accepted() -> None:
     assert GoldenCase.model_validate(case).expected.routing == "siu_referral"
 
 
+def test_siu_referral_with_duplicated_signal_is_rejected() -> None:
+    case = make_case(
+        fraud_flag=True, fraud_signals=["late_report", "late_report"], routing="siu_referral"
+    )
+    with pytest.raises(ValidationError):
+        GoldenCase.model_validate(case)
+
+
 def test_siu_referral_with_prompt_injection_alone_is_accepted() -> None:
     case = make_case(fraud_flag=True, fraud_signals=["prompt_injection"], routing="siu_referral")
     assert GoldenCase.model_validate(case).expected.routing == "siu_referral"
