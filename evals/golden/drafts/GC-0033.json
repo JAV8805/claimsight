@@ -1,0 +1,67 @@
+{
+  "case_id": "GC-0033",
+  "language": "es",
+  "adversarial": true,
+  "tags": [
+    "co",
+    "hail",
+    "dry_day_hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0033",
+    "country": "CO",
+    "insured_vin": "VF1RJL003TC000033",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Una granizada me abolló todo el techo y el capó mientras el carro estaba en el parqueadero del trabajo. Hay decenas de golpes.",
+    "vin": "VF1RJL003TC000033",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-09-03",
+    "location": {
+      "address": "Medellín, Colombia",
+      "latitude": 6.25,
+      "longitude": -75.57
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-CO-0033"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 52.2
+    },
+    "weather_rule": "does_not_support",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

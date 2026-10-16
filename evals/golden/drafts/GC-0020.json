@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0020",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0020",
+    "country": "CO",
+    "insured_vin": "VF1RJL005TC000020",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Cayó una granizada fuerte con el carro parqueado en la calle. Tiene abolladuras en el capó y el techo, y el vidrio trasero está rajado.",
+    "vin": "VF1RJL005TC000020",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-05-22",
+    "location": {
+      "address": "Bogotá, Colombia",
+      "latitude": 4.71,
+      "longitude": -74.07
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-CO-0020"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 55,
+      "precipitation_sum": 5.9,
+      "wind_gusts_10m_max": 33.1
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

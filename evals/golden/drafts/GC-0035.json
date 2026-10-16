@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0035",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0035",
+    "country": "US",
+    "insured_vin": "1N4BL4DV5KN000035",
+    "insured_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    }
+  },
+  "inputs": {
+    "narrative": "Water from a backed-up storm drain pooled around my car overnight. In the morning the floor was wet and the dashboard display flickers.",
+    "vin": "1N4BL4DV5KN000035",
+    "declared_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "incident_date": "2026-03-06",
+    "location": {
+      "address": "Denver, CO, US",
+      "latitude": 39.74,
+      "longitude": -104.99
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-US-0035"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "NISSAN",
+      "Model": "Altima",
+      "ModelYear": "2019"
+    },
+    "weather": {
+      "weather_code": 75,
+      "precipitation_sum": 13.4,
+      "wind_gusts_10m_max": 39.6
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

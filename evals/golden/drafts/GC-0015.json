@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0015",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0015",
+    "country": "US",
+    "insured_vin": "1C4BJWDGXGL000015",
+    "insured_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    }
+  },
+  "inputs": {
+    "narrative": "While merging onto the highway a truck drifted into my lane and scraped the whole passenger side. He kept driving, but I got his plate number. Photos attached.",
+    "vin": "1C4BJWDGXGL000015",
+    "declared_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "incident_date": "2025-11-22",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0015"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "JEEP",
+      "Model": "Wrangler",
+      "ModelYear": "2016"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.1,
+      "wind_gusts_10m_max": 29.9
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

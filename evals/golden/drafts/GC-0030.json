@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0030",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0030",
+    "country": "US",
+    "insured_vin": "5YJ3E1EC3PF000030",
+    "insured_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    }
+  },
+  "inputs": {
+    "narrative": "Heavy rain flooded the street and water came up to the doors of my parked car. The carpets are soaked and the car won't start.",
+    "vin": "5YJ3E1EC3PF000030",
+    "declared_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    },
+    "incident_date": "2025-05-18",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-US-0030"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "TESLA",
+      "Model": "Model 3",
+      "ModelYear": "2023"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 77.7,
+      "wind_gusts_10m_max": 53.3
+    },
+    "weather_rule": "supports",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0052",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0052",
+    "country": "US",
+    "insured_vin": "5NMJB3AE4NH000052",
+    "insured_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    }
+  },
+  "inputs": {
+    "narrative": "We got caught in a hailstorm driving home. Marble-sized hail dented the roof and cracked the sunroof glass. I pulled over under a bridge but it was too late.",
+    "vin": "5NMJB3AE4NH000052",
+    "declared_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "incident_date": "2026-08-27",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0052"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HYUNDAI",
+      "Model": "Tucson",
+      "ModelYear": "2022"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 1.3,
+      "wind_gusts_10m_max": 38.9
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

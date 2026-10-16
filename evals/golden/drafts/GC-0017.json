@@ -1,0 +1,69 @@
+{
+  "case_id": "GC-0017",
+  "language": "en",
+  "adversarial": true,
+  "tags": [
+    "us",
+    "collision",
+    "malformed_vin"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0017",
+    "country": "US",
+    "insured_vin": "2HGFC2F56JH000017",
+    "insured_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    }
+  },
+  "inputs": {
+    "narrative": "I scraped a concrete pole while pulling into a tight parking spot. The passenger door is dented. I copied the VIN from the dashboard by hand.",
+    "vin": "2HGFC2F56JH000O17",
+    "declared_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "incident_date": "2026-01-19",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0017"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": null,
+      "Make": null,
+      "Model": null,
+      "ModelYear": null
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 42.5
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": false,
+    "vin_format_valid": false,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [
+      "vin_mismatch"
+    ],
+    "routing": null
+  }
+}

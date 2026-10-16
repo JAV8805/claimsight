@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0043",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0043",
+    "country": "US",
+    "insured_vin": "1N4BL4DV4KN000043",
+    "insured_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    }
+  },
+  "inputs": {
+    "narrative": "Hail came down for about ten minutes in the afternoon while I was at work. I found dozens of small dents on the roof and hood when I got back to the lot.",
+    "vin": "1N4BL4DV4KN000043",
+    "declared_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "incident_date": "2025-08-02",
+    "location": {
+      "address": "Atlanta, GA, US",
+      "latitude": 33.75,
+      "longitude": -84.39
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0043"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "NISSAN",
+      "Model": "Altima",
+      "ModelYear": "2019"
+    },
+    "weather": {
+      "weather_code": 61,
+      "precipitation_sum": 5.9,
+      "wind_gusts_10m_max": 33.5
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

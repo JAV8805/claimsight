@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0037",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0037",
+    "country": "US",
+    "insured_vin": "1GCPCREC2HF000037",
+    "insured_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    }
+  },
+  "inputs": {
+    "narrative": "I drove through a flooded underpass and the engine stalled. Water got into the cabin up to the pedals and a tow truck had to pull me out.",
+    "vin": "1GCPCREC2HF000037",
+    "declared_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "incident_date": "2025-06-06",
+    "location": {
+      "address": "Denver, CO, US",
+      "latitude": 39.74,
+      "longitude": -104.99
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-US-0037"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "CHEVROLET",
+      "Model": "Silverado",
+      "ModelYear": "2017"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 11.1,
+      "wind_gusts_10m_max": 23.0
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

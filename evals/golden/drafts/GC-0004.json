@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0004",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0004",
+    "country": "US",
+    "insured_vin": "5NMJB3AE4NH000004",
+    "insured_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    }
+  },
+  "inputs": {
+    "narrative": "A car pulled out of a parking space and hit my rear quarter panel. There is a large dent and the paint is cracked. The other driver admitted fault at the scene.",
+    "vin": "5NMJB3AE4NH000004",
+    "declared_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "incident_date": "2025-07-17",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0004"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HYUNDAI",
+      "Model": "Tucson",
+      "ModelYear": "2022"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 31.0
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

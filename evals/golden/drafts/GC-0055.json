@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0055",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0055",
+    "country": "CO",
+    "insured_vin": "VF1RJL002TC000055",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "El granizo dañó el techo panorámico y abolló el baúl. Tengo fotos del daño y de las bolitas de hielo en el antejardín.",
+    "vin": "VF1RJL002TC000055",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-04-26",
+    "location": {
+      "address": "Cartagena, Colombia",
+      "latitude": 10.39,
+      "longitude": -75.48
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-CO-0055"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.2,
+      "wind_gusts_10m_max": 35.3
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

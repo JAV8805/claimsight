@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0040",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0040",
+    "country": "CO",
+    "insured_vin": "VF1RJL000TC000040",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Alguien pintó con aerosol el capó y las puertas con letreros. Tengo fotos y la denuncia.",
+    "vin": "VF1RJL000TC000040",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-08-24",
+    "location": {
+      "address": "Medellín, Colombia",
+      "latitude": 6.25,
+      "longitude": -75.57
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-CO-0040"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 49.3
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

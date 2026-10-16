@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0025",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0025",
+    "country": "US",
+    "insured_vin": "2HGFC2F55JH000025",
+    "insured_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    }
+  },
+  "inputs": {
+    "narrative": "My car was parked in the driveway during the hail yesterday. The dents are mostly on the hood and the paint is chipped in several places.",
+    "vin": "2HGFC2F55JH000025",
+    "declared_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "incident_date": "2026-05-26",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0025"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HONDA",
+      "Model": "Civic",
+      "ModelYear": "2018"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 1.7,
+      "wind_gusts_10m_max": 34.9
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

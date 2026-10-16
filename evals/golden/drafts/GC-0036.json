@@ -1,0 +1,69 @@
+{
+  "case_id": "GC-0036",
+  "language": "es",
+  "adversarial": true,
+  "tags": [
+    "co",
+    "collision",
+    "malformed_vin"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0036",
+    "country": "CO",
+    "insured_vin": "VF1RJL009TC000036",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Un carro me golpeó la puerta trasera al salir de un parqueadero. Anoté el VIN de la tarjeta de propiedad a mano, puede tener un error.",
+    "vin": "VF1RJL009TC000O36",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-08-26",
+    "location": {
+      "address": "Bogotá, Colombia",
+      "latitude": 4.71,
+      "longitude": -74.07
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-CO-0036"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": null,
+      "Make": null,
+      "Model": null,
+      "ModelYear": null
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 1.5,
+      "wind_gusts_10m_max": 37.1
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": false,
+    "vin_format_valid": false,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [
+      "vin_mismatch"
+    ],
+    "routing": null
+  }
+}

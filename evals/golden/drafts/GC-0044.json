@@ -1,0 +1,71 @@
+{
+  "case_id": "GC-0044",
+  "language": "en",
+  "adversarial": true,
+  "tags": [
+    "us",
+    "hail",
+    "dry_day_hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0044",
+    "country": "US",
+    "insured_vin": "5NMJB3AE5NH000044",
+    "insured_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    }
+  },
+  "inputs": {
+    "narrative": "Huge hail destroyed the roof and hood of my car while it was parked at work. There are dozens of deep dents and the windshield is cracked.",
+    "vin": "5NMJB3AE5NH000044",
+    "declared_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "incident_date": "2025-12-19",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0044"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HYUNDAI",
+      "Model": "Tucson",
+      "ModelYear": "2022"
+    },
+    "weather": {
+      "weather_code": 0,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 34.9
+    },
+    "weather_rule": "does_not_support",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

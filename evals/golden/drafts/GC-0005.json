@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0005",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0005",
+    "country": "CO",
+    "insured_vin": "VF1RJL009TC000005",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Un taxi se pasó el semáforo en rojo y me golpeó el guardabarros delantero izquierdo. El farol quedó roto y la llanta torcida. Hicimos el croquis con el tránsito.",
+    "vin": "VF1RJL009TC000005",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-04-09",
+    "location": {
+      "address": "Bucaramanga, Colombia",
+      "latitude": 7.12,
+      "longitude": -73.12
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-CO-0005"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 12.9,
+      "wind_gusts_10m_max": 26.3
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

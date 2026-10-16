@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0011",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0011",
+    "country": "US",
+    "insured_vin": "1N4BL4DV2KN000011",
+    "insured_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    }
+  },
+  "inputs": {
+    "narrative": "The catalytic converter was cut out from under my car while I was at work. I noticed the loud noise when I started the engine, and a mechanic confirmed the cut.",
+    "vin": "1N4BL4DV2KN000011",
+    "declared_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "incident_date": "2025-11-05",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-US-0011"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "NISSAN",
+      "Model": "Altima",
+      "ModelYear": "2019"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.7,
+      "wind_gusts_10m_max": 45.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

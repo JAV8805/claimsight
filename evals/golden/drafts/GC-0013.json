@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0013",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0013",
+    "country": "US",
+    "insured_vin": "1GCPCRECXHF000013",
+    "insured_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    }
+  },
+  "inputs": {
+    "narrative": "A delivery van sideswiped me on a narrow street while I was driving about 20 mph. Both mirrors were knocked off and there are deep scratches along the driver's door.",
+    "vin": "1GCPCRECXHF000013",
+    "declared_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "incident_date": "2025-03-30",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0013"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "CHEVROLET",
+      "Model": "Silverado",
+      "ModelYear": "2017"
+    },
+    "weather": {
+      "weather_code": 61,
+      "precipitation_sum": 3.3,
+      "wind_gusts_10m_max": 51.1
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

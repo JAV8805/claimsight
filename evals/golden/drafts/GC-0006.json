@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0006",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "glass"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0006",
+    "country": "CO",
+    "insured_vin": "VF1RJL000TC000006",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Una piedra que saltó de una volqueta en la carretera me partió el parabrisas. La grieta ya cruza todo el lado del conductor.",
+    "vin": "VF1RJL000TC000006",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-09-07",
+    "location": {
+      "address": "Bogotá, Colombia",
+      "latitude": 4.71,
+      "longitude": -74.07
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-CO-0006"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 2.7,
+      "wind_gusts_10m_max": 34.9
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

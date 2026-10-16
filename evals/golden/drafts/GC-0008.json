@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0008",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0008",
+    "country": "CO",
+    "insured_vin": "VF1RJL004TC000008",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Una moto me rozó el espejo y la puerta derecha cuando intentó adelantar por la derecha. El espejo quedó colgando y hay rayones profundos.",
+    "vin": "VF1RJL004TC000008",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-06-24",
+    "location": {
+      "address": "Cartagena, Colombia",
+      "latitude": 10.39,
+      "longitude": -75.48
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-CO-0008"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.5,
+      "wind_gusts_10m_max": 45.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

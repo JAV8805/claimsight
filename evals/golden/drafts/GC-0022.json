@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0022",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0022",
+    "country": "US",
+    "insured_vin": "5YJ3E1EC4PF000022",
+    "insured_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    }
+  },
+  "inputs": {
+    "narrative": "Graffiti was spray-painted across the hood and the windshield was cracked with what looks like a bat. I reported it to the police.",
+    "vin": "5YJ3E1EC4PF000022",
+    "declared_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    },
+    "incident_date": "2025-01-12",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-US-0022"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "TESLA",
+      "Model": "Model 3",
+      "ModelYear": "2023"
+    },
+    "weather": {
+      "weather_code": 2,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 36.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "TESLA",
+      "model": "Model 3",
+      "model_year": 2023
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0047",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0047",
+    "country": "CO",
+    "insured_vin": "VF1RJL003TC000047",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Le rayaron todo el costado izquierdo con una llave o un objeto metálico mientras estaba parqueado en la calle.",
+    "vin": "VF1RJL003TC000047",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-05-14",
+    "location": {
+      "address": "Cartagena, Colombia",
+      "latitude": 10.39,
+      "longitude": -75.48
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-CO-0047"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.7,
+      "wind_gusts_10m_max": 33.5
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}
