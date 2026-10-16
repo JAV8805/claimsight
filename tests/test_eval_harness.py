@@ -5,7 +5,7 @@ from pathlib import Path
 
 from claimsight.baselines.rules import predict
 from claimsight.evals.harness import flatten, load_golden, regressions, run, score
-from claimsight.evals.schema import GoldenCase
+from claimsight.evals.schema import CaseFacts, ClaimInput, Expected, GoldenCase, PolicyRecord
 
 COMMITTED = Path("evals/reports/baseline.json")
 
@@ -15,6 +15,18 @@ def test_baseline_does_not_regress() -> None:
     current = run("baseline", load_golden(), predict)
     assert current["overall"]["n"] == committed["overall"]["n"], "golden set changed: run make eval"
     assert not regressions(committed, current), "baseline dropped below evals/reports/baseline.json"
+
+
+def test_gate_fails_for_a_degraded_predictor() -> None:
+    """Proves the gate can fail: a predictor that fast-tracks everything must be caught."""
+
+    def always_fast_track(policy: PolicyRecord, inputs: ClaimInput, facts: CaseFacts) -> Expected:
+        return predict(policy, inputs, facts).model_copy(update={"routing": "fast_track"})
+
+    committed = json.loads(COMMITTED.read_text(encoding="utf-8"))
+    degraded = run("degraded", load_golden(), always_fast_track)
+    problems = regressions(committed, degraded)
+    assert any(p.startswith("overall/routing_accuracy") for p in problems)
 
 
 def test_regressions_flags_drops_only() -> None:

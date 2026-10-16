@@ -1,6 +1,6 @@
 # ClaimSight — Functional Specification
 
-Version 0.5 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
+Version 0.6 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
 
 ## 1. Purpose and scope
 
@@ -49,7 +49,7 @@ ClaimSight is a copilot for **auto claims triage at first notice of loss (FNOL)*
 | --- | --- | --- |
 | FR-01 | **Human oversight.** Every denial, SIU referral, amount above the threshold or low-confidence result goes to human approval. There is never an automatic denial | Planned (L5.2) |
 | FR-02 | **Coverage with citations.** A "covered" decision must cite at least one clause retrieved from the policy; without a citation the claim is rejected | Planned (L3.2) |
-| FR-03 | **Routing policy.** Values: fast track, adjuster review or SIU referral. Fast track requires that the claim VIN matches the policy and that no fraud is flagged. SIU referral requires a fraud flag and either at least 2 fraud signals or a prompt injection signal. A single other signal goes to adjuster review | Planned (L5.1) |
+| FR-03 | **Routing policy.** Values: fast track, adjuster review or SIU referral. Fast track applies only to collision and glass claims with no fraud signals and a VIN that matches the policy; theft, vandalism, hail and flood always go to at least adjuster review. SIU referral requires a fraud flag and either at least 2 fraud signals or a prompt injection signal. A single other signal goes to adjuster review | Planned (L5.1) |
 | FR-04 | **Fraud with evidence.** Flagging fraud requires at least one signal; any signal implies a fraud flag | Planned (L5.3) |
 | FR-05 | **Country-independent three-level vehicle verification** (see 5.1). Level 1, primary: the claim VIN must match the insured VIN in the policy; otherwise a "VIN mismatch" signal, but only when the VIN is well formed. Level 2: VIN format (global) and check digit where mandatory; a malformed VIN is a possible typo, **not a fraud signal**: the claim goes to adjuster review to confirm the VIN with the claimant. Level 3, optional: external enrichment under the acceptance rule | Planned (L2.1) |
 | FR-06 | **Weather verdict** (see 5.2). For hail and flood, the daily precipitation of the incident date and location (Open-Meteo historical archive) gives a verdict: supports, does not support or inconclusive. Weather is a **signal for the adjuster, not proof**. Only "does not support" raises a "weather mismatch" signal. The source cannot see hail, so weather never confirms a hail claim; it can only rule out a storm on a dry day. Other events get no verdict | Rule implemented (`claimsight.rules.weather`); pipeline integration planned (L2.1); flood thresholds provisional |
@@ -136,6 +136,7 @@ Injury claims, claims in litigation, complex multi-party liability, total-loss v
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.6 | 2026-10-16 | FR-03: fast track applies only to collision and glass claims with no fraud signals and a VIN that matches the policy; theft, vandalism, hail and flood always go to at least adjuster review |
 | 0.5 | 2026-10-16 | FR-03 rewritten as a routing policy (SIU needs 2 or more signals or prompt injection; fast track needs a VIN match); FR-05 level 2: a malformed VIN is not a fraud signal and VIN mismatch applies only to well-formed VINs; new FR-11: a narrative that contradicts the claimed event is not a fraud signal by itself |
 | 0.4 | 2026-10-15 | FR-06 rewritten as a weather verdict (supports, does not support, inconclusive) from daily precipitation; 5.2 replaces the WMO code table with the verdict table, because the historical source never reports thunderstorm or hail codes; FR-07 aligned with the verdict values |
 | 0.3 | 2026-10-15 | Test evidence moved to the validation log; external enrichment acceptance rule added to FR-05; FR-07 and FR-09 rewritten as system behavior; rule status now tracks system implementation |
