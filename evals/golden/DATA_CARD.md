@@ -84,7 +84,8 @@ Decisions that shape the labels (spec v0.5):
   more uniform than real claims, short, and contain no typos, slang, photos or audio. Colombian Spanish
   is a single register.
 - **Synthetic policies.** Policy records and VINs are invented (real pattern, invented serial); the
-  set has no coverage decisions or clause citations yet (L2.2).
+  set has no coverage decisions yet (L3.1). `expected.clause_ids` (the clauses a correct decision must cite) is decided
+  for all 60 cases against the fictional ClaimSight Mutual Auto Policy (`corpus/policies/`).
 - **Small and not representative.** 60 cases are for regression and rule checks, not for estimating real-world rates.
 - **Label-rule circularity.** Labels were proposed from the same rules the baseline implements, so
   baseline accuracy measures policy consistency, not real-world accuracy. The informative signal is the

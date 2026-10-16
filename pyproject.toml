@@ -12,6 +12,8 @@ dependencies = [
     "langchain>=1.4.6",
     "langchain-ollama>=1.1.0",
     "langgraph>=1.2.15",
+    "pgvector>=0.5.1",
+    "psycopg[binary]>=3.3.6",
     "uvicorn>=0.54.0",
 ]
 

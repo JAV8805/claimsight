@@ -1,0 +1,302 @@
+{
+  "chunks": {
+    "clause": 56,
+    "fixed": 43
+  },
+  "claim_type_source": "claimed_event (the LLM classifier is not in this loop)",
+  "deterministic": {
+    "exact_match": 0.95,
+    "misses": [
+      {
+        "case_id": "GC-0009",
+        "expected": [
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.1"
+        ],
+        "mapped": [
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ]
+      },
+      {
+        "case_id": "GC-0012",
+        "expected": [
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.2"
+        ],
+        "mapped": [
+          "CS-AUTO-5.1"
+        ]
+      },
+      {
+        "case_id": "GC-0053",
+        "expected": [
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.1"
+        ],
+        "mapped": [
+          "CS-AUTO-5.2"
+        ]
+      }
+    ],
+    "n": 60
+  },
+  "embedding_model": "bge-m3",
+  "hybrid_query": "<claimed_event>. <narrative>",
+  "index": "hnsw(m=16, ef_construction=64) cosine",
+  "labels": "expected.clause_ids in labels.json (decided)",
+  "results": {
+    "clause": {
+      "cross_lingual": {
+        "combined": {
+          "all": {
+            "mrr": null,
+            "n": 60,
+            "recall@3": 0.9208,
+            "recall@5": 0.9569
+          },
+          "en queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.9139,
+            "recall@5": 0.9639
+          },
+          "es queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.9278,
+            "recall@5": 0.95
+          }
+        },
+        "pure_semantic": {
+          "all": {
+            "mrr": 0.7381,
+            "n": 60,
+            "recall@3": 0.4106,
+            "recall@5": 0.5194
+          },
+          "en queries": {
+            "mrr": 0.7778,
+            "n": 30,
+            "recall@3": 0.445,
+            "recall@5": 0.5656
+          },
+          "es queries": {
+            "mrr": 0.6983,
+            "n": 30,
+            "recall@3": 0.3761,
+            "recall@5": 0.4733
+          }
+        },
+        "semantic": {
+          "all": {
+            "mrr": 0.8681,
+            "n": 60,
+            "recall@3": 0.9,
+            "recall@5": 0.9583
+          },
+          "en queries": {
+            "mrr": 0.8528,
+            "n": 30,
+            "recall@3": 0.8833,
+            "recall@5": 0.9667
+          },
+          "es queries": {
+            "mrr": 0.8833,
+            "n": 30,
+            "recall@3": 0.9167,
+            "recall@5": 0.95
+          }
+        }
+      },
+      "monolingual": {
+        "combined": {
+          "all": {
+            "mrr": null,
+            "n": 60,
+            "recall@3": 0.9403,
+            "recall@5": 0.9667
+          },
+          "en queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.9556,
+            "recall@5": 0.975
+          },
+          "es queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.925,
+            "recall@5": 0.9583
+          }
+        },
+        "pure_semantic": {
+          "all": {
+            "mrr": 0.8667,
+            "n": 60,
+            "recall@3": 0.4356,
+            "recall@5": 0.5206
+          },
+          "en queries": {
+            "mrr": 0.9389,
+            "n": 30,
+            "recall@3": 0.47,
+            "recall@5": 0.5611
+          },
+          "es queries": {
+            "mrr": 0.7944,
+            "n": 30,
+            "recall@3": 0.4011,
+            "recall@5": 0.48
+          }
+        },
+        "semantic": {
+          "all": {
+            "mrr": 0.9139,
+            "n": 60,
+            "recall@3": 0.9333,
+            "recall@5": 0.975
+          },
+          "en queries": {
+            "mrr": 0.9667,
+            "n": 30,
+            "recall@3": 0.95,
+            "recall@5": 0.9833
+          },
+          "es queries": {
+            "mrr": 0.8611,
+            "n": 30,
+            "recall@3": 0.9167,
+            "recall@5": 0.9667
+          }
+        }
+      }
+    },
+    "fixed": {
+      "cross_lingual": {
+        "combined": {
+          "all": {
+            "mrr": null,
+            "n": 60,
+            "recall@3": 0.8481,
+            "recall@5": 0.925
+          },
+          "en queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.85,
+            "recall@5": 0.9222
+          },
+          "es queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.8461,
+            "recall@5": 0.9278
+          }
+        },
+        "pure_semantic": {
+          "all": {
+            "mrr": 0.5475,
+            "n": 60,
+            "recall@3": 0.2856,
+            "recall@5": 0.3869
+          },
+          "en queries": {
+            "mrr": 0.6272,
+            "n": 30,
+            "recall@3": 0.2856,
+            "recall@5": 0.4244
+          },
+          "es queries": {
+            "mrr": 0.4678,
+            "n": 30,
+            "recall@3": 0.2856,
+            "recall@5": 0.3494
+          }
+        },
+        "semantic": {
+          "all": {
+            "mrr": 0.6889,
+            "n": 60,
+            "recall@3": 0.75,
+            "recall@5": 0.875
+          },
+          "en queries": {
+            "mrr": 0.6667,
+            "n": 30,
+            "recall@3": 0.7333,
+            "recall@5": 0.85
+          },
+          "es queries": {
+            "mrr": 0.7111,
+            "n": 30,
+            "recall@3": 0.7667,
+            "recall@5": 0.9
+          }
+        }
+      },
+      "monolingual": {
+        "combined": {
+          "all": {
+            "mrr": null,
+            "n": 60,
+            "recall@3": 0.8619,
+            "recall@5": 0.9064
+          },
+          "en queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.925,
+            "recall@5": 0.9361
+          },
+          "es queries": {
+            "mrr": null,
+            "n": 30,
+            "recall@3": 0.7989,
+            "recall@5": 0.8767
+          }
+        },
+        "pure_semantic": {
+          "all": {
+            "mrr": 0.7061,
+            "n": 60,
+            "recall@3": 0.3656,
+            "recall@5": 0.4258
+          },
+          "en queries": {
+            "mrr": 0.7278,
+            "n": 30,
+            "recall@3": 0.3478,
+            "recall@5": 0.42
+          },
+          "es queries": {
+            "mrr": 0.6844,
+            "n": 30,
+            "recall@3": 0.3833,
+            "recall@5": 0.4317
+          }
+        },
+        "semantic": {
+          "all": {
+            "mrr": 0.7792,
+            "n": 60,
+            "recall@3": 0.775,
+            "recall@5": 0.8417
+          },
+          "en queries": {
+            "mrr": 0.8944,
+            "n": 30,
+            "recall@3": 0.8833,
+            "recall@5": 0.9
+          },
+          "es queries": {
+            "mrr": 0.6639,
+            "n": 30,
+            "recall@3": 0.6667,
+            "recall@5": 0.7833
+          }
+        }
+      }
+    }
+  }
+}

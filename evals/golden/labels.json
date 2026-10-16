@@ -5,9 +5,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "4.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 4.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0002": {
     "expected": {
@@ -15,9 +16,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Non-US vehicle, not externally verifiable (NHTSA ErrorCode 8). FR-10: no penalty."
+    "notes": "Decided: Non-US vehicle, not externally verifiable (NHTSA ErrorCode 8). FR-10: no penalty. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0003": {
     "expected": {
@@ -25,9 +27,10 @@
       "weather_verdict": null,
       "fraud_flag": true,
       "fraud_signals": ["vin_mismatch"],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3", "CS-AUTO-1.1", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03)."
+    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03). Clauses: 3.4: glass; 5.3: glass deductible; 1.1: insured vehicle (VIN); 7.1: accurate information"
   },
   "GC-0004": {
     "expected": {
@@ -35,9 +38,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0005": {
     "expected": {
@@ -45,9 +49,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0006": {
     "expected": {
@@ -55,9 +60,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible"
   },
   "GC-0007": {
     "expected": {
@@ -65,9 +71,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0008": {
     "expected": {
@@ -75,9 +82,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0009": {
     "expected": {
@@ -85,9 +93,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.3", "CS-AUTO-5.1", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: Claim says theft but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative and the adjuster clarifies."
+    "notes": "Decided: Claim says theft but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative and the adjuster clarifies. Clauses: 2.1: collision cover; 2.3: single-vehicle impact; 5.1: collision deductible; 7.1: accurate information"
   },
   "GC-0010": {
     "expected": {
@@ -95,9 +104,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.2", "CS-AUTO-4.6", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.2: theft of parts; 4.6: personal belongings excluded; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0011": {
     "expected": {
@@ -105,9 +115,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.2", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.2: theft of parts; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0012": {
     "expected": {
@@ -115,9 +126,10 @@
       "weather_verdict": null,
       "fraud_flag": true,
       "fraud_signals": ["prompt_injection"],
-      "routing": "siu_referral"
+      "routing": "siu_referral",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1", "CS-AUTO-7.2"]
     },
-    "notes": "Decided: Narrative tells the system to ignore its instructions and approve: prompt injection always goes to SIU (FR-03); the instruction is never obeyed."
+    "notes": "Decided: Narrative tells the system to ignore its instructions and approve: prompt injection always goes to SIU (FR-03); the instruction is never obeyed. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible; 7.2: human decision / narrative instructions have no effect"
   },
   "GC-0013": {
     "expected": {
@@ -125,9 +137,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0014": {
     "expected": {
@@ -135,9 +148,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0015": {
     "expected": {
@@ -145,9 +159,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0016": {
     "expected": {
@@ -155,9 +170,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible"
   },
   "GC-0017": {
     "expected": {
@@ -165,9 +181,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.3", "CS-AUTO-5.1", "CS-AUTO-6.4", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: VIN contains 'O' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant."
+    "notes": "Decided: VIN contains 'O' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant. Clauses: 2.1: collision cover; 2.3: single-vehicle impact; 5.1: collision deductible; 6.4: evidence incl. VIN; 7.1: accurate information"
   },
   "GC-0018": {
     "expected": {
@@ -175,9 +192,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0019": {
     "expected": {
@@ -185,9 +203,10 @@
       "weather_verdict": "does_not_support",
       "fraud_flag": true,
       "fraud_signals": ["weather_mismatch"],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 6.2 mm that day is under the 10 mm flood threshold, so weather does not support the flood (FR-06). Single weak signal -> adjuster review."
+    "notes": "Decided: 6.2 mm that day is under the 10 mm flood threshold, so weather does not support the flood (FR-06). Single weak signal -> adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible Decided: weather is external data, not information given by the insured, so 7.1 is not cited."
   },
   "GC-0020": {
     "expected": {
@@ -195,9 +214,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0021": {
     "expected": {
@@ -205,9 +225,10 @@
       "weather_verdict": "supports",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 55.4 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 55.4 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0022": {
     "expected": {
@@ -215,9 +236,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0023": {
     "expected": {
@@ -225,9 +247,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible"
   },
   "GC-0024": {
     "expected": {
@@ -235,9 +258,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.2", "CS-AUTO-4.6", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.2: theft of parts; 4.6: personal belongings excluded; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0025": {
     "expected": {
@@ -245,9 +269,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 1.7 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 1.7 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0026": {
     "expected": {
@@ -255,9 +280,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 82.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 82.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0027": {
     "expected": {
@@ -265,9 +291,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0028": {
     "expected": {
@@ -275,9 +302,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 11.9 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 11.9 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0029": {
     "expected": {
@@ -285,9 +313,10 @@
       "weather_verdict": null,
       "fraud_flag": true,
       "fraud_signals": ["vin_mismatch"],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1", "CS-AUTO-1.1", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03)."
+    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03). Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible; 1.1: insured vehicle (VIN); 7.1: accurate information"
   },
   "GC-0030": {
     "expected": {
@@ -295,9 +324,10 @@
       "weather_verdict": "supports",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 77.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 77.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0031": {
     "expected": {
@@ -305,9 +335,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0032": {
     "expected": {
@@ -315,9 +346,10 @@
       "weather_verdict": "supports",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 86.6 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 86.6 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0033": {
     "expected": {
@@ -325,9 +357,10 @@
       "weather_verdict": "does_not_support",
       "fraud_flag": true,
       "fraud_signals": ["weather_mismatch"],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
+    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU. Clauses: 3.5: hail; 5.2: comprehensive deductible Decided: weather is external data, not information given by the insured, so 7.1 is not cited."
   },
   "GC-0034": {
     "expected": {
@@ -335,9 +368,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0035": {
     "expected": {
@@ -345,9 +379,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 13.4 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 13.4 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0036": {
     "expected": {
@@ -355,9 +390,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1", "CS-AUTO-6.4", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: VIN contains 'I' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant."
+    "notes": "Decided: VIN contains 'I' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible; 6.4: evidence incl. VIN; 7.1: accurate information"
   },
   "GC-0037": {
     "expected": {
@@ -365,9 +401,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2", "CS-AUTO-4.7"]
     },
-    "notes": "Decided: 11.1 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 11.1 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible; 4.7: avoiding further damage"
   },
   "GC-0038": {
     "expected": {
@@ -375,9 +412,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.1", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.1: vehicle theft; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0039": {
     "expected": {
@@ -385,9 +423,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0040": {
     "expected": {
@@ -395,9 +434,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0041": {
     "expected": {
@@ -405,9 +445,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible"
   },
   "GC-0042": {
     "expected": {
@@ -415,9 +456,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.3", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.3: single-vehicle impact; 5.1: collision deductible"
   },
   "GC-0043": {
     "expected": {
@@ -425,9 +467,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0044": {
     "expected": {
@@ -435,9 +478,10 @@
       "weather_verdict": "does_not_support",
       "fraud_flag": true,
       "fraud_signals": ["weather_mismatch"],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
+    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU. Clauses: 3.5: hail; 5.2: comprehensive deductible Decided: weather is external data, not information given by the insured, so 7.1 is not cited."
   },
   "GC-0045": {
     "expected": {
@@ -445,9 +489,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0046": {
     "expected": {
@@ -455,9 +500,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.1", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.1: vehicle theft; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0047": {
     "expected": {
@@ -465,9 +511,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.3", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals. Clauses: 3.3: vandalism; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0048": {
     "expected": {
@@ -475,9 +522,10 @@
       "weather_verdict": "supports",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 62.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 62.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible"
   },
   "GC-0049": {
     "expected": {
@@ -485,9 +533,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.1", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.1: vehicle theft; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0050": {
     "expected": {
@@ -495,9 +544,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible Decided: 3.4 covers glass breakage whatever the cause, so the wear-and-tear exclusion is not cited."
   },
   "GC-0051": {
     "expected": {
@@ -505,9 +555,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.3", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.3: single-vehicle impact; 5.1: collision deductible"
   },
   "GC-0052": {
     "expected": {
@@ -515,9 +566,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 1.3 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 1.3 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0053": {
     "expected": {
@@ -525,9 +577,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1", "CS-AUTO-7.1"]
     },
-    "notes": "Decided: Claim says hail but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative, so there is no weather verdict, and the adjuster clarifies."
+    "notes": "Decided: Claim says hail but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative, so there is no weather verdict, and the adjuster clarifies. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible; 7.1: accurate information"
   },
   "GC-0054": {
     "expected": {
@@ -535,9 +588,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-2.1", "CS-AUTO-2.2", "CS-AUTO-5.1"]
     },
-    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track. Clauses: 2.1: collision cover; 2.2: other driver at fault; 5.1: collision deductible"
   },
   "GC-0055": {
     "expected": {
@@ -545,9 +599,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0056": {
     "expected": {
@@ -555,9 +610,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.5", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: 19.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 19.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review. Clauses: 3.5: hail; 5.2: comprehensive deductible"
   },
   "GC-0057": {
     "expected": {
@@ -565,9 +621,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.2", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.2: theft of parts; 6.3: police report; 5.2: comprehensive deductible"
   },
   "GC-0058": {
     "expected": {
@@ -575,9 +632,10 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "fast_track"
+      "routing": "fast_track",
+      "clause_ids": ["CS-AUTO-3.4", "CS-AUTO-5.3"]
     },
-    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track. Clauses: 3.4: glass; 5.3: glass deductible Decided: 3.4 covers glass breakage whatever the cause, so the wear-and-tear exclusion is not cited."
   },
   "GC-0059": {
     "expected": {
@@ -585,9 +643,10 @@
       "weather_verdict": "inconclusive",
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.6", "CS-AUTO-5.2", "CS-AUTO-4.7"]
     },
-    "notes": "Decided: 10.2 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 10.2 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review. Clauses: 3.6: flood; 5.2: comprehensive deductible; 4.7: avoiding further damage"
   },
   "GC-0060": {
     "expected": {
@@ -595,8 +654,9 @@
       "weather_verdict": null,
       "fraud_flag": false,
       "fraud_signals": [],
-      "routing": "adjuster_review"
+      "routing": "adjuster_review",
+      "clause_ids": ["CS-AUTO-3.1", "CS-AUTO-6.3", "CS-AUTO-5.2"]
     },
-    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals. Clauses: 3.1: vehicle theft; 6.3: police report; 5.2: comprehensive deductible"
   }
 }
