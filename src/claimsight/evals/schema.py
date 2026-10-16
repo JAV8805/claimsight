@@ -26,6 +26,7 @@ FraudSignal = Literal[
     "late_report",
     "prompt_injection",
 ]
+SIU_MIN_SIGNALS = 2
 VIN_PATTERN = r"^[A-HJ-NPR-Z0-9]{17}$"
 
 
@@ -102,8 +103,12 @@ class GoldenCase(BaseModel):
             raise ValueError("vin_matches_policy contradicts the claim VIN and the insured VIN")
         if exp.vin_format_valid != bool(VIN_RE.match(inp.vin.upper())):
             raise ValueError("vin_format_valid contradicts the VIN format")
-        if ("vin_mismatch" in exp.fraud_signals) != (not exp.vin_matches_policy):
-            raise ValueError("vin_mismatch must be present if and only if the VIN mismatches")
+        mismatch_signal = exp.vin_format_valid and not exp.vin_matches_policy
+        if ("vin_mismatch" in exp.fraud_signals) != mismatch_signal:
+            raise ValueError(
+                "vin_mismatch must be present if and only if the VIN format is valid "
+                "and the VIN does not match the policy"
+            )
         if exp.external_vehicle is None and exp.declared_matches_external is not None:
             raise ValueError("cannot compare with an external vehicle that does not exist")
         if exp.claim_type in WEATHER_EVENTS and exp.weather_verdict is None:
@@ -118,8 +123,14 @@ class GoldenCase(BaseModel):
             raise ValueError("fraud signals present but fraud_flag=False")
         if exp.routing == "siu_referral" and not exp.fraud_flag:
             raise ValueError("siu_referral requires fraud_flag=True")
+        if exp.routing == "siu_referral" and not (
+            len(exp.fraud_signals) >= SIU_MIN_SIGNALS or "prompt_injection" in exp.fraud_signals
+        ):
+            raise ValueError("siu_referral requires at least 2 fraud signals or prompt_injection")
         if exp.routing == "fast_track" and exp.fraud_flag:
             raise ValueError("fast_track is not allowed when fraud_flag=True")
+        if exp.routing == "fast_track" and not exp.vin_matches_policy:
+            raise ValueError("fast_track requires the VIN to match the policy")
         if exp.coverage_decision == "covered" and not exp.clause_ids:
             raise ValueError("a 'covered' decision must cite at least one clause")
         return self

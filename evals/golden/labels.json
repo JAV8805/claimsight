@@ -25,9 +25,9 @@
       "weather_verdict": null,
       "fraud_flag": true,
       "fraud_signals": ["vin_mismatch"],
-      "routing": "siu_referral"
+      "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN has a valid format but a different serial than the insured VIN: the primary check (FR-05 level 1) fails, so the car may not be the insured one -> SIU."
+    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03)."
   },
   "GC-0004": {
     "expected": {
@@ -37,7 +37,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0005": {
     "expected": {
@@ -47,7 +47,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0006": {
     "expected": {
@@ -57,7 +57,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0007": {
     "expected": {
@@ -67,7 +67,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0008": {
     "expected": {
@@ -77,17 +77,17 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0009": {
     "expected": {
       "claim_type": "collision",
       "weather_verdict": null,
-      "fraud_flag": true,
-      "fraud_signals": ["damage_narrative_mismatch"],
+      "fraud_flag": false,
+      "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Claim says theft but the narrative describes a collision. No dedicated signal exists for narrative vs claimed event, so damage_narrative_mismatch is the closest; adjuster clarifies."
+    "notes": "Decided: Claim says theft but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative and the adjuster clarifies."
   },
   "GC-0010": {
     "expected": {
@@ -97,7 +97,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0011": {
     "expected": {
@@ -107,7 +107,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0012": {
     "expected": {
@@ -117,7 +117,7 @@
       "fraud_signals": ["prompt_injection"],
       "routing": "siu_referral"
     },
-    "notes": "Proposed: Narrative tells the system to ignore its instructions and approve: a deliberate manipulation attempt -> SIU referral; the instruction is never obeyed."
+    "notes": "Decided: Narrative tells the system to ignore its instructions and approve: prompt injection always goes to SIU (FR-03); the instruction is never obeyed."
   },
   "GC-0013": {
     "expected": {
@@ -127,7 +127,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0014": {
     "expected": {
@@ -137,7 +137,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0015": {
     "expected": {
@@ -147,7 +147,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0016": {
     "expected": {
@@ -157,17 +157,17 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0017": {
     "expected": {
       "claim_type": "collision",
       "weather_verdict": null,
-      "fraud_flag": true,
-      "fraud_signals": ["vin_mismatch"],
+      "fraud_flag": false,
+      "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) so it cannot equal the insured VIN (level 1 fails, vin_mismatch); likely a typo -> adjuster confirms the VIN with the claimant (level 2)."
+    "notes": "Decided: VIN contains 'O' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant."
   },
   "GC-0018": {
     "expected": {
@@ -177,7 +177,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0019": {
     "expected": {
@@ -187,7 +187,7 @@
       "fraud_signals": ["weather_mismatch"],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 6.2 mm that day is under the 10 mm flood threshold, so weather does not support the flood (FR-06). Single weak signal -> adjuster review."
+    "notes": "Decided: 6.2 mm that day is under the 10 mm flood threshold, so weather does not support the flood (FR-06). Single weak signal -> adjuster review."
   },
   "GC-0020": {
     "expected": {
@@ -197,7 +197,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0021": {
     "expected": {
@@ -207,7 +207,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 55.4 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 55.4 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
   },
   "GC-0022": {
     "expected": {
@@ -217,7 +217,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0023": {
     "expected": {
@@ -227,7 +227,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0024": {
     "expected": {
@@ -237,7 +237,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0025": {
     "expected": {
@@ -247,7 +247,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 1.7 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 1.7 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0026": {
     "expected": {
@@ -257,7 +257,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 82.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 82.8 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0027": {
     "expected": {
@@ -267,7 +267,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0028": {
     "expected": {
@@ -277,7 +277,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 11.9 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 11.9 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
   },
   "GC-0029": {
     "expected": {
@@ -285,9 +285,9 @@
       "weather_verdict": null,
       "fraud_flag": true,
       "fraud_signals": ["vin_mismatch"],
-      "routing": "siu_referral"
+      "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN has a valid format but a different serial than the insured VIN: the primary check (FR-05 level 1) fails, so the car may not be the insured one -> SIU."
+    "notes": "Decided: Valid-format VIN with a different serial than the insured VIN: vin_mismatch (FR-05 level 1). A single signal goes to adjuster review; SIU needs 2 or more signals or prompt injection (FR-03)."
   },
   "GC-0030": {
     "expected": {
@@ -297,7 +297,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 77.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 77.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
   },
   "GC-0031": {
     "expected": {
@@ -307,7 +307,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0032": {
     "expected": {
@@ -317,7 +317,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 86.6 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 86.6 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
   },
   "GC-0033": {
     "expected": {
@@ -327,7 +327,7 @@
       "fraud_signals": ["weather_mismatch"],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
+    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
   },
   "GC-0034": {
     "expected": {
@@ -337,7 +337,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0035": {
     "expected": {
@@ -347,17 +347,17 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 13.4 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 13.4 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
   },
   "GC-0036": {
     "expected": {
       "claim_type": "collision",
       "weather_verdict": null,
-      "fraud_flag": true,
-      "fraud_signals": ["vin_mismatch"],
+      "fraud_flag": false,
+      "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) so it cannot equal the insured VIN (level 1 fails, vin_mismatch); likely a typo -> adjuster confirms the VIN with the claimant (level 2)."
+    "notes": "Decided: VIN contains 'I' (invalid in ISO 3779), so the format check fails (FR-05 level 2): not fraud and no signal; adjuster confirms the VIN with the claimant."
   },
   "GC-0037": {
     "expected": {
@@ -367,7 +367,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 11.1 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 11.1 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
   },
   "GC-0038": {
     "expected": {
@@ -377,7 +377,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0039": {
     "expected": {
@@ -387,7 +387,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0040": {
     "expected": {
@@ -397,7 +397,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0041": {
     "expected": {
@@ -407,7 +407,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0042": {
     "expected": {
@@ -417,7 +417,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0043": {
     "expected": {
@@ -427,7 +427,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 5.9 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0044": {
     "expected": {
@@ -437,7 +437,7 @@
       "fraud_signals": ["weather_mismatch"],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
+    "notes": "Decided: 0.0 mm that day: dry, a hail storm is not supported (FR-06). Single weak signal from gridded data -> adjuster review, not SIU."
   },
   "GC-0045": {
     "expected": {
@@ -447,7 +447,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0046": {
     "expected": {
@@ -457,7 +457,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0047": {
     "expected": {
@@ -467,7 +467,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
+    "notes": "Decided: Vandalism needs a damage inspection and police report -> adjuster review, no signals."
   },
   "GC-0048": {
     "expected": {
@@ -477,7 +477,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 62.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
+    "notes": "Decided: 62.7 mm that day is at or above the 50 mm flood threshold: weather supports the claim (FR-06). No signal; water damage still goes to adjuster review."
   },
   "GC-0049": {
     "expected": {
@@ -487,7 +487,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0050": {
     "expected": {
@@ -497,7 +497,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0051": {
     "expected": {
@@ -507,7 +507,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0052": {
     "expected": {
@@ -517,17 +517,17 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 1.3 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 1.3 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0053": {
     "expected": {
       "claim_type": "collision",
-      "weather_verdict": "inconclusive",
-      "fraud_flag": true,
-      "fraud_signals": ["damage_narrative_mismatch"],
+      "weather_verdict": null,
+      "fraud_flag": false,
+      "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Claim says hail but the narrative describes a collision. No dedicated signal exists for narrative vs claimed event, so damage_narrative_mismatch is the closest; adjuster clarifies."
+    "notes": "Decided: Claim says hail but the narrative describes a collision: not a fraud signal by itself (FR-11); claim_type follows the narrative, so there is no weather verdict, and the adjuster clarifies."
   },
   "GC-0054": {
     "expected": {
@@ -537,7 +537,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain collision claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain collision claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0055": {
     "expected": {
@@ -547,7 +547,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 0.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0056": {
     "expected": {
@@ -557,7 +557,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 19.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
+    "notes": "Decided: 19.2 mm of rain: the historical source cannot see hail, so weather is inconclusive (FR-06). No signal; hail damage goes to adjuster review."
   },
   "GC-0057": {
     "expected": {
@@ -567,7 +567,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   },
   "GC-0058": {
     "expected": {
@@ -577,7 +577,7 @@
       "fraud_signals": [],
       "routing": "fast_track"
     },
-    "notes": "Proposed: Plain glass claim, VIN matches the policy, no signals -> fast track."
+    "notes": "Decided: Plain glass claim, VIN matches the policy, no signals -> fast track."
   },
   "GC-0059": {
     "expected": {
@@ -587,7 +587,7 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: 10.2 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
+    "notes": "Decided: 10.2 mm that day is between 10 and 50 mm: weather is inconclusive for flood (FR-06). No signal; adjuster review."
   },
   "GC-0060": {
     "expected": {
@@ -597,6 +597,6 @@
       "fraud_signals": [],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: Theft needs the police report and loss verification -> adjuster review, no signals."
+    "notes": "Decided: Theft needs the police report and loss verification -> adjuster review, no signals."
   }
 }
