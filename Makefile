@@ -47,3 +47,9 @@ golden:
 .PHONY: eval
 eval:
 > uv run python -m claimsight.evals.harness baseline
+
+# Local LLM triage (needs Ollama running): make eval-llm MODEL=ollama:qwen2.5:7b
+MODEL ?= ollama:qwen2.5:7b
+.PHONY: eval-llm
+eval-llm:
+> uv run python -m claimsight.evals.harness triage --model $(MODEL)

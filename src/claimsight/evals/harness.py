@@ -23,7 +23,11 @@ Predictor = Callable[[PolicyRecord, ClaimInput, CaseFacts], Expected]
 
 GOLDEN_PATH = Path("evals/golden/v0.jsonl")
 REPORTS_DIR = Path("evals/reports")
-PREDICTORS = {"baseline": "claimsight.baselines.rules:predict"}  # name -> module:function
+PREDICTORS = {  # name -> module:function (a factory taking a model for "triage")
+    "baseline": "claimsight.baselines.rules:predict",
+    "triage": "claimsight.agents.triage:make_predictor",
+}
+FACTORIES = frozenset({"triage"})
 ACCURACY_FIELDS = ("claim_type", "weather_verdict", "routing")
 HEADLINE = "routing_accuracy"
 GROUPS: dict[str, Callable[[GoldenCase], str]] = {
@@ -37,9 +41,10 @@ def load_golden(path: Path = GOLDEN_PATH) -> list[GoldenCase]:
     return [GoldenCase.model_validate_json(line) for line in lines if line.strip()]
 
 
-def load_predictor(name: str) -> Predictor:
+def load_predictor(name: str, model: str | None = None) -> Predictor:
     module, _, func = PREDICTORS[name].partition(":")
-    return getattr(import_module(module), func)
+    target = getattr(import_module(module), func)
+    return target(model) if name in FACTORIES else target
 
 
 def _ratio(numerator: int, denominator: int) -> float | None:
@@ -79,9 +84,27 @@ def mistakes(pairs: list[tuple[GoldenCase, Expected]]) -> list[dict[str, Any]]:
     return found
 
 
+def cost_block(per_case: list[dict[str, Any]]) -> dict[str, Any]:
+    """Tokens and latency per case and in total. Local models cost nothing ($0)."""
+    total = {
+        "input_tokens": sum(u["input_tokens"] for u in per_case),
+        "output_tokens": sum(u["output_tokens"] for u in per_case),
+        "latency_s": round(sum(u["latency_s"] for u in per_case), 3),
+        "llm_failures": sum(not u["llm_ok"] for u in per_case),
+        "cost_usd": 0.0,
+    }
+    return {"total": total, "per_case": per_case}
+
+
 def run(name: str, cases: list[GoldenCase], predictor: Predictor) -> dict[str, Any]:
-    pairs = [(c, predictor(c.policy, c.inputs, c.facts)) for c in cases]
+    pairs, per_case = [], []
+    for c in cases:
+        pairs.append((c, predictor(c.policy, c.inputs, c.facts)))
+        if usage := getattr(predictor, "last_usage", None):  # LLM predictors report usage
+            per_case.append({"case_id": c.case_id, **usage})
     report: dict[str, Any] = {"predictor": name, "golden": GOLDEN_PATH.name}
+    if per_case:
+        report["cost"] = cost_block(per_case)
     report["overall"] = score(pairs)
     for group, key in GROUPS.items():
         labels = sorted({key(c) for c, _ in pairs})
@@ -127,19 +150,44 @@ def markdown(report: dict[str, Any]) -> str:
     return "\n".join(rows)
 
 
+def report_name(predictor: str, model: str | None) -> str:
+    """File stem of a report: 'baseline', or 'triage-<model>' with ':' and '/' replaced."""
+    if predictor not in FACTORIES:
+        return predictor
+    slug = (model or "default").split(":", 1)[-1].replace(":", "-").replace("/", "-")
+    return f"{predictor}-{slug}"
+
+
 def main(argv: list[str]) -> int:
-    if len(argv) != 1 or argv[0] not in PREDICTORS:
-        print(f"usage: harness <{'|'.join(PREDICTORS)}>")
+    model = None
+    if "--model" in argv:
+        i = argv.index("--model")
+        model = argv[i + 1] if i + 1 < len(argv) else None
+        argv = argv[:i] + argv[i + 2 :]
+    if len(argv) != 1 or argv[0] not in PREDICTORS or (model and argv[0] not in FACTORIES):
+        print(f"usage: harness <{'|'.join(PREDICTORS)}> [--model provider:name] (triage only)")
         return 2
-    name = argv[0]
-    report = run(name, load_golden(), load_predictor(name))
+    predictor = argv[0]
+    name = report_name(predictor, model)
+    report = run(name, load_golden(), load_predictor(predictor, model))
+    if model:
+        report["model"] = model
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     out = REPORTS_DIR / f"{name}.json"
     out.write_text(
         json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(markdown(report))
+    if "cost" in report:
+        t = report["cost"]["total"]
+        print(
+            f"\ntokens in/out: {t['input_tokens']}/{t['output_tokens']}, "
+            f"latency: {t['latency_s']}s, llm failures: {t['llm_failures']}, cost: $0"
+        )
     print(f"\nwrote {out}")
+    if report.get("cost", {}).get("total", {}).get("llm_failures"):
+        print("WARNING: some LLM calls failed; those cases used the rules fallback")
+        return 1
     return 0
 
 

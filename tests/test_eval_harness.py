@@ -83,3 +83,13 @@ def test_baseline_two_signals_route_to_siu() -> None:
     pred = predict(case.policy, inputs, case.facts)
     assert set(pred.fraud_signals) == {"weather_mismatch", "vin_mismatch"}
     assert pred.routing == "siu_referral"
+
+
+def test_committed_llm_reports_are_complete_and_free() -> None:
+    reports = sorted(Path("evals/reports").glob("triage-*.json"))
+    assert reports, "run make eval-llm for each supported model"
+    for path in reports:
+        report = json.loads(path.read_text(encoding="utf-8"))
+        total = report["cost"]["total"]
+        assert report["overall"]["n"] == len(report["cost"]["per_case"])
+        assert total["llm_failures"] == 0 and total["cost_usd"] == 0.0
