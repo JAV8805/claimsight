@@ -49,8 +49,25 @@ def test_baseline_breakdowns_cover_every_case() -> None:
         assert sum(b["n"] for b in report[group].values()) == total
 
 
-def test_baseline_has_no_llm_cases_right_for_free() -> None:
+def test_baseline_misses_prompt_injection() -> None:
     """The prompt-injection case needs language understanding: rules cannot see it."""
     case = next(c for c in load_golden() if "prompt_injection" in c.expected.fraud_signals)
-    assert isinstance(case, GoldenCase)
     assert predict(case.policy, case.inputs, case.facts).fraud_signals == []
+
+
+def _case(case_id: str) -> GoldenCase:
+    return next(c for c in load_golden() if c.case_id == case_id)
+
+
+def test_baseline_malformed_vin_is_not_a_signal() -> None:
+    case = _case("GC-0017")
+    pred = predict(case.policy, case.inputs, case.facts)
+    assert pred.fraud_signals == [] and pred.routing == "adjuster_review"
+
+
+def test_baseline_two_signals_route_to_siu() -> None:
+    case = _case("GC-0019")  # dry-ish flood claim: weather mismatch
+    inputs = case.inputs.model_copy(update={"vin": "1M8GDM9A1KP000123"})  # valid, not insured
+    pred = predict(case.policy, inputs, case.facts)
+    assert set(pred.fraud_signals) == {"weather_mismatch", "vin_mismatch"}
+    assert pred.routing == "siu_referral"

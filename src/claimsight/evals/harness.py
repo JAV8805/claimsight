@@ -93,8 +93,7 @@ def run(name: str, cases: list[GoldenCase], predictor: Predictor) -> dict[str, A
 def columns(report: dict[str, Any]) -> Iterator[tuple[str, dict[str, Any]]]:
     yield "overall", report["overall"]
     for group in GROUPS:
-        for label, block in report.get(group, {}).items():
-            yield f"{label}", block
+        yield from report.get(group, {}).items()
 
 
 def flatten(report: dict[str, Any]) -> dict[str, float | None]:
