@@ -6,6 +6,8 @@ Owner: José (git: JoseA <jose.angarita11@gmail.com>, GitHub: JAV8805). Learning
 ## Workflow
 - Never commit to main (protected). Short branches, Conventional Commits, PR + squash merge.
 - Before every commit: `make lint` and `make test` must pass.
+- Before opening any PR, run the `reviewer` subagent (.claude/agents/reviewer.md) on the branch
+  and fix all its BLOCKING findings; rerun it until the verdict is READY.
 - Open PRs with `gh pr create --title ...`; then `sleep 15 && gh pr checks --watch`.
 - José reviews and merges. Never merge yourself.
 - Every PR description explains what changed and why, for learning.
