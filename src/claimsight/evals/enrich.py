@@ -9,7 +9,7 @@ from pydantic import ValidationError
 from claimsight.evals.schema import VehicleInfo
 
 
-def vehicle_from_vpic(row: dict[str, str]) -> VehicleInfo | None:
+def vehicle_from_vpic(row: dict[str, str | None]) -> VehicleInfo | None:
     """Accept an NHTSA vPIC DecodeVinValues row only if ErrorCode is 0 and make/model exist."""
     make = (row.get("Make") or "").strip()
     model = (row.get("Model") or "").strip()

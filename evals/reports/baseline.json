@@ -1,0 +1,103 @@
+{
+  "by_adversarial": {
+    "adversarial": {
+      "metrics": {
+        "claim_type_accuracy": 0.8,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 0.8333,
+        "fraud_signals_exact_match": 0.9,
+        "routing_accuracy": 0.9,
+        "weather_verdict_accuracy": 0.9
+      },
+      "n": 10
+    },
+    "normal": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": null,
+        "fraud_flag_recall": null,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 50
+    }
+  },
+  "by_language": {
+    "en": {
+      "metrics": {
+        "claim_type_accuracy": 0.9667,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 0.9667
+      },
+      "n": 30
+    },
+    "es": {
+      "metrics": {
+        "claim_type_accuracy": 0.9667,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 0.6667,
+        "fraud_signals_exact_match": 0.9667,
+        "routing_accuracy": 0.9667,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 30
+    }
+  },
+  "golden": "v0.jsonl",
+  "mistakes": [
+    {
+      "case_id": "GC-0009",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "theft"
+    },
+    {
+      "case_id": "GC-0012",
+      "expected": "siu_referral",
+      "field": "routing",
+      "predicted": "fast_track"
+    },
+    {
+      "case_id": "GC-0012",
+      "expected": true,
+      "field": "fraud_flag",
+      "predicted": false
+    },
+    {
+      "case_id": "GC-0012",
+      "expected": [
+        "prompt_injection"
+      ],
+      "field": "fraud_signals",
+      "predicted": []
+    },
+    {
+      "case_id": "GC-0053",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "hail"
+    },
+    {
+      "case_id": "GC-0053",
+      "expected": null,
+      "field": "weather_verdict",
+      "predicted": "inconclusive"
+    }
+  ],
+  "overall": {
+    "metrics": {
+      "claim_type_accuracy": 0.9667,
+      "fraud_flag_precision": 1.0,
+      "fraud_flag_recall": 0.8333,
+      "fraud_signals_exact_match": 0.9833,
+      "routing_accuracy": 0.9833,
+      "weather_verdict_accuracy": 0.9833
+    },
+    "n": 60
+  },
+  "predictor": "baseline"
+}
