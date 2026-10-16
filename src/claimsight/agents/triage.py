@@ -112,10 +112,89 @@ class TriageState(TypedDict, total=False):
     coverage_extra: dict[str, Any]
 
 
+def retrieval_query(prediction: Expected, inputs: ClaimInput) -> str:
+    """Semantic query: the *classified* claim type plus the narrative."""
+    return f"{prediction.claim_type}. {inputs.narrative}"
+
+
 def wrap_narrative(text: str) -> str:
     """Delimit the untrusted narrative; forged delimiters inside it are neutralised."""
     clean = text.replace(CLOSE, "[/narrative]").replace(OPEN, "[narrative]")
     return f"{OPEN}\n{clean}\n{CLOSE}"
+
+
+def coverage_nodes(coverage_llm: Runnable[Any, Any]) -> tuple[Any, Any]:
+    """The generation node and the citation-validation node (FR-14), bound to a model."""
+
+    def generate(state: TriageState) -> TriageState:
+        assert coverage_llm is not None
+        prediction, inputs = state["prediction"], state["inputs"]
+        clauses = "\n".join(
+            f'<clause id="{cid}">\n{text}\n</clause>' for cid, text in state["retrieved"].items()
+        )
+        facts = (
+            f"Claim type classified from the account: {prediction.claim_type} "
+            f"(claimed event: {inputs.claimed_event}).\n"
+            f"Signals detected by the system: {', '.join(prediction.fraud_signals) or 'none'}.\n"
+            f"VIN matches the policy: {prediction.vin_matches_policy}; "
+            f"VIN format valid: {prediction.vin_format_valid}.\n"
+            f"Weather verdict: {prediction.weather_verdict or 'not applicable'}."
+        )
+        human = f"{facts}\n\n{wrap_narrative(inputs.narrative)}\n\nPolicy clauses:\n{clauses}"
+        start = time.perf_counter()
+        error = ""
+        try:
+            result = coverage_llm.invoke([SystemMessage(COVERAGE_PROMPT), HumanMessage(human)])
+        except Exception as exc:
+            result = {"raw": None, "parsed": None}
+            error = f"{type(exc).__name__}: {exc}"[:200]
+        meta = getattr(result.get("raw"), "usage_metadata", None) or {}
+        parsed = result.get("parsed")
+        usage = {
+            "input_tokens": meta.get("input_tokens", 0),
+            "output_tokens": meta.get("output_tokens", 0),
+            "latency_s": round(time.perf_counter() - start, 3),
+            "ok": isinstance(parsed, CoverageOutput),
+            "error": error,
+        }
+        return {"coverage": parsed if usage["ok"] else None, "gen_usage": usage}
+
+    def validate(state: TriageState) -> TriageState:
+        """Deterministic citation validator (FR-14); counts violations before correcting."""
+        out, retrieved = state["coverage"], state["retrieved"]
+        if out is None:  # generation failed: a person decides
+            decision: Literal["covered", "not_covered", "needs_review"] = "needs_review"
+            cited, violations = [], []
+        else:
+            checked = validate_citations(out.coverage_decision, out.cited_clause_ids, retrieved)
+            decision, cited = checked.decision, checked.cited_clause_ids
+            violations = checked.violations
+        prediction = state["prediction"].model_copy(
+            update={"coverage_decision": decision, "clause_ids": cited}
+        )
+        gen, base = state["gen_usage"], state["usage"]
+        usage = {
+            **base,
+            "input_tokens": base["input_tokens"] + gen["input_tokens"],
+            "output_tokens": base["output_tokens"] + gen["output_tokens"],
+            "latency_s": round(base["latency_s"] + state["retrieve_s"] + gen["latency_s"], 3),
+            "classify_latency_s": base["latency_s"],
+            "retrieve_latency_s": state["retrieve_s"],
+            "generate_latency_s": gen["latency_s"],
+            "generation_ok": gen["ok"],
+            "coverage_decision": decision,
+            "cited_clause_ids": cited,
+            "retrieved_clause_ids": list(retrieved),
+            "decision_before_validation": out.coverage_decision if out else None,
+            "cited_before_validation": out.cited_clause_ids if out else [],
+            "violations_before": violations,
+            "generation_rationale": out.rationale[:MAX_RATIONALE] if out else "",
+        }
+        if gen["error"] or not gen["ok"]:
+            usage["error"] = gen["error"] or "no structured coverage output"
+        return {"prediction": prediction, "usage": usage}
+
+    return generate, validate
 
 
 def build_graph(
@@ -205,7 +284,7 @@ def build_graph(
         language = policy_language(state["policy"])
         start = time.perf_counter()
         try:
-            docs = retrievers[language].invoke(f"{prediction.claim_type}. {inputs.narrative}")
+            docs = retrievers[language].invoke(retrieval_query(prediction, inputs))
         except Exception:  # database or embedder unreachable: the clause map still applies
             docs = []
         retrieved: dict[str, str] = {}
@@ -215,74 +294,6 @@ def build_graph(
         for clause_id in from_prediction(prediction, inputs.claimed_event):
             retrieved.setdefault(clause_id, known[clause_id].text)
         return {"retrieved": retrieved, "retrieve_s": round(time.perf_counter() - start, 3)}
-
-    def generate(state: TriageState) -> TriageState:
-        assert coverage_llm is not None
-        prediction, inputs = state["prediction"], state["inputs"]
-        clauses = "\n".join(
-            f'<clause id="{cid}">\n{text}\n</clause>' for cid, text in state["retrieved"].items()
-        )
-        facts = (
-            f"Claim type classified from the account: {prediction.claim_type} "
-            f"(claimed event: {inputs.claimed_event}).\n"
-            f"Signals detected by the system: {', '.join(prediction.fraud_signals) or 'none'}.\n"
-            f"VIN matches the policy: {prediction.vin_matches_policy}; "
-            f"VIN format valid: {prediction.vin_format_valid}.\n"
-            f"Weather verdict: {prediction.weather_verdict or 'not applicable'}."
-        )
-        human = f"{facts}\n\n{wrap_narrative(inputs.narrative)}\n\nPolicy clauses:\n{clauses}"
-        start = time.perf_counter()
-        error = ""
-        try:
-            result = coverage_llm.invoke([SystemMessage(COVERAGE_PROMPT), HumanMessage(human)])
-        except Exception as exc:
-            result = {"raw": None, "parsed": None}
-            error = f"{type(exc).__name__}: {exc}"[:200]
-        meta = getattr(result.get("raw"), "usage_metadata", None) or {}
-        parsed = result.get("parsed")
-        usage = {
-            "input_tokens": meta.get("input_tokens", 0),
-            "output_tokens": meta.get("output_tokens", 0),
-            "latency_s": round(time.perf_counter() - start, 3),
-            "ok": isinstance(parsed, CoverageOutput),
-            "error": error,
-        }
-        return {"coverage": parsed if usage["ok"] else None, "gen_usage": usage}
-
-    def validate(state: TriageState) -> TriageState:
-        """Deterministic citation validator (FR-14); counts violations before correcting."""
-        out, retrieved = state["coverage"], state["retrieved"]
-        if out is None:  # generation failed: a person decides
-            decision: Literal["covered", "not_covered", "needs_review"] = "needs_review"
-            cited, violations = [], []
-        else:
-            checked = validate_citations(out.coverage_decision, out.cited_clause_ids, retrieved)
-            decision, cited = checked.decision, checked.cited_clause_ids
-            violations = checked.violations
-        prediction = state["prediction"].model_copy(
-            update={"coverage_decision": decision, "clause_ids": cited}
-        )
-        gen, base = state["gen_usage"], state["usage"]
-        usage = {
-            **base,
-            "input_tokens": base["input_tokens"] + gen["input_tokens"],
-            "output_tokens": base["output_tokens"] + gen["output_tokens"],
-            "latency_s": round(base["latency_s"] + state["retrieve_s"] + gen["latency_s"], 3),
-            "classify_latency_s": base["latency_s"],
-            "retrieve_latency_s": state["retrieve_s"],
-            "generate_latency_s": gen["latency_s"],
-            "generation_ok": gen["ok"],
-            "coverage_decision": decision,
-            "cited_clause_ids": cited,
-            "retrieved_clause_ids": list(retrieved),
-            "decision_before_validation": out.coverage_decision if out else None,
-            "cited_before_validation": out.cited_clause_ids if out else [],
-            "violations_before": violations,
-            "generation_rationale": out.rationale[:MAX_RATIONALE] if out else "",
-        }
-        if gen["error"] or not gen["ok"]:
-            usage["error"] = gen["error"] or "no structured coverage output"
-        return {"prediction": prediction, "usage": usage}
 
     graph = StateGraph(TriageState)
     graph.add_node("vin_check", vin_check)
@@ -294,11 +305,24 @@ def build_graph(
     if retrievers is None or coverage_llm is None:
         graph.add_edge("signals", END)
         return graph.compile()
+    generate, validate = coverage_nodes(coverage_llm)
     graph.add_node("retrieve", retrieve)
     graph.add_node("generate", generate)
     graph.add_node("validate", validate)
     graph.add_edge("signals", "retrieve")
     graph.add_edge("retrieve", "generate")
+    graph.add_edge("generate", "validate")
+    graph.add_edge("validate", END)
+    return graph.compile()
+
+
+def build_generation_graph(coverage_llm: Runnable[Any, Any]) -> Any:
+    """generate -> validate, starting from cached classification and retrieval (staged evals)."""
+    generate, validate = coverage_nodes(coverage_llm)
+    graph = StateGraph(TriageState)
+    graph.add_node("generate", generate)
+    graph.add_node("validate", validate)
+    graph.add_edge(START, "generate")
     graph.add_edge("generate", "validate")
     graph.add_edge("validate", END)
     return graph.compile()

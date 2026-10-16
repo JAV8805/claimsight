@@ -204,3 +204,37 @@ def test_harness_adds_a_coverage_block_for_coverage_predictors() -> None:
     report = run("coverage-fake", cases, predictor)
     assert report["coverage"]["n"] == 3 and "coverage_accuracy" in report["coverage"]
     assert report["cost"]["total"]["cost_usd"] == 0.0
+
+
+def test_staged_predictor_replays_cached_stages_and_runs_generation(tmp_path) -> None:
+    import json
+
+    from claimsight.baselines.rules import predict
+    from claimsight.evals import staged_coverage as sc
+
+    case = _case("GC-0004")
+    key = sc.case_key(case.policy, case.inputs)
+    prediction = predict(case.policy, case.inputs, case.facts)
+    usage = {"input_tokens": 5, "output_tokens": 2, "latency_s": 1.0, "llm_ok": True}
+    (tmp_path / sc.CLASSIFY_FILE).write_text(
+        json.dumps({key: {"prediction": prediction.model_dump(mode="json"), "usage": usage}})
+    )
+    (tmp_path / sc.RETRIEVE_FILE).write_text(
+        json.dumps(
+            {key: {"retrieved": {"CS-AUTO-2.1": "text", "CS-AUTO-2.2": "t"}, "retrieve_s": 0.5}}
+        )
+    )
+    out = CoverageOutput(coverage_decision="covered", cited_clause_ids=["CS-AUTO-2.1"])
+    predictor = sc.StagedCoveragePredictor(_llm(out), tmp_path)
+    result = predictor(case.policy, case.inputs, case.facts)
+    assert result.coverage_decision == "covered" and result.clause_ids == ["CS-AUTO-2.1"]
+    assert predictor.last_usage["llm_ok"] is True
+    assert predictor.last_usage["retrieve_latency_s"] == 0.5
+    assert sc.load_classification([case], tmp_path)[0].claim_type == prediction.claim_type
+    other = _case("GC-0005")
+    try:
+        sc.load_classification([other], tmp_path)
+    except RuntimeError as exc:
+        assert "eval-classify" in str(exc)
+    else:
+        raise AssertionError("an unclassified case must fail loudly")

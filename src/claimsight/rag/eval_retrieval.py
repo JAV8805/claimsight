@@ -31,7 +31,6 @@ from claimsight.evals.schema import Expected, GoldenCase
 from claimsight.rag import store
 from claimsight.rag.chunking import CHUNKERS
 from claimsight.rag.clause_map import from_prediction, is_semantic
-from claimsight.rag.embeddings import unload_model
 from claimsight.rag.metrics import mean, recall_at_k, reciprocal_rank
 
 REPORT = Path("evals/reports/retrieval.json")
@@ -104,18 +103,11 @@ def markdown(report: dict[str, Any]) -> str:
 
 
 def classifier_predictions(cases: list[GoldenCase]) -> list[Expected]:
-    """L2.1 triage predictions (claim type from the narrative, injection detected by the LLM)."""
-    from claimsight.agents.triage import DEFAULT_MODEL, make_predictor
+    """L2.1 triage predictions from stage 1 (`make eval-classify`): claim type from the narrative,
+    prompt injection detected by the LLM. Cached so only one model is in memory at a time."""
+    from claimsight.evals.staged_coverage import load_classification
 
-    unload_model(store.EMBED_MODEL)  # the chat model and the embedder do not fit in RAM together
-    predictor = make_predictor()
-    predictions = []
-    for case in cases:
-        predictions.append(predictor(case.policy, case.inputs, case.facts))
-        if not predictor.last_usage["llm_ok"]:  # a silent fallback would fake the comparison
-            raise RuntimeError(f"classifier failed on {case.case_id}: {predictor.last_usage}")
-    unload_model(DEFAULT_MODEL.split(":", 1)[1])  # free RAM before the embedding model loads
-    return predictions
+    return load_classification(cases)
 
 
 def evaluate_source(

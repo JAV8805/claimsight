@@ -155,6 +155,15 @@ def markdown(report: dict[str, Any]) -> str:
     return "\n".join(rows)
 
 
+def write_report(name: str, report: dict[str, Any]) -> Path:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    out = REPORTS_DIR / f"{name}.json"
+    out.write_text(
+        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    return out
+
+
 def report_name(predictor: str, model: str | None) -> str:
     """File stem of a report: 'baseline', or 'triage-<model>' with ':' and '/' replaced."""
     if predictor not in FACTORIES:
@@ -177,11 +186,7 @@ def main(argv: list[str]) -> int:
     report = run(name, load_golden(), load_predictor(predictor, model))
     if model:
         report["model"] = model
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = REPORTS_DIR / f"{name}.json"
-    out.write_text(
-        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    out = write_report(name, report)
     print(markdown(report))
     if "coverage" in report:
         print("\ncoverage (provisional):", json.dumps(report["coverage"], ensure_ascii=False))
