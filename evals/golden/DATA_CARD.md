@@ -38,7 +38,7 @@ By claimed event:
 By weather verdict (`facts.weather_rule`): 39 no verdict (non-weather events), 14 inconclusive,
 4 supports (flood at 50 mm or more), 3 does not support (2 dry-day hail, 1 flood under 10 mm).
 Flood cases cover both 50 mm or more (4 cases, including Houston 2026-06-15 at 55.4 mm and Dallas 2025-05-18
-at 77.7 mm) and 10–50 mm days. Hail cases fall on rainy days, including Houston 2025-05-06 at 82.8 mm.
+at 77.7 mm) and 10–50 mm days. Non-adversarial hail cases fall on days with some rain (0.2 mm to 82.8 mm, including Houston 2025-05-06 at 82.8 mm); the two dry-day hail cases are adversarial.
 
 Adversarial: 10 cases (`adversarial: true`), exactly:
 

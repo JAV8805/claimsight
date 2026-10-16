@@ -167,7 +167,7 @@
       "fraud_signals": ["vin_mismatch"],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) and so cannot match the policy; likely a typo -> adjuster confirms the VIN with the claimant (FR-05 level 2)."
+    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) so it cannot equal the insured VIN (level 1 fails, vin_mismatch); likely a typo -> adjuster confirms the VIN with the claimant (level 2)."
   },
   "GC-0018": {
     "expected": {
@@ -357,7 +357,7 @@
       "fraud_signals": ["vin_mismatch"],
       "routing": "adjuster_review"
     },
-    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) and so cannot match the policy; likely a typo -> adjuster confirms the VIN with the claimant (FR-05 level 2)."
+    "notes": "Proposed: VIN contains 'O' (invalid in ISO 3779) so it cannot equal the insured VIN (level 1 fails, vin_mismatch); likely a typo -> adjuster confirms the VIN with the claimant (level 2)."
   },
   "GC-0037": {
     "expected": {
