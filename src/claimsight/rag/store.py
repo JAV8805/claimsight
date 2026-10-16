@@ -82,13 +82,26 @@ def ingest(conn: psycopg.Connection, chunker: str, embeddings: OllamaEmbeddings)
 
 
 def search(
-    conn: psycopg.Connection, chunker: str, vector: Sequence[float], language: str, k: int
+    conn: psycopg.Connection,
+    chunker: str,
+    vector: Sequence[float],
+    language: str,
+    k: int,
+    sections: Sequence[str] | None = None,
 ) -> list[str]:
-    """Clause IDs of the k nearest chunks of one language, nearest first."""
+    """Clause IDs of the k nearest chunks of one language, nearest first.
+
+    `sections` (e.g. ["2", "3", "4"]) keeps only chunks whose primary clause is in those
+    policy sections; the section column starts with the section number ("3. Comprehensive").
+    """
     conn.execute(f"SET hnsw.ef_search = {EF_SEARCH}")
+    where, params = "language = %s", [language]
+    if sections:
+        where += " AND split_part(section, '.', 1) = ANY(%s)"
+        params.append(list(sections))
     rows = conn.execute(
-        f"SELECT clause_id FROM {table_name(chunker)} WHERE language = %s "
+        f"SELECT clause_id FROM {table_name(chunker)} WHERE {where} "
         "ORDER BY embedding <=> %s::vector LIMIT %s",
-        (language, list(vector), k),
+        (*params, list(vector), k),
     ).fetchall()
     return [r[0] for r in rows]

@@ -1,6 +1,5 @@
 """Chunkers, metrics, corpus and proposed clause labels: offline, no Ollama and no database."""
 
-import json
 from pathlib import Path
 
 import pytest
@@ -12,7 +11,8 @@ from claimsight.rag.chunking import (
     load_policy,
     parse_policy,
 )
-from claimsight.rag.eval_retrieval import PROPOSALS, load_proposals, score_rows
+from claimsight.rag.clause_map import is_semantic, mapped_clause_ids
+from claimsight.rag.eval_retrieval import combined_recall, deterministic_exact, score_rows
 from claimsight.rag.metrics import dedupe, mean, recall_at_k, reciprocal_rank
 
 POLICY_DIR = Path("corpus/policies")
@@ -106,15 +106,73 @@ def test_corpus_is_fictional_bilingual_and_has_the_same_ids() -> None:
         assert "FICTIONAL" in header or "FICTICIO" in header
 
 
-def test_proposed_clause_labels_cover_every_case_with_existing_clauses() -> None:
+def test_golden_clause_labels_are_decided_exist_and_have_a_semantic_part() -> None:
     known = {c.clause_id for c in load_policy(POLICY_DIR / "claimsight-mutual-auto-policy.en.md")}
-    proposals = load_proposals()
-    assert set(proposals) == {c.case_id for c in load_golden()}
-    for case_id, ids in proposals.items():
-        assert ids and set(ids) <= known, case_id
-    doc = json.loads(PROPOSALS.read_text(encoding="utf-8"))
-    assert "PROPOSED" in doc["status"]
-    assert all(p["rationale"] for p in doc["cases"].values())
+    for case in load_golden():
+        ids = case.expected.clause_ids
+        assert ids and set(ids) <= known and len(set(ids)) == len(ids), case.case_id
+        assert any(is_semantic(c) for c in ids), case.case_id  # something to retrieve
+        assert case.notes.startswith("Decided:"), case.case_id
+
+
+def test_clause_decisions_of_jose() -> None:
+    by_id = {c.case_id: set(c.expected.clause_ids) for c in load_golden()}
+    for case_id in ("GC-0050", "GC-0058"):  # 3.4 covers glass "whatever the cause"
+        assert "CS-AUTO-4.4" not in by_id[case_id]
+    for case_id in ("GC-0019", "GC-0033", "GC-0044"):  # external weather is not insured's info
+        assert "CS-AUTO-7.1" not in by_id[case_id]
+    assert "CS-AUTO-7.1" in by_id["GC-0003"] and "CS-AUTO-7.1" in by_id["GC-0017"]  # VIN
+    assert "CS-AUTO-7.1" in by_id["GC-0009"] and "CS-AUTO-7.2" in by_id["GC-0012"]
+
+
+def test_clause_map_rules() -> None:
+    assert mapped_clause_ids("collision") == ["CS-AUTO-5.1"]
+    assert mapped_clause_ids("glass") == ["CS-AUTO-5.3"]
+    assert mapped_clause_ids("theft") == ["CS-AUTO-5.2", "CS-AUTO-6.3"]
+    assert mapped_clause_ids("vandalism") == ["CS-AUTO-5.2", "CS-AUTO-6.3"]
+    assert mapped_clause_ids("hail") == ["CS-AUTO-5.2"] and mapped_clause_ids("other") == []
+    assert mapped_clause_ids("hail", vin_mismatch=True) == [
+        "CS-AUTO-5.2",
+        "CS-AUTO-1.1",
+        "CS-AUTO-7.1",
+    ]
+    assert mapped_clause_ids("flood", vin_malformed=True)[1:] == ["CS-AUTO-6.4", "CS-AUTO-7.1"]
+    assert mapped_clause_ids("collision", prompt_injection=True)[-1] == "CS-AUTO-7.2"
+    both = mapped_clause_ids("collision", vin_mismatch=True, narrative_contradiction=True)
+    assert both.count("CS-AUTO-7.1") == 1  # no duplicates
+    assert not any(is_semantic(c) for c in mapped_clause_ids("theft", vin_mismatch=True))
+
+
+def test_weather_mismatch_alone_never_cites_7_1() -> None:
+    assert "CS-AUTO-7.1" not in mapped_clause_ids("hail")  # no insured inconsistency, no 7.1
+
+
+def test_clause_map_reproduces_every_decided_non_semantic_label() -> None:
+    """With the true claim type and signals the map must give exactly the decided 1/5/6/7 labels."""
+    for case in load_golden():
+        exp = case.expected
+        got = mapped_clause_ids(
+            exp.claim_type,
+            vin_mismatch="vin_mismatch" in exp.fraud_signals,
+            vin_malformed=not exp.vin_format_valid,
+            narrative_contradiction=exp.claim_type != case.inputs.claimed_event,
+            prompt_injection="prompt_injection" in exp.fraud_signals,
+        )
+        want = {c for c in exp.clause_ids if not is_semantic(c)}
+        assert set(got) == want, case.case_id
+
+
+def test_deterministic_part_misses_only_what_needs_the_llm() -> None:
+    result = deterministic_exact(load_golden())
+    assert {m["case_id"] for m in result["misses"]} == {"GC-0009", "GC-0012", "GC-0053"}
+    assert result["exact_match"] == round(57 / 60, 4)
+
+
+def test_combined_recall_unions_map_and_semantic_top_k() -> None:
+    expected = ["CS-AUTO-3.5", "CS-AUTO-5.2", "CS-AUTO-7.1"]
+    assert combined_recall(expected, ["CS-AUTO-5.2"], ["CS-AUTO-3.5", "X"], 3) == 2 / 3
+    assert combined_recall(expected, ["CS-AUTO-5.2"], ["X", "Y", "CS-AUTO-3.5"], 2) == 1 / 3
+    assert combined_recall(expected, ["CS-AUTO-5.2", "CS-AUTO-7.1"], ["CS-AUTO-3.5"], 3) == 1.0
 
 
 def test_table_name_only_accepts_known_chunkers() -> None:
