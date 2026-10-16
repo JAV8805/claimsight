@@ -64,6 +64,17 @@ class ClaimInput(BaseModel):
     estimate_amount_usd: float | None = Field(default=None, ge=0)
 
 
+class CaseFacts(BaseModel):
+    """Generated facts fetched from external sources (drafts); a predictor may read them."""
+
+    sources: list[str] = []
+    vpic: dict[str, str | None] | None = Field(default=None, description="vPIC row")
+    weather: dict[str, float | None] | None = Field(
+        default=None, description="Open-Meteo daily values, e.g. precipitation_sum in mm"
+    )
+    weather_rule: WeatherVerdict | None = None
+
+
 class Expected(BaseModel):
     claim_type: ClaimType
     vin_matches_policy: bool = Field(description="Level 1: claim VIN equals the insured VIN")
@@ -92,6 +103,7 @@ class GoldenCase(BaseModel):
     notes: str = ""
     policy: PolicyRecord
     inputs: ClaimInput
+    facts: CaseFacts = CaseFacts()
     expected: Expected
 
     @model_validator(mode="after")

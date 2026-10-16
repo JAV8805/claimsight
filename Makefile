@@ -43,3 +43,7 @@ golden-drafts:
 
 golden:
 > uv run python scripts/compile_golden.py
+
+.PHONY: eval
+eval:
+> uv run python -m claimsight.evals.harness baseline
