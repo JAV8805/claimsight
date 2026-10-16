@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0014",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0014",
+    "country": "CO",
+    "insured_vin": "VF1RJL00XTC000014",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Una tormenta con granizo me sorprendió en la vía. Me detuve bajo un puente, pero el granizo ya había dejado muchas abolladuras pequeñas en el techo.",
+    "vin": "VF1RJL00XTC000014",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-09-17",
+    "location": {
+      "address": "Barranquilla, Colombia",
+      "latitude": 10.96,
+      "longitude": -74.8
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-CO-0014"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.2,
+      "wind_gusts_10m_max": 40.7
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

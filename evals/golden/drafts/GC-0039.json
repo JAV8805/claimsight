@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0039",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0039",
+    "country": "US",
+    "insured_vin": "1C4BJWDG2GL000039",
+    "insured_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    }
+  },
+  "inputs": {
+    "narrative": "I was stopped at a red light when a pickup rear-ended me. The bumper is cracked and the trunk lid no longer closes. Nobody was hurt and we exchanged insurance information.",
+    "vin": "1C4BJWDG2GL000039",
+    "declared_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "incident_date": "2026-03-13",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0039"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "JEEP",
+      "Model": "Wrangler",
+      "ModelYear": "2016"
+    },
+    "weather": {
+      "weather_code": 0,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 38.9
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

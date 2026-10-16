@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0023",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "glass"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0023",
+    "country": "CO",
+    "insured_vin": "VF1RJL000TC000023",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Unos niños que jugaban fútbol en la calle patearon el balón contra la ventana trasera y la quebraron. Los papás ofrecieron pagar, pero prefiero reclamar al seguro.",
+    "vin": "VF1RJL000TC000023",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-06-14",
+    "location": {
+      "address": "Cali, Colombia",
+      "latitude": 3.45,
+      "longitude": -76.53
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-CO-0023"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 55,
+      "precipitation_sum": 4.2,
+      "wind_gusts_10m_max": 20.9
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

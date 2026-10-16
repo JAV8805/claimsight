@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0038",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0038",
+    "country": "CO",
+    "insured_vin": "VF1RJL002TC000038",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Dejé el carro parqueado frente a mi casa anoche y esta mañana ya no estaba. Puse la denuncia en la Fiscalía y tengo las llaves conmigo.",
+    "vin": "VF1RJL002TC000038",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-03-28",
+    "location": {
+      "address": "Cali, Colombia",
+      "latitude": 3.45,
+      "longitude": -76.53
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-CO-0038"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.4,
+      "wind_gusts_10m_max": 32.0
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

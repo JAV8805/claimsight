@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0058",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "glass"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0058",
+    "country": "CO",
+    "insured_vin": "VF1RJL008TC000058",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "El vidrio trasero se quebró solo cuando cerré el baúl. No vi ningún golpe.",
+    "vin": "VF1RJL008TC000058",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-07-01",
+    "location": {
+      "address": "Barranquilla, Colombia",
+      "latitude": 10.96,
+      "longitude": -74.8
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-CO-0058"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 1.5,
+      "wind_gusts_10m_max": 41.0
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0026",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0026",
+    "country": "US",
+    "insured_vin": "1FTEW1EP6MK000026",
+    "insured_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    }
+  },
+  "inputs": {
+    "narrative": "A severe storm hit while my car was parked outside. Large hail dented the hood, roof and trunk, and the rear window has a crack. It looks like a golf ball.",
+    "vin": "1FTEW1EP6MK000026",
+    "declared_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "incident_date": "2025-05-06",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-US-0026"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "FORD",
+      "Model": "F-150",
+      "ModelYear": "2021"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 82.8,
+      "wind_gusts_10m_max": 50.8
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

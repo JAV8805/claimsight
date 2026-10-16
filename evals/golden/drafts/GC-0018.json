@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0018",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0018",
+    "country": "CO",
+    "insured_vin": "VF1RJL007TC000018",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Amanecí con los cuatro neumáticos pinchados y el espejo retrovisor arrancado. Una cámara de la tienda de enfrente puede haberlo grabado.",
+    "vin": "VF1RJL007TC000018",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-06-27",
+    "location": {
+      "address": "Quibdó, Colombia",
+      "latitude": 5.69,
+      "longitude": -76.66
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-CO-0018"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 1.2,
+      "wind_gusts_10m_max": 20.2
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

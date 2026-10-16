@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0031",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0031",
+    "country": "US",
+    "insured_vin": "1C4BJWDG8GL000031",
+    "insured_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    }
+  },
+  "inputs": {
+    "narrative": "Someone keyed the full length of my car while it was parked outside my building. The scratches go through the paint on both doors and the rear quarter panel.",
+    "vin": "1C4BJWDG8GL000031",
+    "declared_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "incident_date": "2026-07-15",
+    "location": {
+      "address": "Denver, CO, US",
+      "latitude": 39.74,
+      "longitude": -104.99
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-US-0031"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "JEEP",
+      "Model": "Wrangler",
+      "ModelYear": "2016"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.2,
+      "wind_gusts_10m_max": 50.8
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "JEEP",
+      "model": "Wrangler",
+      "model_year": 2016
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

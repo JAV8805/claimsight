@@ -1,0 +1,69 @@
+{
+  "case_id": "GC-0003",
+  "language": "es",
+  "adversarial": true,
+  "tags": [
+    "co",
+    "glass",
+    "vin_mismatch"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0003",
+    "country": "CO",
+    "insured_vin": "VF1RJL005TC000003",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Una piedra en la autopista me rompió el parabrisas. Quiero cambiarlo en el taller autorizado.",
+    "vin": "VF1RJL003TC000503",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-01-28",
+    "location": {
+      "address": "Cali, Colombia",
+      "latitude": 3.45,
+      "longitude": -76.53
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-CO-0003"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 12.6,
+      "wind_gusts_10m_max": 21.6
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": false,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [
+      "vin_mismatch"
+    ],
+    "routing": null
+  }
+}

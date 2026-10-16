@@ -1,0 +1,73 @@
+{
+  "case_id": "GC-0029",
+  "language": "en",
+  "adversarial": true,
+  "tags": [
+    "us",
+    "collision",
+    "vin_mismatch"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0029",
+    "country": "US",
+    "insured_vin": "1GCPCREC3HF000029",
+    "insured_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    }
+  },
+  "inputs": {
+    "narrative": "A car hit me from behind at a traffic light and drove off. I have a photo of the plate. The bumper and trunk are damaged.",
+    "vin": "1GCPCREC1HF000529",
+    "declared_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "incident_date": "2025-05-10",
+    "location": {
+      "address": "Atlanta, GA, US",
+      "latitude": 33.75,
+      "longitude": -84.39
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0029"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "CHEVROLET",
+      "Model": "Silverado",
+      "ModelYear": "2017"
+    },
+    "weather": {
+      "weather_code": 61,
+      "precipitation_sum": 14.2,
+      "wind_gusts_10m_max": 60.1
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": false,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [
+      "vin_mismatch"
+    ],
+    "routing": null
+  }
+}

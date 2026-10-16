@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0048",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0048",
+    "country": "CO",
+    "insured_vin": "VF1RJL005TC000048",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "El sótano del edificio se inundó con el aguacero y el carro estuvo cerca de medio metro bajo el agua varias horas. Hay marca de agua en los asientos.",
+    "vin": "VF1RJL005TC000048",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-02-03",
+    "location": {
+      "address": "Bucaramanga, Colombia",
+      "latitude": 7.12,
+      "longitude": -73.12
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-CO-0048"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 62.7,
+      "wind_gusts_10m_max": 24.1
+    },
+    "weather_rule": "supports",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

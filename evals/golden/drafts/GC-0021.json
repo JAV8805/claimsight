@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0021",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0021",
+    "country": "US",
+    "insured_vin": "1GCPCREC9HF000021",
+    "insured_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    }
+  },
+  "inputs": {
+    "narrative": "The underground garage at my building took on water during the storm. My car sat in about a foot of water for hours and there is a waterline on the seats.",
+    "vin": "1GCPCREC9HF000021",
+    "declared_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "incident_date": "2026-06-15",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-US-0021"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "CHEVROLET",
+      "Model": "Silverado",
+      "ModelYear": "2017"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 55.4,
+      "wind_gusts_10m_max": 27.0
+    },
+    "weather_rule": "supports",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

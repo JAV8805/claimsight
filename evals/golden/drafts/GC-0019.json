@@ -1,0 +1,71 @@
+{
+  "case_id": "GC-0019",
+  "language": "en",
+  "adversarial": true,
+  "tags": [
+    "us",
+    "flood",
+    "flood_low"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0019",
+    "country": "US",
+    "insured_vin": "1N4BL4DV7KN000019",
+    "insured_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    }
+  },
+  "inputs": {
+    "narrative": "The street flooded outside my house and the water rose over the tires, ruining the interior of my car. The floor mats are still soaked.",
+    "vin": "1N4BL4DV7KN000019",
+    "declared_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "incident_date": "2025-07-05",
+    "location": {
+      "address": "Houston, TX, US",
+      "latitude": 29.76,
+      "longitude": -95.37
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-US-0019"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "NISSAN",
+      "Model": "Altima",
+      "ModelYear": "2019"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 6.2,
+      "wind_gusts_10m_max": 40.7
+    },
+    "weather_rule": "does_not_support",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0056",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "hail"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0056",
+    "country": "CO",
+    "insured_vin": "VF1RJL004TC000056",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Granizó por unos diez minutos en la tarde mientras yo estaba en el trabajo. Al salir encontré el techo y el capó llenos de golpes.",
+    "vin": "VF1RJL004TC000056",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-02-24",
+    "location": {
+      "address": "Bogotá, Colombia",
+      "latitude": 4.71,
+      "longitude": -74.07
+    },
+    "claimed_event": "hail",
+    "policy_id": "POL-CO-0056"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 19.2,
+      "wind_gusts_10m_max": 26.6
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0010",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0010",
+    "country": "CO",
+    "insured_vin": "VF1RJL002TC000010",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Rompieron el vidrio de la ventana del copiloto y se llevaron la radio y una maleta que había en el asiento. Hice la denuncia en el CAI.",
+    "vin": "VF1RJL002TC000010",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-07-03",
+    "location": {
+      "address": "Quibdó, Colombia",
+      "latitude": 5.69,
+      "longitude": -76.66
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-CO-0010"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 76.6,
+      "wind_gusts_10m_max": 23.0
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

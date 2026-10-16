@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0042",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0042",
+    "country": "US",
+    "insured_vin": "1FTEW1EP4MK000042",
+    "insured_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    }
+  },
+  "inputs": {
+    "narrative": "I backed into a concrete pillar in a parking garage. The rear bumper is crushed and the right tail light is gone. I'm the only one involved.",
+    "vin": "1FTEW1EP4MK000042",
+    "declared_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "incident_date": "2025-08-30",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0042"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "FORD",
+      "Model": "F-150",
+      "ModelYear": "2021"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 4.8,
+      "wind_gusts_10m_max": 35.6
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

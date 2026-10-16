@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0041",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "glass"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0041",
+    "country": "US",
+    "insured_vin": "2HGFC2F53JH000041",
+    "insured_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    }
+  },
+  "inputs": {
+    "narrative": "A rock thrown up by a dump truck on the interstate cracked my windshield. The crack runs across the driver's side and is getting longer.",
+    "vin": "2HGFC2F53JH000041",
+    "declared_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "incident_date": "2025-07-31",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-US-0041"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HONDA",
+      "Model": "Civic",
+      "ModelYear": "2018"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 41.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

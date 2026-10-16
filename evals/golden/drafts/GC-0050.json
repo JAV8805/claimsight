@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0050",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "glass"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0050",
+    "country": "US",
+    "insured_vin": "1FTEW1EP3MK000050",
+    "insured_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    }
+  },
+  "inputs": {
+    "narrative": "My rear window shattered when I closed the trunk this morning. I didn't hit anything that I can tell; maybe it was already weakened.",
+    "vin": "1FTEW1EP3MK000050",
+    "declared_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "incident_date": "2025-09-19",
+    "location": {
+      "address": "Miami, FL, US",
+      "latitude": 25.76,
+      "longitude": -80.19
+    },
+    "claimed_event": "glass",
+    "policy_id": "POL-US-0050"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "FORD",
+      "Model": "F-150",
+      "ModelYear": "2021"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 2.1,
+      "wind_gusts_10m_max": 28.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "FORD",
+      "model": "F-150",
+      "model_year": 2021
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

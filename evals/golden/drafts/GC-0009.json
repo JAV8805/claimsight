@@ -1,0 +1,67 @@
+{
+  "case_id": "GC-0009",
+  "language": "es",
+  "adversarial": true,
+  "tags": [
+    "co",
+    "theft",
+    "narrative_contradiction"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0009",
+    "country": "CO",
+    "insured_vin": "VF1RJL006TC000009",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Iba conduciendo y choqué contra un poste en una curva. El carro quedó con el frente destruido y tuve que llamar la grúa.",
+    "vin": "VF1RJL006TC000009",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-03-14",
+    "location": {
+      "address": "Cali, Colombia",
+      "latitude": 3.45,
+      "longitude": -76.53
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-CO-0009"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 61,
+      "precipitation_sum": 2.8,
+      "wind_gusts_10m_max": 27.7
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

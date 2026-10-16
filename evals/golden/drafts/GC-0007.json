@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0007",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0007",
+    "country": "CO",
+    "insured_vin": "VF1RJL002TC000007",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Un bus me cerró en una glorieta y me golpeó el costado derecho. Tomé fotos de los daños y de la placa del bus.",
+    "vin": "VF1RJL002TC000007",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-02-18",
+    "location": {
+      "address": "Medellín, Colombia",
+      "latitude": 6.25,
+      "longitude": -75.57
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-CO-0007"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 65,
+      "precipitation_sum": 13.4,
+      "wind_gusts_10m_max": 25.6
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

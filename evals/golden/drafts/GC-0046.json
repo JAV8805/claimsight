@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0046",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0046",
+    "country": "CO",
+    "insured_vin": "VF1RJL001TC000046",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Dos hombres en moto me interceptaron en un semáforo y me quitaron el carro bajo amenaza. Ya presenté la denuncia.",
+    "vin": "VF1RJL001TC000046",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-08-13",
+    "location": {
+      "address": "Barranquilla, Colombia",
+      "latitude": 10.96,
+      "longitude": -74.8
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-CO-0046"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.6,
+      "wind_gusts_10m_max": 36.4
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

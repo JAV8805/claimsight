@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0059",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "flood"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0059",
+    "country": "CO",
+    "insured_vin": "VF1RJL00XTC000059",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Pasé por un tramo inundado de la vía y el motor se apagó. Entró agua a la cabina hasta los pedales y tuve que llamar la grúa.",
+    "vin": "VF1RJL00XTC000059",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-02-23",
+    "location": {
+      "address": "Medellín, Colombia",
+      "latitude": 6.25,
+      "longitude": -75.57
+    },
+    "claimed_event": "flood",
+    "policy_id": "POL-CO-0059"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 10.2,
+      "wind_gusts_10m_max": 27.4
+    },
+    "weather_rule": "inconclusive",
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

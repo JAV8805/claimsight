@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0049",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0049",
+    "country": "US",
+    "insured_vin": "2HGFC2F58JH000049",
+    "insured_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    }
+  },
+  "inputs": {
+    "narrative": "I came out of the gym and my car was gone from the spot where I parked it. I only have one set of keys and both are with me. I filed a police report this morning.",
+    "vin": "2HGFC2F58JH000049",
+    "declared_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "incident_date": "2026-02-15",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-US-0049"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HONDA",
+      "Model": "Civic",
+      "ModelYear": "2018"
+    },
+    "weather": {
+      "weather_code": 53,
+      "precipitation_sum": 0.5,
+      "wind_gusts_10m_max": 61.2
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HONDA",
+      "model": "Civic",
+      "model_year": 2018
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

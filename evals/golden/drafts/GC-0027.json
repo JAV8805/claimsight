@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0027",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0027",
+    "country": "US",
+    "insured_vin": "1N4BL4DV6KN000027",
+    "insured_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    }
+  },
+  "inputs": {
+    "narrative": "Another driver ran a stop sign and clipped my front-left fender at a four-way intersection. The headlight is broken and the wheel is bent.",
+    "vin": "1N4BL4DV6KN000027",
+    "declared_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "incident_date": "2026-08-16",
+    "location": {
+      "address": "Atlanta, GA, US",
+      "latitude": 33.75,
+      "longitude": -84.39
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-US-0027"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "NISSAN",
+      "Model": "Altima",
+      "ModelYear": "2019"
+    },
+    "weather": {
+      "weather_code": 51,
+      "precipitation_sum": 0.2,
+      "wind_gusts_10m_max": 25.2
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "NISSAN",
+      "model": "Altima",
+      "model_year": 2019
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

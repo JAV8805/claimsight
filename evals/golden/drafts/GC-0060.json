@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0060",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "theft"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0060",
+    "country": "US",
+    "insured_vin": "5NMJB3AE3NH000060",
+    "insured_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    }
+  },
+  "inputs": {
+    "narrative": "My car was stolen from my apartment complex's open lot sometime between 11 pm and 6 am. The security cameras only cover the entrance. I have the keys with me.",
+    "vin": "5NMJB3AE3NH000060",
+    "declared_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "incident_date": "2025-06-20",
+    "location": {
+      "address": "Atlanta, GA, US",
+      "latitude": 33.75,
+      "longitude": -84.39
+    },
+    "claimed_event": "theft",
+    "policy_id": "POL-US-0060"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "HYUNDAI",
+      "Model": "Tucson",
+      "ModelYear": "2022"
+    },
+    "weather": {
+      "weather_code": 3,
+      "precipitation_sum": 0.0,
+      "wind_gusts_10m_max": 24.5
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "HYUNDAI",
+      "model": "Tucson",
+      "model_year": 2022
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

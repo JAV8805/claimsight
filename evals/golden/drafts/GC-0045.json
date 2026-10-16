@@ -1,0 +1,70 @@
+{
+  "case_id": "GC-0045",
+  "language": "en",
+  "adversarial": false,
+  "tags": [
+    "us",
+    "vandalism"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-US-0045",
+    "country": "US",
+    "insured_vin": "1GCPCREC1HF000045",
+    "insured_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    }
+  },
+  "inputs": {
+    "narrative": "I found all four tires slashed this morning and the side mirror ripped off. A neighbor's doorbell camera may have caught it.",
+    "vin": "1GCPCREC1HF000045",
+    "declared_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "incident_date": "2025-06-05",
+    "location": {
+      "address": "Dallas, TX, US",
+      "latitude": 32.78,
+      "longitude": -96.8
+    },
+    "claimed_event": "vandalism",
+    "policy_id": "POL-US-0045"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "0",
+      "Make": "CHEVROLET",
+      "Model": "Silverado",
+      "ModelYear": "2017"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 10.7,
+      "wind_gusts_10m_max": 34.6
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": {
+      "make": "CHEVROLET",
+      "model": "Silverado",
+      "model_year": 2017
+    },
+    "declared_matches_external": true,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}

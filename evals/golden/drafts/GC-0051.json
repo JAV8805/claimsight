@@ -1,0 +1,66 @@
+{
+  "case_id": "GC-0051",
+  "language": "es",
+  "adversarial": false,
+  "tags": [
+    "co",
+    "collision"
+  ],
+  "notes": "",
+  "policy": {
+    "policy_id": "POL-CO-0051",
+    "country": "CO",
+    "insured_vin": "VF1RJL005TC000051",
+    "insured_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    }
+  },
+  "inputs": {
+    "narrative": "Retrocedí contra un poste en el parqueadero del centro comercial. El bómper trasero quedó hundido y se rompió una luz trasera.",
+    "vin": "VF1RJL005TC000051",
+    "declared_vehicle": {
+      "make": "RENAULT",
+      "model": "Arkana",
+      "model_year": 2026
+    },
+    "incident_date": "2026-06-02",
+    "location": {
+      "address": "Medellín, Colombia",
+      "latitude": 6.25,
+      "longitude": -75.57
+    },
+    "claimed_event": "collision",
+    "policy_id": "POL-CO-0051"
+  },
+  "facts": {
+    "vpic": {
+      "ErrorCode": "8",
+      "Make": "",
+      "Model": "",
+      "ModelYear": "1996"
+    },
+    "weather": {
+      "weather_code": 63,
+      "precipitation_sum": 6.2,
+      "wind_gusts_10m_max": 35.3
+    },
+    "weather_rule": null,
+    "sources": [
+      "NHTSA vPIC DecodeVinValues",
+      "Open-Meteo archive (ERA5)"
+    ]
+  },
+  "expected": {
+    "claim_type": null,
+    "vin_matches_policy": true,
+    "vin_format_valid": true,
+    "external_vehicle": null,
+    "declared_matches_external": null,
+    "weather_verdict": null,
+    "fraud_flag": null,
+    "fraud_signals": [],
+    "routing": null
+  }
+}
