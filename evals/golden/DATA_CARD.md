@@ -2,8 +2,8 @@
 
 60 synthetic auto-claim cases (FNOL triage) for evaluating ClaimSight. `v0.jsonl` is compiled
 from generated facts (`drafts/`) plus human judgment (`labels.json`) with `make golden`.
-GC-0001 and GC-0002 were labeled first; GC-0003 to GC-0060 carry **proposed** labels that José
-still has to review (see "Labeling process").
+GC-0001 and GC-0002 were labeled first; GC-0003 to GC-0060 carry labels proposed by Claude and
+decided by José in review (see "Labeling process").
 
 ## Sources
 
@@ -57,14 +57,18 @@ Adversarial: 10 cases (`adversarial: true`), exactly:
    with fetched facts (vPIC decode, Open-Meteo weather, `weather_rule`) and leaves judgment fields empty.
 2. **Human judgment.** `labels.json` holds `claim_type`, `weather_verdict`, `fraud_flag`,
    `fraud_signals`, `routing` and a rationale in `notes`. Labels are José's decision.
-   For GC-0003 to GC-0060 they are **proposals** written by Claude, starting from
-   `facts.weather_rule`, each with a one-line rationale. They are not final until José approves them.
+   For GC-0003 to GC-0060 they were first **proposed** by Claude, starting from
+   `facts.weather_rule`, and then reviewed and decided by José; each note starts with "Decided:" and gives a one-line rationale.
 3. **Compile.** `make golden` merges drafts and labels, validates every case against the schema
    (including label-consistency rules) and writes `v0.jsonl`; a CI test checks the committed file is in sync.
 
-Judgment calls worth a second look: SIU referral for a VIN mismatch and for prompt injection;
-`damage_narrative_mismatch` as the closest signal for a narrative that contradicts the claimed event
-(there is no dedicated signal); fast track for plain collision and glass claims only.
+Decisions that shape the labels (spec v0.5):
+- A malformed VIN is not fraud: no signal, adjuster review (FR-05 level 2).
+- A narrative that contradicts the claimed event is not fraud: `claim_type` follows the narrative,
+  so a hail claim described as a collision has no weather verdict (FR-11).
+- SIU referral needs 2 or more fraud signals or `prompt_injection`; a single VIN mismatch goes to
+  adjuster review. Fast track needs a VIN match (FR-03).
+- GC-0023, GC-0050 and GC-0058 stay fast track.
 
 ## Known limitations
 
