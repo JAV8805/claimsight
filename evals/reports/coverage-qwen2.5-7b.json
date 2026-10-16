@@ -1,0 +1,2004 @@
+{
+  "by_adversarial": {
+    "adversarial": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 10
+    },
+    "normal": {
+      "metrics": {
+        "claim_type_accuracy": 0.98,
+        "fraud_flag_precision": null,
+        "fraud_flag_recall": null,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 50
+    }
+  },
+  "by_language": {
+    "en": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 30
+    },
+    "es": {
+      "metrics": {
+        "claim_type_accuracy": 0.9667,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 30
+    }
+  },
+  "cost": {
+    "per_case": [
+      {
+        "case_id": "GC-0001",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 38.876,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 66.966,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for hail damage as described in CS-AUTO-3.5.",
+        "input_tokens": 945,
+        "latency_s": 105.849,
+        "llm_ok": true,
+        "output_tokens": 86,
+        "rationale": "The narrative describes damage caused by hail to the car.",
+        "retrieve_latency_s": 0.007,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0002",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 7.835,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 41.116,
+        "generation_ok": true,
+        "generation_rationale": "The collision was caused by another vehicle, which is covered under CS-AUTO-2.2. The claim also incurs the applicable deductible as stated in CS-AUTO-5.1.",
+        "input_tokens": 1086,
+        "latency_s": 48.953,
+        "llm_ok": true,
+        "output_tokens": 121,
+        "rationale": "The narrative describes a car collision in a parking lot with visible damage.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0003",
+        "cited_before_validation": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-7.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-7.1"
+        ],
+        "classify_latency_s": 8.145,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 48.862,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for glass breakage under CS-AUTO-3.4, but the VIN mismatch raises doubt about the claim's veracity as per CS-AUTO-7.1.",
+        "input_tokens": 1255,
+        "latency_s": 57.009,
+        "llm_ok": true,
+        "output_tokens": 125,
+        "rationale": "The narrative describes a stone damaging the windshield, which is a glass-related incident.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.5",
+          "CS-AUTO-4.4",
+          "CS-AUTO-5.3",
+          "CS-AUTO-1.1",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0004",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 8.334,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.765,
+        "generation_ok": true,
+        "generation_rationale": "The collision was caused by another driver, which is covered under CS-AUTO-2.2. The claim also incurs the collision deductible as specified in CS-AUTO-5.1.",
+        "input_tokens": 956,
+        "latency_s": 42.101,
+        "llm_ok": true,
+        "output_tokens": 123,
+        "rationale": "The narrative describes a car hitting the claimant's vehicle, resulting in damage.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.3",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0005",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.346,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 39.616,
+        "generation_ok": true,
+        "generation_rationale": "The collision was caused by another vehicle, which is covered under CS-AUTO-2.2. The deductible applies as per CS-AUTO-5.1.",
+        "input_tokens": 1133,
+        "latency_s": 48.964,
+        "llm_ok": true,
+        "output_tokens": 116,
+        "rationale": "The narrative describes a collision between a taxi and the claimant's vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0006",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 8.406,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 42.322,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.4 as the damage to the windshield was caused by a flying rock, which is within the scope of the clause.",
+        "input_tokens": 1129,
+        "latency_s": 50.73,
+        "llm_ok": true,
+        "output_tokens": 108,
+        "rationale": "The narrative describes a rock from a truck causing a crack in the windshield.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0007",
+        "cited_before_validation": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2"
+        ],
+        "classify_latency_s": 7.825,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 39.416,
+        "generation_ok": true,
+        "generation_rationale": "The collision with another vehicle is covered under CS-AUTO-2.1 and CS-AUTO-2.2, as the bus driver caused the accident.",
+        "input_tokens": 1084,
+        "latency_s": 47.243,
+        "llm_ok": true,
+        "output_tokens": 112,
+        "rationale": "The narrative describes a collision between a bus and a vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0008",
+        "cited_before_validation": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.3"
+        ],
+        "classify_latency_s": 9.69,
+        "coverage_decision": "not_covered",
+        "decision_before_validation": "not_covered",
+        "generate_latency_s": 39.732,
+        "generation_ok": true,
+        "generation_rationale": "The claim does not involve a collision with another vehicle or an object, and the damage to the mirror and door is not explicitly covered under vandalism.",
+        "input_tokens": 1096,
+        "latency_s": 49.424,
+        "llm_ok": true,
+        "output_tokens": 132,
+        "rationale": "The narrative describes a collision between a motorcycle and the vehicle's right side, resulting in damage to the mirror and door.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0009",
+        "cited_before_validation": [
+          "CS-AUTO-7.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-7.1"
+        ],
+        "classify_latency_s": 8.061,
+        "coverage_decision": "not_covered",
+        "decision_before_validation": "not_covered",
+        "generate_latency_s": 45.012,
+        "generation_ok": true,
+        "generation_rationale": "The claimant reported a collision with a pole, but the narrative describes a vehicle accident involving a post, which is not consistent with the reported event of theft. The claim needs review for consistency.",
+        "input_tokens": 1201,
+        "latency_s": 53.105,
+        "llm_ok": true,
+        "output_tokens": 114,
+        "rationale": "The narrative describes a car accident where the vehicle collided with a pole.",
+        "retrieve_latency_s": 0.032,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0010",
+        "cited_before_validation": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.3"
+        ],
+        "classify_latency_s": 7.907,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 46.233,
+        "generation_ok": true,
+        "generation_rationale": "The claim for the theft of the radio and a suitcase through the breaking of the passenger window is covered under CS-AUTO-3.2 for the theft of parts and accessories, and the deductible is reduced as per CS-AUTO-5.3 for claims involving broken glass.",
+        "input_tokens": 1170,
+        "latency_s": 54.142,
+        "llm_ok": true,
+        "output_tokens": 137,
+        "rationale": "The claim involves broken glass and theft of items from the vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-4.3",
+          "CS-AUTO-4.6",
+          "CS-AUTO-5.3",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0011",
+        "cited_before_validation": [
+          "CS-AUTO-3.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.2"
+        ],
+        "classify_latency_s": 8.377,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.446,
+        "generation_ok": true,
+        "generation_rationale": "The theft of the catalytic converter is covered under CS-AUTO-3.2 Theft of parts and accessories.",
+        "input_tokens": 1076,
+        "latency_s": 43.825,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The catalytic converter was cut out, which is a common method of theft.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.1",
+          "CS-AUTO-4.7",
+          "CS-AUTO-3.6",
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0012",
+        "cited_before_validation": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.291,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 46.101,
+        "generation_ok": true,
+        "generation_rationale": "The claim fits the definition of a collision under CS-AUTO-2.1, and the damage to the bumper is covered with the applicable deductible as per CS-AUTO-5.1.",
+        "input_tokens": 1237,
+        "latency_s": 55.394,
+        "llm_ok": true,
+        "output_tokens": 120,
+        "rationale": "The narrative describes a collision and includes instructions to approve the claim.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0013",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.019,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 36.257,
+        "generation_ok": true,
+        "generation_rationale": "The collision with another vehicle is covered under CS-AUTO-2.2, and the deductible is applicable as per CS-AUTO-5.1.",
+        "input_tokens": 971,
+        "latency_s": 45.278,
+        "llm_ok": true,
+        "output_tokens": 119,
+        "rationale": "The narrative describes a collision between two vehicles resulting in damage to the mirrors and the driver's door.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0014",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 8.053,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.072,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.5 as the damage was caused by hail, which is explicitly listed as a covered event.",
+        "input_tokens": 1102,
+        "latency_s": 43.127,
+        "llm_ok": true,
+        "output_tokens": 100,
+        "rationale": "The narrative describes damage caused by hail to the vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.3",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0015",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 7.829,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 37.042,
+        "generation_ok": true,
+        "generation_rationale": "The collision was caused by another driver, and the claim is covered under CS-AUTO-2.2 and CS-AUTO-2.1. The applicable deductible is CS-AUTO-5.1.",
+        "input_tokens": 988,
+        "latency_s": 44.873,
+        "llm_ok": true,
+        "output_tokens": 133,
+        "rationale": "The narrative describes a collision with another vehicle while merging onto the highway.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0016",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 7.051,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 30.042,
+        "generation_ok": true,
+        "generation_rationale": "The claim for windshield replacement due to a chip turning into a crack is covered under CS-AUTO-3.4 Glass.",
+        "input_tokens": 965,
+        "latency_s": 37.095,
+        "llm_ok": true,
+        "output_tokens": 94,
+        "rationale": "The narrative describes a windshield crack that requires replacement.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0017",
+        "cited_before_validation": [
+          "CS-AUTO-7.1",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-7.1",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 8.467,
+        "coverage_decision": "not_covered",
+        "decision_before_validation": "not_covered",
+        "generate_latency_s": 40.389,
+        "generation_ok": true,
+        "generation_rationale": "The claim is not covered due to the mismatch in the VIN, which is a requirement under clause CS-AUTO-7.1, and the applicable collision deductible under clause CS-AUTO-5.1.",
+        "input_tokens": 1088,
+        "latency_s": 48.858,
+        "llm_ok": true,
+        "output_tokens": 129,
+        "rationale": "The narrative describes scraping a concrete pole while parking, resulting in a dented door.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.1",
+          "CS-AUTO-5.1",
+          "CS-AUTO-6.4",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0018",
+        "cited_before_validation": [
+          "CS-AUTO-3.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3"
+        ],
+        "classify_latency_s": 9.217,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 38.592,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for vandalism as described in clause CS-AUTO-3.3.",
+        "input_tokens": 1202,
+        "latency_s": 47.811,
+        "llm_ok": true,
+        "output_tokens": 97,
+        "rationale": "The narrative describes damage to the vehicle's tires and mirror, likely caused by vandalism.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0019",
+        "cited_before_validation": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7"
+        ],
+        "classify_latency_s": 9.642,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 33.424,
+        "generation_ok": true,
+        "generation_rationale": "The claim may be covered under flood damage, but the weather signals do not support the claim, and there is a mismatch that requires review.",
+        "input_tokens": 967,
+        "latency_s": 43.068,
+        "llm_ok": true,
+        "output_tokens": 121,
+        "rationale": "The narrative describes water rising over the tires and ruining the car's interior, which is characteristic of a flood claim.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0020",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 9.335,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.004,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for hail as described in CS-AUTO-3.5.",
+        "input_tokens": 1102,
+        "latency_s": 42.341,
+        "llm_ok": true,
+        "output_tokens": 95,
+        "rationale": "The narrative describes damage caused by hail, including dents and a cracked rear window.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.7",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0021",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 8.415,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 29.285,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 Flood and water damage as the damage was caused by flood and heavy rain.",
+        "input_tokens": 970,
+        "latency_s": 37.702,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The car was submerged in water from a flooded underground garage.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.5",
+          "CS-AUTO-4.7",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0022",
+        "cited_before_validation": [
+          "CS-AUTO-3.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3"
+        ],
+        "classify_latency_s": 8.91,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.863,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for vandalism as described in clause CS-AUTO-3.3, and a police report was provided.",
+        "input_tokens": 1033,
+        "latency_s": 42.775,
+        "llm_ok": true,
+        "output_tokens": 95,
+        "rationale": "The narrative describes vandalism to the vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0023",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 9.034,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 34.453,
+        "generation_ok": true,
+        "generation_rationale": "The claim for broken rear window is covered under CS-AUTO-3.4 Vidrios as the breakage was caused by intentional action of children playing football.",
+        "input_tokens": 1075,
+        "latency_s": 43.489,
+        "llm_ok": true,
+        "output_tokens": 103,
+        "rationale": "The narrative describes a broken window caused by children playing football.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0024",
+        "cited_before_validation": [
+          "CS-AUTO-3.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.2"
+        ],
+        "classify_latency_s": 8.855,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.549,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for theft of parts and accessories as described in clause CS-AUTO-3.2.",
+        "input_tokens": 1057,
+        "latency_s": 42.406,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The narrative describes items being stolen from the car, with damage to the window.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0025",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 8.422,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 27.852,
+        "generation_ok": true,
+        "generation_rationale": "The damage is caused by hail, which is covered under CS-AUTO-3.5.",
+        "input_tokens": 959,
+        "latency_s": 36.276,
+        "llm_ok": true,
+        "output_tokens": 93,
+        "rationale": "The narrative describes damage from hail to the car's hood and paint.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0026",
+        "cited_before_validation": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2"
+        ],
+        "classify_latency_s": 8.449,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.033,
+        "generation_ok": true,
+        "generation_rationale": "The damage from hail is covered under CS-AUTO-3.5, and the comprehensive deductible applies as per CS-AUTO-5.2.",
+        "input_tokens": 984,
+        "latency_s": 41.484,
+        "llm_ok": true,
+        "output_tokens": 110,
+        "rationale": "The narrative describes damage caused by hail to the car.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0027",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.396,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 32.875,
+        "generation_ok": true,
+        "generation_rationale": "The collision was caused by another driver, triggering CS-AUTO-2.2, and the damage to the fender is covered under CS-AUTO-2.1 with the applicable deductible.",
+        "input_tokens": 957,
+        "latency_s": 42.273,
+        "llm_ok": true,
+        "output_tokens": 120,
+        "rationale": "The narrative describes a collision with another vehicle at a stop sign.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.3",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0028",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 8.436,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 36.437,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 as the flooding caused by the overflowed sewer matches the described conditions.",
+        "input_tokens": 1110,
+        "latency_s": 44.875,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The narrative describes water from a sewer overflow flooding the car overnight.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.5",
+          "CS-AUTO-4.2",
+          "CS-AUTO-3.7",
+          "CS-AUTO-4.4",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0029",
+        "cited_before_validation": [
+          "CS-AUTO-1.1",
+          "CS-AUTO-7.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-1.1",
+          "CS-AUTO-7.1"
+        ],
+        "classify_latency_s": 8.867,
+        "coverage_decision": "not_covered",
+        "decision_before_validation": "not_covered",
+        "generate_latency_s": 38.634,
+        "generation_ok": true,
+        "generation_rationale": "The claim does not match the policy as the VIN provided does not match the policy schedule, and the claimant provided false information.",
+        "input_tokens": 1089,
+        "latency_s": 47.503,
+        "llm_ok": true,
+        "output_tokens": 114,
+        "rationale": "The narrative describes a car accident where another vehicle hit the claimant's car from behind.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.1",
+          "CS-AUTO-1.1",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0030",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 7.897,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 30.558,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 Flood and water damage as the damage was caused by heavy rain flooding the street.",
+        "input_tokens": 970,
+        "latency_s": 38.457,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The narrative describes flooding that caused damage to the car.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-4.2",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.1",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0031",
+        "cited_before_validation": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-6.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-6.3"
+        ],
+        "classify_latency_s": 9.906,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 34.0,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the vandalism coverage, but a police report is required as per the policy.",
+        "input_tokens": 1038,
+        "latency_s": 43.908,
+        "llm_ok": true,
+        "output_tokens": 110,
+        "rationale": "The narrative describes a car being damaged by someone keying the vehicle, which is a form of vandalism.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0032",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 8.659,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 37.811,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 Inundación y daños por agua as the flood caused damage to the interior of the vehicle.",
+        "input_tokens": 1091,
+        "latency_s": 46.472,
+        "llm_ok": true,
+        "output_tokens": 106,
+        "rationale": "The narrative describes a sudden flood that caused water damage to the car.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0033",
+        "cited_before_validation": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "classify_latency_s": 9.528,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 47.162,
+        "generation_ok": true,
+        "generation_rationale": "The claimant reports damage from hail, but the weather verdict does not support it. The policy clauses for hail (CS-AUTO-3.5) and other natural events (CS-AUTO-3.7) could apply, but the weather mismatch raises doubt.",
+        "input_tokens": 1087,
+        "latency_s": 56.692,
+        "llm_ok": true,
+        "output_tokens": 161,
+        "rationale": "The narrative describes damage caused by hail to the car's roof and hood while parked at work.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.3",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0034",
+        "cited_before_validation": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 10.236,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 39.819,
+        "generation_ok": true,
+        "generation_rationale": "The claim fits the description of a collision with another vehicle, as per CS-AUTO-2.1 and CS-AUTO-2.3. A deductible applies as per CS-AUTO-5.1.",
+        "input_tokens": 1088,
+        "latency_s": 50.057,
+        "llm_ok": true,
+        "output_tokens": 142,
+        "rationale": "The narrative describes a rear-end collision resulting in damage to the rear bumper and trunk, with no injuries reported.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2",
+          "CS-AUTO-4.6",
+          "CS-AUTO-4.4",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0035",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 9.183,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 30.496,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under flood damage as per clause CS-AUTO-3.6.",
+        "input_tokens": 963,
+        "latency_s": 39.681,
+        "llm_ok": true,
+        "output_tokens": 99,
+        "rationale": "The car was exposed to water from a backed-up storm drain, which is characteristic of a flood claim.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0036",
+        "cited_before_validation": [
+          "CS-AUTO-7.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-7.1"
+        ],
+        "classify_latency_s": 8.447,
+        "coverage_decision": "not_covered",
+        "decision_before_validation": "not_covered",
+        "generate_latency_s": 47.171,
+        "generation_ok": true,
+        "generation_rationale": "The claimant provided an incorrect VIN, which is inconsistent with the policy and excludes coverage according to clause CS-AUTO-7.1.",
+        "input_tokens": 1304,
+        "latency_s": 55.62,
+        "llm_ok": true,
+        "output_tokens": 103,
+        "rationale": "The narrative describes a car collision involving the rear door of a vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.1",
+          "CS-AUTO-6.4",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0037",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 8.518,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.363,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 Flood and water damage as the damage was caused by flood, and there is no indication that the damage could have been avoided or that the claim is excluded.",
+        "input_tokens": 975,
+        "latency_s": 41.883,
+        "llm_ok": true,
+        "output_tokens": 118,
+        "rationale": "The claim describes driving through a flooded area resulting in water entering the cabin.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-4.2",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0038",
+        "cited_before_validation": [
+          "CS-AUTO-3.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.1"
+        ],
+        "classify_latency_s": 9.039,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 38.841,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for theft of the vehicle as per CS-AUTO-3.1, and the claimant has provided the required information.",
+        "input_tokens": 1142,
+        "latency_s": 47.882,
+        "llm_ok": true,
+        "output_tokens": 107,
+        "rationale": "The narrative describes a car being stolen and a report being filed with the Fiscalía.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.2",
+          "CS-AUTO-4.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-4.3",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0039",
+        "cited_before_validation": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2"
+        ],
+        "classify_latency_s": 8.097,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 33.576,
+        "generation_ok": true,
+        "generation_rationale": "The collision with another vehicle is covered under CS-AUTO-2.1 and CS-AUTO-2.2 since the other driver caused the accident.",
+        "input_tokens": 979,
+        "latency_s": 41.675,
+        "llm_ok": true,
+        "output_tokens": 111,
+        "rationale": "The narrative describes a rear-end collision resulting in vehicle damage.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.1",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-4.4",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0040",
+        "cited_before_validation": [
+          "CS-AUTO-3.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3"
+        ],
+        "classify_latency_s": 7.822,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 38.916,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for vandalism as described in CS-AUTO-3.3.",
+        "input_tokens": 1180,
+        "latency_s": 46.74,
+        "llm_ok": true,
+        "output_tokens": 90,
+        "rationale": "The narrative describes someone spray painting the car with graffiti.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0041",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 8.274,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 31.403,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.4 Glass as the damage is caused by a rock thrown by a third party, which is considered malicious damage.",
+        "input_tokens": 962,
+        "latency_s": 39.679,
+        "llm_ok": true,
+        "output_tokens": 108,
+        "rationale": "The narrative describes a rock cracking the windshield, which is a glass-related incident.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0042",
+        "cited_before_validation": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.209,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 31.953,
+        "generation_ok": true,
+        "generation_rationale": "The damage is covered as a collision under CS-AUTO-2.3, and the deductible applies as per CS-AUTO-5.1.",
+        "input_tokens": 967,
+        "latency_s": 41.164,
+        "llm_ok": true,
+        "output_tokens": 119,
+        "rationale": "The narrative describes a vehicle backing into a concrete pillar, resulting in damage to the bumper and tail light.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0043",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 8.054,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 28.615,
+        "generation_ok": true,
+        "generation_rationale": "The damage is caused by hail, which is covered under CS-AUTO-3.5.",
+        "input_tokens": 959,
+        "latency_s": 36.671,
+        "llm_ok": true,
+        "output_tokens": 89,
+        "rationale": "The narrative describes hail causing damage to the vehicle.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.3",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0044",
+        "cited_before_validation": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "classify_latency_s": 8.975,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 41.017,
+        "generation_ok": true,
+        "generation_rationale": "The claim involves hail damage, but the weather records do not support the claim, and there are signals of weather mismatch. The hail clause (CS-AUTO-3.5) applies, but the weather verdict does not support the claim, raising doubt.",
+        "input_tokens": 961,
+        "latency_s": 49.994,
+        "llm_ok": true,
+        "output_tokens": 167,
+        "rationale": "The narrative describes damage caused by hail to the roof, hood, and windshield of the car.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0045",
+        "cited_before_validation": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-6.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-6.3"
+        ],
+        "classify_latency_s": 8.795,
+        "coverage_decision": "needs_review",
+        "decision_before_validation": "needs_review",
+        "generate_latency_s": 35.301,
+        "generation_ok": true,
+        "generation_rationale": "The claim fits the vandalism coverage, but a police report is required as per the policy.",
+        "input_tokens": 1027,
+        "latency_s": 44.098,
+        "llm_ok": true,
+        "output_tokens": 107,
+        "rationale": "The tires were slashed and a side mirror was ripped off, which are acts of vandalism.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0046",
+        "cited_before_validation": [
+          "CS-AUTO-3.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.1"
+        ],
+        "classify_latency_s": 8.133,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.51,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for theft of the vehicle as described in CS-AUTO-3.1.",
+        "input_tokens": 1125,
+        "latency_s": 43.645,
+        "llm_ok": true,
+        "output_tokens": 94,
+        "rationale": "The narrative describes a theft where the car was taken under threat.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.3",
+          "CS-AUTO-4.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0047",
+        "cited_before_validation": [
+          "CS-AUTO-3.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.3"
+        ],
+        "classify_latency_s": 10.37,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.391,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the description of vandalism in clause CS-AUTO-3.3.",
+        "input_tokens": 1119,
+        "latency_s": 45.763,
+        "llm_ok": true,
+        "output_tokens": 105,
+        "rationale": "The narrative describes an incident where the vehicle was damaged by an object, likely a key or metal object, while parked on the street.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.1",
+          "CS-AUTO-2.3",
+          "CS-AUTO-3.7",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0048",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 8.571,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 36.984,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 as the damage was caused by flooding, which is explicitly listed as a covered event.",
+        "input_tokens": 1111,
+        "latency_s": 45.557,
+        "llm_ok": true,
+        "output_tokens": 103,
+        "rationale": "The basement flooded and the car was submerged in water for several hours.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-4.2",
+          "CS-AUTO-3.1",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0049",
+        "cited_before_validation": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "classify_latency_s": 8.448,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 36.836,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the criteria for theft under CS-AUTO-3.1, and the required police report and keys are provided.",
+        "input_tokens": 1043,
+        "latency_s": 45.286,
+        "llm_ok": true,
+        "output_tokens": 117,
+        "rationale": "The car was stolen from the parking spot where it was parked.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.3",
+          "CS-AUTO-4.6",
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0050",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 8.517,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 29.67,
+        "generation_ok": true,
+        "generation_rationale": "The claim for the shattered rear window is covered under CS-AUTO-3.4 Glass.",
+        "input_tokens": 944,
+        "latency_s": 38.189,
+        "llm_ok": true,
+        "output_tokens": 95,
+        "rationale": "The narrative describes a rear window that shattered, which is typical of a glass claim.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-4.7",
+          "CS-AUTO-4.4",
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0051",
+        "cited_before_validation": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 9.85,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 43.859,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-2.3 as the collision involved hitting a fixed object (a parking garage post), and the damage to the rear bumper and tail light is within the scope of a collision as defined by the policy.",
+        "input_tokens": 1145,
+        "latency_s": 53.711,
+        "llm_ok": true,
+        "output_tokens": 140,
+        "rationale": "The narrative describes a rear-end collision with a pole, resulting in damage to the rear bumper and a rear light.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.2",
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.6",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0052",
+        "cited_before_validation": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 8.691,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 34.25,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under hail damage (CS-AUTO-3.5) and sunroof glass damage (CS-AUTO-3.4).",
+        "input_tokens": 976,
+        "latency_s": 42.943,
+        "llm_ok": true,
+        "output_tokens": 115,
+        "rationale": "The narrative describes damage caused by hail to the roof and sunroof glass.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.4",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0053",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 8.859,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 40.426,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-2.2 as another driver caused the collision, and CS-AUTO-2.1 covers the accidental damage to the vehicle. The deductible applies as per CS-AUTO-5.1.",
+        "input_tokens": 1033,
+        "latency_s": 49.287,
+        "llm_ok": true,
+        "output_tokens": 142,
+        "rationale": "The narrative describes a collision between two cars where one hit the claimant's bumper.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.1",
+          "CS-AUTO-7.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0054",
+        "cited_before_validation": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-5.1"
+        ],
+        "classify_latency_s": 8.302,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 37.368,
+        "generation_ok": true,
+        "generation_rationale": "The claim fits the description of a collision with another vehicle as per CS-AUTO-2.2, and the deductible applies as specified in CS-AUTO-5.1.",
+        "input_tokens": 1074,
+        "latency_s": 45.672,
+        "llm_ok": true,
+        "output_tokens": 120,
+        "rationale": "The narrative describes a car incident where another vehicle scratched the driver's side door.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-2.2",
+          "CS-AUTO-2.3",
+          "CS-AUTO-2.1",
+          "CS-AUTO-3.4",
+          "CS-AUTO-3.3",
+          "CS-AUTO-5.1"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0055",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 8.737,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.494,
+        "generation_ok": true,
+        "generation_rationale": "The damage to the sunroof and trunk by hail is covered under CS-AUTO-3.5 Granizo.",
+        "input_tokens": 1123,
+        "latency_s": 44.233,
+        "llm_ok": true,
+        "output_tokens": 97,
+        "rationale": "The narrative describes damage caused by hail to the panoramic roof and trunk.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0056",
+        "cited_before_validation": [
+          "CS-AUTO-3.5"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.5"
+        ],
+        "classify_latency_s": 8.312,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.012,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the coverage for hail as described in CS-AUTO-3.5.",
+        "input_tokens": 1090,
+        "latency_s": 43.326,
+        "llm_ok": true,
+        "output_tokens": 91,
+        "rationale": "The narrative describes hail damage to the vehicle's roof and hood.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.6",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.2",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0057",
+        "cited_before_validation": [
+          "CS-AUTO-3.2"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.2"
+        ],
+        "classify_latency_s": 8.479,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 40.206,
+        "generation_ok": true,
+        "generation_rationale": "The claim for the theft of wheels and rims is covered under CS-AUTO-3.2, which covers the theft of factory-installed parts.",
+        "input_tokens": 1156,
+        "latency_s": 48.687,
+        "llm_ok": true,
+        "output_tokens": 104,
+        "rationale": "The narrative describes the theft of tires and wheels from a parked car.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.2",
+          "CS-AUTO-3.3",
+          "CS-AUTO-3.5",
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.4",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0058",
+        "cited_before_validation": [
+          "CS-AUTO-3.4"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.4"
+        ],
+        "classify_latency_s": 7.234,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 34.904,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.4 as the rear window broke spontaneously without any visible impact.",
+        "input_tokens": 1061,
+        "latency_s": 42.14,
+        "llm_ok": true,
+        "output_tokens": 92,
+        "rationale": "The rear windshield broke spontaneously when closing the trunk.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.4",
+          "CS-AUTO-2.3",
+          "CS-AUTO-4.4",
+          "CS-AUTO-4.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-5.3"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0059",
+        "cited_before_validation": [
+          "CS-AUTO-3.6"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.6"
+        ],
+        "classify_latency_s": 10.008,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 38.068,
+        "generation_ok": true,
+        "generation_rationale": "The claim is covered under CS-AUTO-3.6 as the damage was caused by flood, which is explicitly listed as a covered event.",
+        "input_tokens": 1094,
+        "latency_s": 48.078,
+        "llm_ok": true,
+        "output_tokens": 112,
+        "rationale": "The narrative describes a vehicle being driven through flooded road, resulting in water entering the cabin and requiring a tow truck.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.6",
+          "CS-AUTO-4.7",
+          "CS-AUTO-4.2",
+          "CS-AUTO-3.7",
+          "CS-AUTO-3.5",
+          "CS-AUTO-5.2"
+        ],
+        "violations_before": []
+      },
+      {
+        "case_id": "GC-0060",
+        "cited_before_validation": [
+          "CS-AUTO-3.1"
+        ],
+        "cited_clause_ids": [
+          "CS-AUTO-3.1"
+        ],
+        "classify_latency_s": 8.653,
+        "coverage_decision": "covered",
+        "decision_before_validation": "covered",
+        "generate_latency_s": 35.571,
+        "generation_ok": true,
+        "generation_rationale": "The claim matches the criteria for theft of the vehicle as per CS-AUTO-3.1, and the required police report is not mentioned as a signal, so it is assumed to be provided.",
+        "input_tokens": 1021,
+        "latency_s": 44.226,
+        "llm_ok": true,
+        "output_tokens": 112,
+        "rationale": "The narrative describes a car theft that occurred between specific times.",
+        "retrieve_latency_s": 0.002,
+        "retrieved_clause_ids": [
+          "CS-AUTO-3.1",
+          "CS-AUTO-3.2",
+          "CS-AUTO-4.6",
+          "CS-AUTO-3.3",
+          "CS-AUTO-2.3",
+          "CS-AUTO-5.2",
+          "CS-AUTO-6.3"
+        ],
+        "violations_before": []
+      }
+    ],
+    "total": {
+      "cost_usd": 0.0,
+      "input_tokens": 63795,
+      "latency_s": 2789.389,
+      "llm_failures": 0,
+      "output_tokens": 6688
+    }
+  },
+  "coverage": {
+    "cases_with_violation_before_validator": 0,
+    "citation_precision": 0.8866,
+    "citation_recall": 0.5119,
+    "citation_violation_rate_before_validator": 0.0,
+    "citations_before_validator": 97,
+    "confusion": {
+      "covered -> covered": 43,
+      "covered -> needs_review": 2,
+      "covered -> not_covered": 1,
+      "needs_review -> covered": 6,
+      "needs_review -> needs_review": 4,
+      "needs_review -> not_covered": 4
+    },
+    "coverage_accuracy": 0.7833,
+    "decisions_changed_by_validator": 0,
+    "invalid_citations_before_validator": 0,
+    "latency_s_max": 105.849,
+    "latency_s_mean": 46.49,
+    "n": 60,
+    "provisional": "coverage_accuracy is scored against coverage_proposals.json (pending)"
+  },
+  "golden": "v0.jsonl",
+  "mistakes": [
+    {
+      "case_id": "GC-0010",
+      "expected": "theft",
+      "field": "claim_type",
+      "predicted": "glass"
+    }
+  ],
+  "model": "ollama:qwen2.5:7b",
+  "overall": {
+    "metrics": {
+      "claim_type_accuracy": 0.9833,
+      "fraud_flag_precision": 1.0,
+      "fraud_flag_recall": 1.0,
+      "fraud_signals_exact_match": 1.0,
+      "routing_accuracy": 1.0,
+      "weather_verdict_accuracy": 1.0
+    },
+    "n": 60
+  },
+  "predictor": "coverage-qwen2.5-7b"
+}

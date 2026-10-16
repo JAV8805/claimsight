@@ -55,9 +55,35 @@ The report has four parts per chunker and setting:
 
 Settings: *monolingual* (query and clauses in the same language) and *cross-lingual* (the other language). The clause map does not depend on language.
 
-**The classifier is not in this loop.** The eval uses `claimed_event` as the claim type, and the map's signals come from the rules baseline. So the cases that need language understanding are expected to miss in the deterministic part: GC-0009 and GC-0053 (narrative contradicts the claimed event: wrong deductible and no 7.1) and GC-0012 (prompt injection: no 7.2). The next step is to feed the LLM triage prediction instead.
+**Two sources of claim type and signals.** The report compares `claimed_event` (the claimed event plus the rules baseline's signals, no LLM) with `classifier` (the L2.1 triage prediction). With `claimed_event`, the cases that need language understanding miss in the deterministic part: GC-0009 and GC-0053 (narrative contradicts the claimed event: wrong deductible and no 7.1) and GC-0012 (prompt injection: no 7.2). `classifier` is the production path; the validation log says which of these it fixes.
 
 Run with `make eval-retrieval` (needs `make up` and Ollama with `bge-m3`); the report is `evals/reports/retrieval.json`. The unit tests cover chunkers, metrics, the clause map and the decided labels without Ollama or a database, so CI stays offline.
+
+## Retriever and grounded generation (L2.2b)
+
+`PolicyRetriever` (`claimsight.rag.retriever`) wraps the pgvector search as a LangChain `BaseRetriever`: `invoke(query)` returns documents whose metadata carries `clause_id`, `language` and `section`. It searches the coverage and exclusion sections (2 to 4) of the policy language (derived from the policy country: CO is Spanish, otherwise English).
+
+The triage graph continues after the signals with three nodes:
+
+1. **retrieve**: query = classified claim type + narrative; the result is the semantic hits plus the clauses of the deterministic map, built from the *classified* type and the triage signals. This is the only set a citation may come from.
+2. **generate**: a model receives the claim facts, the narrative (delimited, untrusted) and the retrieved clauses (`<clause id="...">`), and returns structured output: `coverage_decision` (covered, not_covered, needs_review), `cited_clause_ids` and a rationale.
+3. **validate**: deterministic code (`claimsight.rag.citations`) checks that every cited ID was retrieved and that "covered" cites at least one section 2 or 3 clause. A violation turns the decision into needs_review and removes the invalid ID. Violations are counted **before** this correction, because otherwise the validator would hide how often the model breaks the rules.
+
+Why validate instead of trusting the prompt: an instruction ("cite only provided IDs") lowers the rate of invented citations but cannot make it zero, and a coverage decision that cites a clause that does not exist is worse than no decision. The validator makes the guarantee a property of the code.
+
+`make eval-coverage` runs the pipeline over the golden set and reports coverage accuracy (against `evals/golden/coverage_proposals.json`, provisional until José reviews it), citation precision and recall against the decided `clause_ids`, the citation-violation rate before the validator, and latency per case.
+
+## Running the evals on a small machine
+
+A 7B chat model (about 5 GB) and the embedding model (about 1.2 GB) do not fit together in 8 GB of RAM next to Docker: Ollama is killed by the OOM killer and the machine can freeze. The evals therefore run in **stages with one model in memory at a time**, and the stages talk through cache files under `.cache/claimsight/stages/` (not committed):
+
+1. `make eval-classify` (chat model): claim type and signals for the 60 cases. Resumable; `ollama stop` runs afterwards.
+2. `make eval-retrieval` (embedding model only): reads the stage 1 cache, so the classifier source needs no chat model; `ollama stop bge-m3` runs afterwards.
+3. `make eval-coverage`: retrieval of the clauses per case (embedding model), `ollama stop bge-m3`, then generation and validation (chat model) from the cached retrieval.
+
+Also run the Ollama server with `OLLAMA_MAX_LOADED_MODELS=1`, so that it never keeps two models loaded even if a stage forgets to unload one. With the systemd service: `sudo systemctl edit ollama`, add `[Service]` and `Environment="OLLAMA_MAX_LOADED_MODELS=1"`, then `sudo systemctl restart ollama`; or start it by hand with `OLLAMA_MAX_LOADED_MODELS=1 ollama serve`. The code does not depend on the setting (each stage unloads the previous model itself), and it cannot check it from the client.
+
+Failures stay visible: a stage stops with an error if an LLM call fails, instead of falling back silently, because a fallback would make a broken run look like a result.
 
 ## Known limitations
 
