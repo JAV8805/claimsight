@@ -9,11 +9,13 @@ from collections.abc import Sequence
 from pathlib import Path
 
 import psycopg
+from langchain_core.embeddings import Embeddings
 from langchain_ollama import OllamaEmbeddings
 from pgvector.psycopg import register_vector
 from psycopg.types.json import Jsonb
 
 from claimsight.rag.chunking import CHUNKERS, Chunk, load_policy
+from claimsight.rag.embeddings import CachedEmbeddings
 
 EMBED_MODEL = "bge-m3"
 EMBED_DIM = 1024
@@ -36,11 +38,11 @@ def connect() -> psycopg.Connection:
     return conn
 
 
-def embedder() -> OllamaEmbeddings:
-    return OllamaEmbeddings(model=EMBED_MODEL)
+def embedder() -> CachedEmbeddings:
+    return CachedEmbeddings(OllamaEmbeddings(model=EMBED_MODEL), EMBED_MODEL)
 
 
-def ingest(conn: psycopg.Connection, chunker: str, embeddings: OllamaEmbeddings) -> int:
+def ingest(conn: psycopg.Connection, chunker: str, embeddings: Embeddings) -> int:
     """Rebuild the collection of one chunker from the policy files; returns the chunk count."""
     table = table_name(chunker)
     chunks: list[Chunk] = []
@@ -81,15 +83,15 @@ def ingest(conn: psycopg.Connection, chunker: str, embeddings: OllamaEmbeddings)
     return len(chunks)
 
 
-def search(
+def search_chunks(
     conn: psycopg.Connection,
     chunker: str,
     vector: Sequence[float],
     language: str,
     k: int,
     sections: Sequence[str] | None = None,
-) -> list[str]:
-    """Clause IDs of the k nearest chunks of one language, nearest first.
+) -> list[tuple[str, str, str]]:
+    """(clause_id, section, content) of the k nearest chunks of one language, nearest first.
 
     `sections` (e.g. ["2", "3", "4"]) keeps only chunks whose primary clause is in those
     policy sections; the section column starts with the section number ("3. Comprehensive").
@@ -100,8 +102,28 @@ def search(
         where += " AND split_part(section, '.', 1) = ANY(%s)"
         params.append(list(sections))
     rows = conn.execute(
-        f"SELECT clause_id FROM {table_name(chunker)} WHERE {where} "
+        f"SELECT clause_id, section, content FROM {table_name(chunker)} WHERE {where} "
         "ORDER BY embedding <=> %s::vector LIMIT %s",
         (*params, list(vector), k),
     ).fetchall()
-    return [r[0] for r in rows]
+    return [(r[0], r[1], r[2]) for r in rows]
+
+
+def search(
+    conn: psycopg.Connection,
+    chunker: str,
+    vector: Sequence[float],
+    language: str,
+    k: int,
+    sections: Sequence[str] | None = None,
+) -> list[str]:
+    """Clause IDs of the k nearest chunks (see `search_chunks`)."""
+    return [r[0] for r in search_chunks(conn, chunker, vector, language, k, sections)]
+
+
+def ensure_ingested(conn: psycopg.Connection, chunker: str, embeddings: Embeddings) -> None:
+    """Ingest a collection only when its table is missing or empty."""
+    table = table_name(chunker)
+    exists = conn.execute("SELECT to_regclass(%s)", (table,)).fetchone()[0]
+    if exists is None or conn.execute(f"SELECT count(*) FROM {table}").fetchone()[0] == 0:
+        ingest(conn, chunker, embeddings)
