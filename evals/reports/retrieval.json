@@ -3,297 +3,2297 @@
     "clause": 56,
     "fixed": 43
   },
-  "claim_type_source": "claimed_event (the LLM classifier is not in this loop)",
-  "deterministic": {
-    "exact_match": 0.95,
-    "misses": [
-      {
-        "case_id": "GC-0009",
-        "expected": [
-          "CS-AUTO-5.1",
-          "CS-AUTO-7.1"
-        ],
-        "mapped": [
-          "CS-AUTO-5.2",
-          "CS-AUTO-6.3"
-        ]
-      },
-      {
-        "case_id": "GC-0012",
-        "expected": [
-          "CS-AUTO-5.1",
-          "CS-AUTO-7.2"
-        ],
-        "mapped": [
-          "CS-AUTO-5.1"
-        ]
-      },
-      {
-        "case_id": "GC-0053",
-        "expected": [
-          "CS-AUTO-5.1",
-          "CS-AUTO-7.1"
-        ],
-        "mapped": [
-          "CS-AUTO-5.2"
-        ]
-      }
-    ],
-    "n": 60
-  },
   "embedding_model": "bge-m3",
-  "hybrid_query": "<claimed_event>. <narrative>",
+  "hybrid_query": "<claim type>. <narrative>",
   "index": "hnsw(m=16, ef_construction=64) cosine",
   "labels": "expected.clause_ids in labels.json (decided)",
-  "results": {
-    "clause": {
-      "cross_lingual": {
-        "combined": {
-          "all": {
-            "mrr": null,
-            "n": 60,
-            "recall@3": 0.9208,
-            "recall@5": 0.9569
+  "language_dependent_cases": {
+    "GC-0009": {
+      "claimed_event": "map wrong (got ['CS-AUTO-5.2', 'CS-AUTO-6.3']), combined recall@5 0.25",
+      "classifier": "map exact, combined recall@5 1.00"
+    },
+    "GC-0012": {
+      "claimed_event": "map wrong (got ['CS-AUTO-5.1']), combined recall@5 0.75",
+      "classifier": "map exact, combined recall@5 1.00"
+    },
+    "GC-0053": {
+      "claimed_event": "map wrong (got ['CS-AUTO-5.2']), combined recall@5 0.50",
+      "classifier": "map exact, combined recall@5 1.00"
+    }
+  },
+  "sources": {
+    "claimed_event": {
+      "deterministic": {
+        "exact_match": 0.95,
+        "misses": [
+          {
+            "case_id": "GC-0009",
+            "expected": [
+              "CS-AUTO-5.1",
+              "CS-AUTO-7.1"
+            ],
+            "mapped": [
+              "CS-AUTO-5.2",
+              "CS-AUTO-6.3"
+            ]
           },
-          "en queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.9139,
-            "recall@5": 0.9639
+          {
+            "case_id": "GC-0012",
+            "expected": [
+              "CS-AUTO-5.1",
+              "CS-AUTO-7.2"
+            ],
+            "mapped": [
+              "CS-AUTO-5.1"
+            ]
           },
-          "es queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.9278,
-            "recall@5": 0.95
+          {
+            "case_id": "GC-0053",
+            "expected": [
+              "CS-AUTO-5.1",
+              "CS-AUTO-7.1"
+            ],
+            "mapped": [
+              "CS-AUTO-5.2"
+            ]
           }
+        ],
+        "n": 60
+      },
+      "per_case": {
+        "GC-0001": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
         },
-        "pure_semantic": {
-          "all": {
-            "mrr": 0.7381,
-            "n": 60,
-            "recall@3": 0.4106,
-            "recall@5": 0.5194
-          },
-          "en queries": {
-            "mrr": 0.7778,
-            "n": 30,
-            "recall@3": 0.445,
-            "recall@5": 0.5656
-          },
-          "es queries": {
-            "mrr": 0.6983,
-            "n": 30,
-            "recall@3": 0.3761,
-            "recall@5": 0.4733
-          }
+        "GC-0002": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3"
+          ]
         },
-        "semantic": {
-          "all": {
-            "mrr": 0.8681,
-            "n": 60,
-            "recall@3": 0.9,
-            "recall@5": 0.9583
-          },
-          "en queries": {
-            "mrr": 0.8528,
-            "n": 30,
-            "recall@3": 0.8833,
-            "recall@5": 0.9667
-          },
-          "es queries": {
-            "mrr": 0.8833,
-            "n": 30,
-            "recall@3": 0.9167,
-            "recall@5": 0.95
-          }
+        "GC-0003": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0004": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0005": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0006": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0007": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0008": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0009": {
+          "recall@5": 0.25,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.3",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0010": {
+          "recall@5": 0.75,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.3"
+          ]
+        },
+        "GC-0011": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0012": {
+          "recall@5": 0.75,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0013": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3"
+          ]
+        },
+        "GC-0014": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0015": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0016": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0017": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0018": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0019": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0020": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3"
+          ]
+        },
+        "GC-0021": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0022": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0023": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0024": {
+          "recall@5": 0.75,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0025": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0026": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0027": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0028": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0029": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0030": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0031": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0032": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0033": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0034": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0035": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0036": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0037": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0038": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.3"
+          ]
+        },
+        "GC-0039": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0040": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0041": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0042": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0043": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0044": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0045": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0046": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0047": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0048": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0049": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.6",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0050": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0051": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0052": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0053": {
+          "recall@5": 0.5,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0054": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0055": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0056": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0057": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0058": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.4",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0059": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0060": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
         }
       },
-      "monolingual": {
-        "combined": {
-          "all": {
-            "mrr": null,
-            "n": 60,
-            "recall@3": 0.9403,
-            "recall@5": 0.9667
+      "predictions": {
+        "GC-0001": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0002": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0003": {
+          "claim_type": "glass",
+          "fraud_signals": [
+            "vin_mismatch"
+          ]
+        },
+        "GC-0004": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0005": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0006": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0007": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0008": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0009": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0010": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0011": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0012": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0013": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0014": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0015": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0016": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0017": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0018": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0019": {
+          "claim_type": "flood",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0020": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0021": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0022": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0023": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0024": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0025": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0026": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0027": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0028": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0029": {
+          "claim_type": "collision",
+          "fraud_signals": [
+            "vin_mismatch"
+          ]
+        },
+        "GC-0030": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0031": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0032": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0033": {
+          "claim_type": "hail",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0034": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0035": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0036": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0037": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0038": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0039": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0040": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0041": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0042": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0043": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0044": {
+          "claim_type": "hail",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0045": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0046": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0047": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0048": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0049": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0050": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0051": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0052": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0053": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0054": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0055": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0056": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0057": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0058": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0059": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0060": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        }
+      },
+      "results": {
+        "clause": {
+          "cross_lingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.9208,
+                "recall@5": 0.9569
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9139,
+                "recall@5": 0.9639
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9278,
+                "recall@5": 0.95
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.7381,
+                "n": 60,
+                "recall@3": 0.4106,
+                "recall@5": 0.5194
+              },
+              "en queries": {
+                "mrr": 0.7778,
+                "n": 30,
+                "recall@3": 0.445,
+                "recall@5": 0.5656
+              },
+              "es queries": {
+                "mrr": 0.6983,
+                "n": 30,
+                "recall@3": 0.3761,
+                "recall@5": 0.4733
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.8681,
+                "n": 60,
+                "recall@3": 0.9,
+                "recall@5": 0.9583
+              },
+              "en queries": {
+                "mrr": 0.8528,
+                "n": 30,
+                "recall@3": 0.8833,
+                "recall@5": 0.9667
+              },
+              "es queries": {
+                "mrr": 0.8833,
+                "n": 30,
+                "recall@3": 0.9167,
+                "recall@5": 0.95
+              }
+            }
           },
-          "en queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.9556,
-            "recall@5": 0.975
-          },
-          "es queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.925,
-            "recall@5": 0.9583
+          "monolingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.9403,
+                "recall@5": 0.9667
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9556,
+                "recall@5": 0.975
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.925,
+                "recall@5": 0.9583
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.8667,
+                "n": 60,
+                "recall@3": 0.4356,
+                "recall@5": 0.5206
+              },
+              "en queries": {
+                "mrr": 0.9389,
+                "n": 30,
+                "recall@3": 0.47,
+                "recall@5": 0.5611
+              },
+              "es queries": {
+                "mrr": 0.7944,
+                "n": 30,
+                "recall@3": 0.4011,
+                "recall@5": 0.48
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.9139,
+                "n": 60,
+                "recall@3": 0.9333,
+                "recall@5": 0.975
+              },
+              "en queries": {
+                "mrr": 0.9667,
+                "n": 30,
+                "recall@3": 0.95,
+                "recall@5": 0.9833
+              },
+              "es queries": {
+                "mrr": 0.8611,
+                "n": 30,
+                "recall@3": 0.9167,
+                "recall@5": 0.9667
+              }
+            }
           }
         },
-        "pure_semantic": {
-          "all": {
-            "mrr": 0.8667,
-            "n": 60,
-            "recall@3": 0.4356,
-            "recall@5": 0.5206
+        "fixed": {
+          "cross_lingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.8481,
+                "recall@5": 0.925
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.85,
+                "recall@5": 0.9222
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.8461,
+                "recall@5": 0.9278
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.5475,
+                "n": 60,
+                "recall@3": 0.2856,
+                "recall@5": 0.3869
+              },
+              "en queries": {
+                "mrr": 0.6272,
+                "n": 30,
+                "recall@3": 0.2856,
+                "recall@5": 0.4244
+              },
+              "es queries": {
+                "mrr": 0.4678,
+                "n": 30,
+                "recall@3": 0.2856,
+                "recall@5": 0.3494
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.6889,
+                "n": 60,
+                "recall@3": 0.75,
+                "recall@5": 0.875
+              },
+              "en queries": {
+                "mrr": 0.6667,
+                "n": 30,
+                "recall@3": 0.7333,
+                "recall@5": 0.85
+              },
+              "es queries": {
+                "mrr": 0.7111,
+                "n": 30,
+                "recall@3": 0.7667,
+                "recall@5": 0.9
+              }
+            }
           },
-          "en queries": {
-            "mrr": 0.9389,
-            "n": 30,
-            "recall@3": 0.47,
-            "recall@5": 0.5611
-          },
-          "es queries": {
-            "mrr": 0.7944,
-            "n": 30,
-            "recall@3": 0.4011,
-            "recall@5": 0.48
-          }
-        },
-        "semantic": {
-          "all": {
-            "mrr": 0.9139,
-            "n": 60,
-            "recall@3": 0.9333,
-            "recall@5": 0.975
-          },
-          "en queries": {
-            "mrr": 0.9667,
-            "n": 30,
-            "recall@3": 0.95,
-            "recall@5": 0.9833
-          },
-          "es queries": {
-            "mrr": 0.8611,
-            "n": 30,
-            "recall@3": 0.9167,
-            "recall@5": 0.9667
+          "monolingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.8619,
+                "recall@5": 0.9064
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.925,
+                "recall@5": 0.9361
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.7989,
+                "recall@5": 0.8767
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.7061,
+                "n": 60,
+                "recall@3": 0.3656,
+                "recall@5": 0.4258
+              },
+              "en queries": {
+                "mrr": 0.7278,
+                "n": 30,
+                "recall@3": 0.3478,
+                "recall@5": 0.42
+              },
+              "es queries": {
+                "mrr": 0.6844,
+                "n": 30,
+                "recall@3": 0.3833,
+                "recall@5": 0.4317
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.7792,
+                "n": 60,
+                "recall@3": 0.775,
+                "recall@5": 0.8417
+              },
+              "en queries": {
+                "mrr": 0.8944,
+                "n": 30,
+                "recall@3": 0.8833,
+                "recall@5": 0.9
+              },
+              "es queries": {
+                "mrr": 0.6639,
+                "n": 30,
+                "recall@3": 0.6667,
+                "recall@5": 0.7833
+              }
+            }
           }
         }
       }
     },
-    "fixed": {
-      "cross_lingual": {
-        "combined": {
-          "all": {
-            "mrr": null,
-            "n": 60,
-            "recall@3": 0.8481,
-            "recall@5": 0.925
-          },
-          "en queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.85,
-            "recall@5": 0.9222
-          },
-          "es queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.8461,
-            "recall@5": 0.9278
+    "classifier": {
+      "deterministic": {
+        "exact_match": 0.9833,
+        "misses": [
+          {
+            "case_id": "GC-0010",
+            "expected": [
+              "CS-AUTO-5.2",
+              "CS-AUTO-6.3"
+            ],
+            "mapped": [
+              "CS-AUTO-5.3",
+              "CS-AUTO-7.1"
+            ]
           }
+        ],
+        "n": 60
+      },
+      "per_case": {
+        "GC-0001": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
         },
-        "pure_semantic": {
-          "all": {
-            "mrr": 0.5475,
-            "n": 60,
-            "recall@3": 0.2856,
-            "recall@5": 0.3869
-          },
-          "en queries": {
-            "mrr": 0.6272,
-            "n": 30,
-            "recall@3": 0.2856,
-            "recall@5": 0.4244
-          },
-          "es queries": {
-            "mrr": 0.4678,
-            "n": 30,
-            "recall@3": 0.2856,
-            "recall@5": 0.3494
-          }
+        "GC-0002": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3"
+          ]
         },
-        "semantic": {
-          "all": {
-            "mrr": 0.6889,
-            "n": 60,
-            "recall@3": 0.75,
-            "recall@5": 0.875
-          },
-          "en queries": {
-            "mrr": 0.6667,
-            "n": 30,
-            "recall@3": 0.7333,
-            "recall@5": 0.85
-          },
-          "es queries": {
-            "mrr": 0.7111,
-            "n": 30,
-            "recall@3": 0.7667,
-            "recall@5": 0.9
-          }
+        "GC-0003": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0004": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0005": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0006": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0007": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0008": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0009": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0010": {
+          "recall@5": 0.5,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.3",
+            "CS-AUTO-4.6"
+          ]
+        },
+        "GC-0011": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0012": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0013": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3"
+          ]
+        },
+        "GC-0014": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0015": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0016": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0017": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0018": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0019": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0020": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3"
+          ]
+        },
+        "GC-0021": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0022": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0023": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0024": {
+          "recall@5": 0.75,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0025": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0026": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0027": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0028": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0029": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0030": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0031": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0032": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0033": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0034": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0035": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0036": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0037": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0038": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.3"
+          ]
+        },
+        "GC-0039": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4"
+          ]
+        },
+        "GC-0040": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0041": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0042": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0043": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0044": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0045": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0046": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0047": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        "GC-0048": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.1"
+          ]
+        },
+        "GC-0049": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.6",
+            "CS-AUTO-2.2"
+          ]
+        },
+        "GC-0050": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        "GC-0051": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        "GC-0052": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0053": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        "GC-0054": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3"
+          ]
+        },
+        "GC-0055": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0056": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        "GC-0057": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4"
+          ]
+        },
+        "GC-0058": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.4",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.7"
+          ]
+        },
+        "GC-0059": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        "GC-0060": {
+          "recall@5": 1.0,
+          "semantic_top5": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
         }
       },
-      "monolingual": {
-        "combined": {
-          "all": {
-            "mrr": null,
-            "n": 60,
-            "recall@3": 0.8619,
-            "recall@5": 0.9064
+      "predictions": {
+        "GC-0001": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0002": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0003": {
+          "claim_type": "glass",
+          "fraud_signals": [
+            "vin_mismatch"
+          ]
+        },
+        "GC-0004": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0005": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0006": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0007": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0008": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0009": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0010": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0011": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0012": {
+          "claim_type": "collision",
+          "fraud_signals": [
+            "prompt_injection"
+          ]
+        },
+        "GC-0013": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0014": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0015": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0016": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0017": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0018": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0019": {
+          "claim_type": "flood",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0020": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0021": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0022": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0023": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0024": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0025": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0026": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0027": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0028": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0029": {
+          "claim_type": "collision",
+          "fraud_signals": [
+            "vin_mismatch"
+          ]
+        },
+        "GC-0030": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0031": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0032": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0033": {
+          "claim_type": "hail",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0034": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0035": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0036": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0037": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0038": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0039": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0040": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0041": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0042": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0043": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0044": {
+          "claim_type": "hail",
+          "fraud_signals": [
+            "weather_mismatch"
+          ]
+        },
+        "GC-0045": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0046": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0047": {
+          "claim_type": "vandalism",
+          "fraud_signals": []
+        },
+        "GC-0048": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0049": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0050": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0051": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0052": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0053": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0054": {
+          "claim_type": "collision",
+          "fraud_signals": []
+        },
+        "GC-0055": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0056": {
+          "claim_type": "hail",
+          "fraud_signals": []
+        },
+        "GC-0057": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        },
+        "GC-0058": {
+          "claim_type": "glass",
+          "fraud_signals": []
+        },
+        "GC-0059": {
+          "claim_type": "flood",
+          "fraud_signals": []
+        },
+        "GC-0060": {
+          "claim_type": "theft",
+          "fraud_signals": []
+        }
+      },
+      "results": {
+        "clause": {
+          "cross_lingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.95,
+                "recall@5": 0.9819
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9472,
+                "recall@5": 0.9889
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9528,
+                "recall@5": 0.975
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.7381,
+                "n": 60,
+                "recall@3": 0.4106,
+                "recall@5": 0.5194
+              },
+              "en queries": {
+                "mrr": 0.7778,
+                "n": 30,
+                "recall@3": 0.445,
+                "recall@5": 0.5656
+              },
+              "es queries": {
+                "mrr": 0.6983,
+                "n": 30,
+                "recall@3": 0.3761,
+                "recall@5": 0.4733
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.8889,
+                "n": 60,
+                "recall@3": 0.9333,
+                "recall@5": 0.9833
+              },
+              "en queries": {
+                "mrr": 0.8778,
+                "n": 30,
+                "recall@3": 0.9167,
+                "recall@5": 0.9833
+              },
+              "es queries": {
+                "mrr": 0.9,
+                "n": 30,
+                "recall@3": 0.95,
+                "recall@5": 0.9833
+              }
+            }
           },
-          "en queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.925,
-            "recall@5": 0.9361
-          },
-          "es queries": {
-            "mrr": null,
-            "n": 30,
-            "recall@3": 0.7989,
-            "recall@5": 0.8767
+          "monolingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.9611,
+                "recall@5": 0.9875
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9806,
+                "recall@5": 0.9917
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.9417,
+                "recall@5": 0.9833
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.8667,
+                "n": 60,
+                "recall@3": 0.4356,
+                "recall@5": 0.5206
+              },
+              "en queries": {
+                "mrr": 0.9389,
+                "n": 30,
+                "recall@3": 0.47,
+                "recall@5": 0.5611
+              },
+              "es queries": {
+                "mrr": 0.7944,
+                "n": 30,
+                "recall@3": 0.4011,
+                "recall@5": 0.48
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.9306,
+                "n": 60,
+                "recall@3": 0.95,
+                "recall@5": 0.9917
+              },
+              "en queries": {
+                "mrr": 0.9833,
+                "n": 30,
+                "recall@3": 0.9667,
+                "recall@5": 0.9833
+              },
+              "es queries": {
+                "mrr": 0.8778,
+                "n": 30,
+                "recall@3": 0.9333,
+                "recall@5": 1.0
+              }
+            }
           }
         },
-        "pure_semantic": {
-          "all": {
-            "mrr": 0.7061,
-            "n": 60,
-            "recall@3": 0.3656,
-            "recall@5": 0.4258
+        "fixed": {
+          "cross_lingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.8689,
+                "recall@5": 0.9458
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.875,
+                "recall@5": 0.9472
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.8628,
+                "recall@5": 0.9444
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.5475,
+                "n": 60,
+                "recall@3": 0.2856,
+                "recall@5": 0.3869
+              },
+              "en queries": {
+                "mrr": 0.6272,
+                "n": 30,
+                "recall@3": 0.2856,
+                "recall@5": 0.4244
+              },
+              "es queries": {
+                "mrr": 0.4678,
+                "n": 30,
+                "recall@3": 0.2856,
+                "recall@5": 0.3494
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.6889,
+                "n": 60,
+                "recall@3": 0.7667,
+                "recall@5": 0.8917
+              },
+              "en queries": {
+                "mrr": 0.6667,
+                "n": 30,
+                "recall@3": 0.75,
+                "recall@5": 0.8667
+              },
+              "es queries": {
+                "mrr": 0.7111,
+                "n": 30,
+                "recall@3": 0.7833,
+                "recall@5": 0.9167
+              }
+            }
           },
-          "en queries": {
-            "mrr": 0.7278,
-            "n": 30,
-            "recall@3": 0.3478,
-            "recall@5": 0.42
-          },
-          "es queries": {
-            "mrr": 0.6844,
-            "n": 30,
-            "recall@3": 0.3833,
-            "recall@5": 0.4317
-          }
-        },
-        "semantic": {
-          "all": {
-            "mrr": 0.7792,
-            "n": 60,
-            "recall@3": 0.775,
-            "recall@5": 0.8417
-          },
-          "en queries": {
-            "mrr": 0.8944,
-            "n": 30,
-            "recall@3": 0.8833,
-            "recall@5": 0.9
-          },
-          "es queries": {
-            "mrr": 0.6639,
-            "n": 30,
-            "recall@3": 0.6667,
-            "recall@5": 0.7833
+          "monolingual": {
+            "combined": {
+              "all": {
+                "mrr": null,
+                "n": 60,
+                "recall@3": 0.8828,
+                "recall@5": 0.9272
+              },
+              "en queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.95,
+                "recall@5": 0.9611
+              },
+              "es queries": {
+                "mrr": null,
+                "n": 30,
+                "recall@3": 0.8156,
+                "recall@5": 0.8933
+              }
+            },
+            "pure_semantic": {
+              "all": {
+                "mrr": 0.7061,
+                "n": 60,
+                "recall@3": 0.3656,
+                "recall@5": 0.4258
+              },
+              "en queries": {
+                "mrr": 0.7278,
+                "n": 30,
+                "recall@3": 0.3478,
+                "recall@5": 0.42
+              },
+              "es queries": {
+                "mrr": 0.6844,
+                "n": 30,
+                "recall@3": 0.3833,
+                "recall@5": 0.4317
+              }
+            },
+            "semantic": {
+              "all": {
+                "mrr": 0.7792,
+                "n": 60,
+                "recall@3": 0.7917,
+                "recall@5": 0.8583
+              },
+              "en queries": {
+                "mrr": 0.8944,
+                "n": 30,
+                "recall@3": 0.9,
+                "recall@5": 0.9167
+              },
+              "es queries": {
+                "mrr": 0.6639,
+                "n": 30,
+                "recall@3": 0.6833,
+                "recall@5": 0.8
+              }
+            }
           }
         }
       }

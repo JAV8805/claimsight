@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from claimsight.baselines.rules import predict
 from claimsight.evals.harness import load_golden
 from claimsight.rag.chunking import (
     chunk_by_clause,
@@ -163,7 +164,8 @@ def test_clause_map_reproduces_every_decided_non_semantic_label() -> None:
 
 
 def test_deterministic_part_misses_only_what_needs_the_llm() -> None:
-    result = deterministic_exact(load_golden())
+    cases = load_golden()
+    result = deterministic_exact(cases, [predict(c.policy, c.inputs, c.facts) for c in cases])
     assert {m["case_id"] for m in result["misses"]} == {"GC-0009", "GC-0012", "GC-0053"}
     assert result["exact_match"] == round(57 / 60, 4)
 
@@ -182,3 +184,23 @@ def test_table_name_only_accepts_known_chunkers() -> None:
     assert table_name("fixed") == "policy_chunks_fixed"
     with pytest.raises(ValueError):
         table_name("x; DROP TABLE policy_chunks_clause")
+
+
+def test_cached_embeddings_embed_each_text_once(tmp_path) -> None:
+    from claimsight.rag.embeddings import CachedEmbeddings
+
+    class Counting:
+        calls: list[list[str]] = []
+
+        def embed_documents(self, texts: list[str]) -> list[list[float]]:
+            self.calls.append(texts)
+            return [[float(len(t))] for t in texts]
+
+    inner, path = Counting(), tmp_path / "cache.json"
+    cached = CachedEmbeddings(inner, "m", path)
+    assert cached.embed_documents(["a", "bb", "a"]) == [[1.0], [2.0], [1.0]]
+    assert cached.embed_query("bb") == [2.0] and inner.calls == [["a", "bb"]]  # second is a hit
+    again = CachedEmbeddings(inner, "m", path)  # persisted on disk
+    assert again.embed_query("a") == [1.0] and len(inner.calls) == 1
+    other = CachedEmbeddings(inner, "other", path)  # a different model never shares vectors
+    assert other.embed_query("a") == [1.0] and len(inner.calls) == 2

@@ -11,6 +11,8 @@ from importlib import import_module
 from pathlib import Path
 from typing import Any
 
+from claimsight.evals.coverage import coverage_block
+from claimsight.evals.coverage import load_proposals as load_coverage_proposals
 from claimsight.evals.schema import (
     CaseFacts,
     ClaimInput,
@@ -26,8 +28,9 @@ REPORTS_DIR = Path("evals/reports")
 PREDICTORS = {  # name -> module:function (a factory taking a model for "triage")
     "baseline": "claimsight.baselines.rules:predict",
     "triage": "claimsight.agents.triage:make_predictor",
+    "coverage": "claimsight.agents.triage:make_coverage_predictor",
 }
-FACTORIES = frozenset({"triage"})
+FACTORIES = frozenset({"triage", "coverage"})
 ACCURACY_FIELDS = ("claim_type", "weather_verdict", "routing")
 HEADLINE = "routing_accuracy"
 GROUPS: dict[str, Callable[[GoldenCase], str]] = {
@@ -105,6 +108,8 @@ def run(name: str, cases: list[GoldenCase], predictor: Predictor) -> dict[str, A
     report: dict[str, Any] = {"predictor": name, "golden": GOLDEN_PATH.name}
     if per_case:
         report["cost"] = cost_block(per_case)
+    if getattr(predictor, "reports_coverage", False):
+        report["coverage"] = coverage_block(pairs, per_case, load_coverage_proposals())
     report["overall"] = score(pairs)
     for group, key in GROUPS.items():
         labels = sorted({key(c) for c, _ in pairs})
@@ -150,6 +155,15 @@ def markdown(report: dict[str, Any]) -> str:
     return "\n".join(rows)
 
 
+def write_report(name: str, report: dict[str, Any]) -> Path:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    out = REPORTS_DIR / f"{name}.json"
+    out.write_text(
+        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    return out
+
+
 def report_name(predictor: str, model: str | None) -> str:
     """File stem of a report: 'baseline', or 'triage-<model>' with ':' and '/' replaced."""
     if predictor not in FACTORIES:
@@ -172,12 +186,10 @@ def main(argv: list[str]) -> int:
     report = run(name, load_golden(), load_predictor(predictor, model))
     if model:
         report["model"] = model
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = REPORTS_DIR / f"{name}.json"
-    out.write_text(
-        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    out = write_report(name, report)
     print(markdown(report))
+    if "coverage" in report:
+        print("\ncoverage (provisional):", json.dumps(report["coverage"], ensure_ascii=False))
     if "cost" in report:
         t = report["cost"]["total"]
         print(

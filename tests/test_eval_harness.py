@@ -87,9 +87,18 @@ def test_baseline_two_signals_route_to_siu() -> None:
 
 def test_committed_llm_reports_are_complete_and_free() -> None:
     reports = sorted(Path("evals/reports").glob("triage-*.json"))
+    reports += sorted(Path("evals/reports").glob("coverage-*.json"))
     assert reports, "run make eval-llm for each supported model"
     for path in reports:
         report = json.loads(path.read_text(encoding="utf-8"))
         total = report["cost"]["total"]
         assert report["overall"]["n"] == len(report["cost"]["per_case"])
         assert total["llm_failures"] == 0 and total["cost_usd"] == 0.0
+
+
+def test_committed_coverage_report_has_the_grounded_coverage_metrics() -> None:
+    for path in Path("evals/reports").glob("coverage-*.json"):
+        block = json.loads(path.read_text(encoding="utf-8"))["coverage"]
+        assert block["n"] == 60 and "provisional" in block
+        assert block["citation_violation_rate_before_validator"] is not None
+        assert block["latency_s_mean"] > 0

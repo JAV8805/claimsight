@@ -54,8 +54,24 @@ MODEL ?= ollama:qwen2.5:7b
 eval-llm:
 > uv run python -m claimsight.evals.harness triage --model $(MODEL)
 
-# Retrieval eval: ingests the policy corpus into pgvector and scores recall@k / MRR.
-# Needs `make up` (Postgres) and Ollama with bge-m3.
-.PHONY: eval-retrieval
-eval-retrieval:
+# --- Staged evals: ONE model in memory at a time (8 GB RAM cannot hold 7B chat + bge-m3) ---
+# Recommended: run the Ollama server with OLLAMA_MAX_LOADED_MODELS=1 (see docs/rag.md). The
+# targets below also unload each model explicitly (`ollama stop`) before the next stage.
+# Order: make eval-classify; make eval-retrieval; make eval-coverage
+CHAT = $(patsubst ollama:%,%,$(MODEL))
+STAGED = set -a && . ./.env && set +a && uv run python -m claimsight.evals.staged_coverage
+
+.PHONY: eval-classify eval-retrieval eval-coverage
+eval-classify:  # stage 1 (chat model): claim type and signals per case, cached
+> $(STAGED) classify --model $(MODEL)
+> ollama stop $(CHAT) || true
+
+eval-retrieval:  # embedding model only; reads the stage 1 cache for the classifier source
 > set -a && . ./.env && set +a && uv run python -m claimsight.rag.eval_retrieval
+> ollama stop bge-m3 || true
+
+eval-coverage:  # stage 2 (embedding model), then stage 3 (chat model) from the cache
+> $(STAGED) retrieve
+> ollama stop bge-m3 || true
+> $(STAGED) generate --model $(MODEL)
+> ollama stop $(CHAT) || true
