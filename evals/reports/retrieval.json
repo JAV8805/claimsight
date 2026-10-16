@@ -1,0 +1,3583 @@
+{
+  "chunks": {
+    "clause": 56,
+    "fixed": 43
+  },
+  "embedding_model": "bge-m3",
+  "index": "hnsw(m=16, ef_construction=64) cosine",
+  "labels": "clause_proposals.json (proposed, pending review)",
+  "misses": {
+    "clause": {
+      "cross_lingual": [
+        {
+          "case_id": "GC-0001",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0002",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0003",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0004",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0005",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0006",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0007",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0008",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0009",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-4.7",
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0010",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.1"
+          ]
+        },
+        {
+          "case_id": "GC-0011",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.2"
+          ]
+        },
+        {
+          "case_id": "GC-0012",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0013",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ]
+        },
+        {
+          "case_id": "GC-0014",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-2.1",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0015",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-4.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0016",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0017",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-7.1",
+            "CS-AUTO-1.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0018",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0019",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-5.2"
+          ]
+        },
+        {
+          "case_id": "GC-0020",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0022",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0023",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0024",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0025",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0027",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0028",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0029",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0030",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0031",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0032",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0033",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0034",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.6",
+            "CS-AUTO-2.1",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0035",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0036",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-7.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0037",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-6.4",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0038",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0039",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0040",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0041",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0042",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0044",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0045",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0046",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0047",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0048",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.2"
+          ]
+        },
+        {
+          "case_id": "GC-0049",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6"
+          ]
+        },
+        {
+          "case_id": "GC-0050",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0051",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0052",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0053",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0054",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.1"
+          ]
+        },
+        {
+          "case_id": "GC-0055",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0056",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0057",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0058",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0059",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.2"
+          ]
+        },
+        {
+          "case_id": "GC-0060",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2"
+          ]
+        }
+      ],
+      "monolingual": [
+        {
+          "case_id": "GC-0001",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0002",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0003",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0004",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-4.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0005",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0006",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0007",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0008",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0009",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0010",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.3"
+          ]
+        },
+        {
+          "case_id": "GC-0011",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0012",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0013",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0014",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0015",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0016",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0017",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-7.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0018",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0019",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0020",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0021",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0022",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0023",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0024",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0025",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0026",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0027",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0028",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.2",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0029",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0030",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0031",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.1"
+          ]
+        },
+        {
+          "case_id": "GC-0033",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0034",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0035",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0036",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-1.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0037",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0038",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0039",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0040",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0041",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0042",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0044",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-5.2",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0045",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0046",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0047",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0049",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0050",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0051",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0052",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0053",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0054",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0055",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0056",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0057",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0058",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-1.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0059",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.2",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0060",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6"
+          ]
+        }
+      ]
+    },
+    "fixed": {
+      "cross_lingual": [
+        {
+          "case_id": "GC-0001",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0002",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0003",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0004",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0005",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0006",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0007",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0008",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0009",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0010",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.2",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0011",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.2"
+          ]
+        },
+        {
+          "case_id": "GC-0012",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.4",
+            "CS-AUTO-4.5",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0013",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0014",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.1",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0015",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0016",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0017",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.2",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3"
+          ]
+        },
+        {
+          "case_id": "GC-0018",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.2",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0019",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0020",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0021",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0022",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0023",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.5"
+          ]
+        },
+        {
+          "case_id": "GC-0024",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0025",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0026",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0027",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.1",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0028",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2",
+            "CS-AUTO-5.1"
+          ]
+        },
+        {
+          "case_id": "GC-0029",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0030",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.1",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0031",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0032",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.1",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0033",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0034",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.5",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0035",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0036",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0037",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.1",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.7",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0038",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.2",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0039",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.4",
+            "CS-AUTO-4.3"
+          ]
+        },
+        {
+          "case_id": "GC-0040",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0041",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0042",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0043",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0044",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0045",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0046",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.2",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-5.1"
+          ]
+        },
+        {
+          "case_id": "GC-0047",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0048",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0049",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0050",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.6"
+          ]
+        },
+        {
+          "case_id": "GC-0051",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0052",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.3",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0053",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.3"
+          ]
+        },
+        {
+          "case_id": "GC-0054",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0055",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0056",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0057",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.1"
+          ]
+        },
+        {
+          "case_id": "GC-0058",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.5",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0059",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0060",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-4.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.3"
+          ]
+        }
+      ],
+      "monolingual": [
+        {
+          "case_id": "GC-0001",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0002",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0003",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0004",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1"
+          ]
+        },
+        {
+          "case_id": "GC-0005",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0006",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0007",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0008",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0009",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0010",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0011",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0012",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4",
+            "CS-AUTO-7.2"
+          ]
+        },
+        {
+          "case_id": "GC-0013",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0014",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0015",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0016",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0017",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0018",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0019",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0020",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7"
+          ]
+        },
+        {
+          "case_id": "GC-0021",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0022",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0023",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0024",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-4.6",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-6.4"
+          ]
+        },
+        {
+          "case_id": "GC-0025",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ]
+        },
+        {
+          "case_id": "GC-0026",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0027",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0028",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0029",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-1.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0030",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.1",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0031",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0032",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.7",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0033",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.6",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0034",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-4.6",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0035",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0036",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-7.2",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0037",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.1",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.2"
+          ]
+        },
+        {
+          "case_id": "GC-0038",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0039",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-2.1",
+            "CS-AUTO-4.5"
+          ]
+        },
+        {
+          "case_id": "GC-0040",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0041",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.3",
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2"
+          ]
+        },
+        {
+          "case_id": "GC-0042",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.5",
+            "CS-AUTO-3.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.4"
+          ]
+        },
+        {
+          "case_id": "GC-0043",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0044",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-5.1"
+          ]
+        },
+        {
+          "case_id": "GC-0045",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.6",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0046",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.1",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0047",
+          "expected": [
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.1",
+            "CS-AUTO-3.6"
+          ]
+        },
+        {
+          "case_id": "GC-0049",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-6.2",
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.4",
+            "CS-AUTO-6.1",
+            "CS-AUTO-3.3"
+          ]
+        },
+        {
+          "case_id": "GC-0050",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-4.7",
+            "CS-AUTO-3.6",
+            "CS-AUTO-4.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.4"
+          ]
+        },
+        {
+          "case_id": "GC-0051",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.4",
+            "CS-AUTO-4.7"
+          ]
+        },
+        {
+          "case_id": "GC-0052",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.3",
+            "CS-AUTO-6.2"
+          ]
+        },
+        {
+          "case_id": "GC-0053",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1",
+            "CS-AUTO-7.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.3",
+            "CS-AUTO-3.1"
+          ]
+        },
+        {
+          "case_id": "GC-0054",
+          "expected": [
+            "CS-AUTO-2.1",
+            "CS-AUTO-2.2",
+            "CS-AUTO-5.1"
+          ],
+          "retrieved": [
+            "CS-AUTO-2.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.2",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0055",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-3.2"
+          ]
+        },
+        {
+          "case_id": "GC-0056",
+          "expected": [
+            "CS-AUTO-3.5",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.4",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0057",
+          "expected": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.2",
+            "CS-AUTO-3.4",
+            "CS-AUTO-6.3",
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.5"
+          ]
+        },
+        {
+          "case_id": "GC-0058",
+          "expected": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-5.3",
+            "CS-AUTO-4.4"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.4",
+            "CS-AUTO-3.5",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.6",
+            "CS-AUTO-2.3"
+          ]
+        },
+        {
+          "case_id": "GC-0059",
+          "expected": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-5.2",
+            "CS-AUTO-4.7"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.6",
+            "CS-AUTO-3.7",
+            "CS-AUTO-6.3",
+            "CS-AUTO-4.7",
+            "CS-AUTO-4.1"
+          ]
+        },
+        {
+          "case_id": "GC-0060",
+          "expected": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.3",
+            "CS-AUTO-5.2"
+          ],
+          "retrieved": [
+            "CS-AUTO-3.1",
+            "CS-AUTO-6.2",
+            "CS-AUTO-6.1",
+            "CS-AUTO-2.3",
+            "CS-AUTO-4.7"
+          ]
+        }
+      ]
+    }
+  },
+  "results": {
+    "clause": {
+      "cross_lingual": {
+        "all": {
+          "mrr": 0.7422,
+          "n": 60,
+          "recall@3": 0.4106,
+          "recall@5": 0.5139
+        },
+        "en queries": {
+          "mrr": 0.7778,
+          "n": 30,
+          "recall@3": 0.4394,
+          "recall@5": 0.5544
+        },
+        "es queries": {
+          "mrr": 0.7067,
+          "n": 30,
+          "recall@3": 0.3817,
+          "recall@5": 0.4733
+        }
+      },
+      "monolingual": {
+        "all": {
+          "mrr": 0.8667,
+          "n": 60,
+          "recall@3": 0.4272,
+          "recall@5": 0.515
+        },
+        "en queries": {
+          "mrr": 0.9389,
+          "n": 30,
+          "recall@3": 0.4644,
+          "recall@5": 0.55
+        },
+        "es queries": {
+          "mrr": 0.7944,
+          "n": 30,
+          "recall@3": 0.39,
+          "recall@5": 0.48
+        }
+      }
+    },
+    "fixed": {
+      "cross_lingual": {
+        "all": {
+          "mrr": 0.5531,
+          "n": 60,
+          "recall@3": 0.2856,
+          "recall@5": 0.3869
+        },
+        "en queries": {
+          "mrr": 0.6272,
+          "n": 30,
+          "recall@3": 0.28,
+          "recall@5": 0.4189
+        },
+        "es queries": {
+          "mrr": 0.4789,
+          "n": 30,
+          "recall@3": 0.2911,
+          "recall@5": 0.355
+        }
+      },
+      "monolingual": {
+        "all": {
+          "mrr": 0.7061,
+          "n": 60,
+          "recall@3": 0.3544,
+          "recall@5": 0.4175
+        },
+        "en queries": {
+          "mrr": 0.7278,
+          "n": 30,
+          "recall@3": 0.3367,
+          "recall@5": 0.4144
+        },
+        "es queries": {
+          "mrr": 0.6844,
+          "n": 30,
+          "recall@3": 0.3722,
+          "recall@5": 0.4206
+        }
+      }
+    }
+  }
+}

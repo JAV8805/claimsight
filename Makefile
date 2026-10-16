@@ -53,3 +53,9 @@ MODEL ?= ollama:qwen2.5:7b
 .PHONY: eval-llm
 eval-llm:
 > uv run python -m claimsight.evals.harness triage --model $(MODEL)
+
+# Retrieval eval: ingests the policy corpus into pgvector and scores recall@k / MRR.
+# Needs `make up` (Postgres) and Ollama with bge-m3.
+.PHONY: eval-retrieval
+eval-retrieval:
+> set -a && . ./.env && set +a && uv run python -m claimsight.rag.eval_retrieval

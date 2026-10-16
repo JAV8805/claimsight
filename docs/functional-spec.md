@@ -1,6 +1,6 @@
 # ClaimSight — Functional Specification
 
-Version 0.7 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
+Version 0.8 · Living document, updated every lesson. This document describes how the system behaves; test evidence lives in `docs/evals/validation-log.md`.
 
 ## 1. Purpose and scope
 
@@ -59,6 +59,7 @@ ClaimSight is a copilot for **auto claims triage at first notice of loss (FNOL)*
 | FR-10 | **No discrimination by data origin.** Being unable to verify a vehicle in an external source (for example, a vehicle outside the US market) is never, on its own, a fraud signal or a reason for worse treatment | Planned (L2.1) |
 | FR-11 | **Claimed event vs narrative.** The claim type is classified from the narrative. When the narrative describes a different event than the claimed one, the claim type follows the narrative and the claim goes to adjuster review to clarify. This is **not a fraud signal by itself**. Weather is verified only when the classified claim type is hail or flood | Implemented in the triage graph (`claimsight.agents.triage`) |
 | FR-12 | **LLM outputs are advisory.** A language model only extracts information from the claimant's text (claim type, whether the text tries to instruct the system, a short rationale). Its output is an input to the deterministic policy (FR-03 to FR-06); it never sets routing, and untrusted text never changes routing directly. The narrative is passed as delimited data with an instruction to extract only. A detected prompt injection adds the prompt injection signal. If the model fails or returns unusable output, the system falls back to the claimed event and the deterministic rules | Implemented in the triage graph (`claimsight.agents.triage`) |
+| FR-13 | **Coverage evidence comes only from the policy.** Any statement about coverage, exclusions, deductibles or duties cites clauses retrieved from the policy wording, each with its stable ID (for example CS-AUTO-4.2). The system never states a coverage term it did not retrieve; when no clause supports a statement, the brief says so. Retrieval works across languages: a claim in Spanish can be matched against English clauses and the reverse | Retrieval implemented, quality baseline measured (`claimsight.rag`); citation in the brief planned (L2.2b) |
 
 ### 5.1 Three-level vehicle verification (FR-05)
 
@@ -137,6 +138,7 @@ Injury claims, claims in litigation, complex multi-party liability, total-loss v
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.8 | 2026-10-16 | New FR-13: coverage evidence comes only from retrieved policy clauses with stable IDs |
 | 0.7 | 2026-10-16 | New FR-12: LLM outputs are advisory inputs to deterministic policy; untrusted text never changes routing directly. FR-11: a claim whose narrative contradicts the claimed event is never fast-tracked |
 | 0.6 | 2026-10-16 | FR-03: fast track applies only to collision and glass claims with no fraud signals and a VIN that matches the policy; theft, vandalism, hail and flood always go to at least adjuster review |
 | 0.5 | 2026-10-16 | FR-03 rewritten as a routing policy (SIU needs 2 or more signals or prompt injection; fast track needs a VIN match); FR-05 level 2: a malformed VIN is not a fraud signal and VIN mismatch applies only to well-formed VINs; new FR-11: a narrative that contradicts the claimed event is not a fraud signal by itself |
