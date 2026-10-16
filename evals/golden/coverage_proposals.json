@@ -1,0 +1,247 @@
+{
+  "status": "PROPOSED by Claude, pending review by José. Not in labels.json. Coverage accuracy in the harness is scored against these and reported as provisional.",
+  "definition": "coverage_decision a correct system should give: covered, not_covered or needs_review. Derived from the decided clause_ids and signals: needs_review when a doubt clause (1.1, 6.4, 7.1, 7.2, 4.6, 4.7) or a weather mismatch applies, otherwise covered.",
+  "note": "No golden case triggers an exclusion that denies the whole claim (racing, intoxication, unlisted driver), so not_covered is never proposed and that class is untested. The golden set must grow with such cases.",
+  "cases": {
+    "GC-0001": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0002": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0003": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.4 apply in principle, but the VIN does not match the insured vehicle; what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0004": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0005": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0006": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0007": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0008": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0009": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.3 apply in principle, but what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0010": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.2 apply in principle, but part of the loss is personal belongings, excluded by 4.6."
+    },
+    "GC-0011": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0012": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.2 apply in principle, but the narrative contains instructions to the system (7.2): a person decides."
+    },
+    "GC-0013": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0014": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0015": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0016": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0017": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.3 apply in principle, but the reported VIN is malformed; what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0018": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0019": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.6 apply in principle, but historical weather does not support the claimed event (FR-06)."
+    },
+    "GC-0020": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0021": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0022": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0023": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0024": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.2 apply in principle, but part of the loss is personal belongings, excluded by 4.6."
+    },
+    "GC-0025": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0026": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0027": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0028": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0029": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.2 apply in principle, but the VIN does not match the insured vehicle; what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0030": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0031": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0032": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0033": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.5 apply in principle, but historical weather does not support the claimed event (FR-06)."
+    },
+    "GC-0034": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0035": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0036": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.2 apply in principle, but the reported VIN is malformed; what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0037": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.6 apply in principle, but driving into water may reduce the claim (4.7)."
+    },
+    "GC-0038": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.1; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0039": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0040": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0041": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0042": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0043": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0044": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.5 apply in principle, but historical weather does not support the claimed event (FR-06)."
+    },
+    "GC-0045": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0046": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.1; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0047": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0048": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.6; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0049": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.1; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0050": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0051": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.3; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0052": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0053": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-2.1, CS-AUTO-2.2 apply in principle, but what the insured reported is inconsistent (7.1)."
+    },
+    "GC-0054": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-2.1, CS-AUTO-2.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0055": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0056": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.5; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0057": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.2; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0058": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.4; no exclusion, inconsistency or signal in the case."
+    },
+    "GC-0059": {
+      "coverage_decision": "needs_review",
+      "rationale": "Coverage clauses CS-AUTO-3.6 apply in principle, but driving into water may reduce the claim (4.7)."
+    },
+    "GC-0060": {
+      "coverage_decision": "covered",
+      "rationale": "Covered under CS-AUTO-3.1; no exclusion, inconsistency or signal in the case."
+    }
+  }
+}

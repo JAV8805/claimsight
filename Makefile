@@ -59,3 +59,9 @@ eval-llm:
 .PHONY: eval-retrieval
 eval-retrieval:
 > set -a && . ./.env && set +a && uv run python -m claimsight.rag.eval_retrieval
+
+# Grounded coverage (triage + retrieval + generation + citation validation). Needs `make up`,
+# Ollama, and the policy ingested (make eval-retrieval does it): make eval-coverage MODEL=...
+.PHONY: eval-coverage
+eval-coverage:
+> set -a && . ./.env && set +a && uv run python -m claimsight.evals.harness coverage --model $(MODEL)
