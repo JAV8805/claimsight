@@ -13,13 +13,10 @@ from claimsight.evals.schema import (
     Expected,
     FraudSignal,
     PolicyRecord,
-    Routing,
 )
 from claimsight.evals.vin import VIN_RE
+from claimsight.rules.routing import route
 from claimsight.rules.weather import weather_verdict
-
-# FR-03 (spec v0.6): fast track applies only to collision and glass claims.
-FAST_TRACK_TYPES = frozenset({"collision", "glass"})
 
 
 def predict(policy: PolicyRecord, inputs: ClaimInput, facts: CaseFacts) -> Expected:
@@ -49,14 +46,5 @@ def predict(policy: PolicyRecord, inputs: ClaimInput, facts: CaseFacts) -> Expec
         weather_verdict=verdict,
         fraud_flag=bool(signals),
         fraud_signals=signals,
-        routing=_route(claim_type, vin_matches and vin_format_valid, signals),
+        routing=route(claim_type, vin_matches and vin_format_valid, signals),
     )
-
-
-def _route(claim_type: str, vin_ok: bool, signals: list[FraudSignal]) -> Routing:
-    """FR-03 routing policy."""
-    if len(set(signals)) >= 2 or "prompt_injection" in signals:
-        return "siu_referral"
-    if signals or not vin_ok:  # a single signal or an unconfirmed VIN: a human decides
-        return "adjuster_review"
-    return "fast_track" if claim_type in FAST_TRACK_TYPES else "adjuster_review"

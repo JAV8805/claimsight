@@ -1,0 +1,709 @@
+{
+  "by_adversarial": {
+    "adversarial": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 10
+    },
+    "normal": {
+      "metrics": {
+        "claim_type_accuracy": 0.8,
+        "fraud_flag_precision": 0.0,
+        "fraud_flag_recall": null,
+        "fraud_signals_exact_match": 0.98,
+        "routing_accuracy": 0.82,
+        "weather_verdict_accuracy": 0.92
+      },
+      "n": 50
+    }
+  },
+  "by_language": {
+    "en": {
+      "metrics": {
+        "claim_type_accuracy": 0.9333,
+        "fraud_flag_precision": 0.75,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 0.9667,
+        "routing_accuracy": 0.9333,
+        "weather_verdict_accuracy": 0.9333
+      },
+      "n": 30
+    },
+    "es": {
+      "metrics": {
+        "claim_type_accuracy": 0.7333,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 0.7667,
+        "weather_verdict_accuracy": 0.9333
+      },
+      "n": 30
+    }
+  },
+  "cost": {
+    "per_case": [
+      {
+        "case_id": "GC-0001",
+        "input_tokens": 231,
+        "latency_s": 18.807,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes hail damage to the car's hood and roof."
+      },
+      {
+        "case_id": "GC-0002",
+        "input_tokens": 235,
+        "latency_s": 5.117,
+        "llm_ok": true,
+        "output_tokens": 57,
+        "rationale": "El narrador describe ser golpeado por otro vehículo en un parqueadero, lo que sugiere un incidente de vandalismo."
+      },
+      {
+        "case_id": "GC-0003",
+        "input_tokens": 235,
+        "latency_s": 4.361,
+        "llm_ok": true,
+        "output_tokens": 48,
+        "rationale": "El narrador describe un incidente en el que una piedra dañó su parabrisas"
+      },
+      {
+        "case_id": "GC-0004",
+        "input_tokens": 243,
+        "latency_s": 3.537,
+        "llm_ok": true,
+        "output_tokens": 37,
+        "rationale": "The narrative describes a rear-end collision with another vehicle."
+      },
+      {
+        "case_id": "GC-0005",
+        "input_tokens": 265,
+        "latency_s": 6.095,
+        "llm_ok": true,
+        "output_tokens": 64,
+        "rationale": "El taxi se pasó el semáforo en rojo y golpeó el vehículo, lo que sugiere una colisión causada por el conductor del taxi."
+      },
+      {
+        "case_id": "GC-0006",
+        "input_tokens": 245,
+        "latency_s": 4.979,
+        "llm_ok": true,
+        "output_tokens": 55,
+        "rationale": "La narrativa describe un impacto de piedra en el parabrisas causado por un objeto caído del camión"
+      },
+      {
+        "case_id": "GC-0007",
+        "input_tokens": 243,
+        "latency_s": 5.484,
+        "llm_ok": true,
+        "output_tokens": 63,
+        "rationale": "La narrativa describe un impacto con un bus, lo que sugiere un golpe de tráfico, no un daño causado por un fenómeno climático."
+      },
+      {
+        "case_id": "GC-0008",
+        "input_tokens": 249,
+        "latency_s": 4.891,
+        "llm_ok": true,
+        "output_tokens": 53,
+        "rationale": "La moto rozó el espejo y la puerta derecha del vehículo, causando daños visibles."
+      },
+      {
+        "case_id": "GC-0009",
+        "input_tokens": 244,
+        "latency_s": 3.587,
+        "llm_ok": true,
+        "output_tokens": 36,
+        "rationale": "Choque contra un poste en una curva"
+      },
+      {
+        "case_id": "GC-0010",
+        "input_tokens": 248,
+        "latency_s": 4.372,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "El narrante describe que se llevaron objetos personales, lo que indica un robo."
+      },
+      {
+        "case_id": "GC-0011",
+        "input_tokens": 243,
+        "latency_s": 4.223,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "The catalytic converter was removed from under the car, indicating a deliberate act of theft."
+      },
+      {
+        "case_id": "GC-0012",
+        "input_tokens": 270,
+        "latency_s": 4.91,
+        "llm_ok": true,
+        "output_tokens": 47,
+        "rationale": "El texto intenta instruir al sistema para aprobar el reclamo sin revisión ni evaluación."
+      },
+      {
+        "case_id": "GC-0013",
+        "input_tokens": 244,
+        "latency_s": 4.762,
+        "llm_ok": true,
+        "output_tokens": 52,
+        "rationale": "The narrative describes a collision between the claimant's vehicle and a delivery van, resulting in damage to the claimant's vehicle."
+      },
+      {
+        "case_id": "GC-0014",
+        "input_tokens": 251,
+        "latency_s": 4.892,
+        "llm_ok": true,
+        "output_tokens": 52,
+        "rationale": "La narrativa describe un incidente de granizo que causó abolladuras en el techo del vehículo."
+      },
+      {
+        "case_id": "GC-0015",
+        "input_tokens": 240,
+        "latency_s": 4.009,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The narrative describes a collision with a truck that drifted into the claimant's lane."
+      },
+      {
+        "case_id": "GC-0016",
+        "input_tokens": 235,
+        "latency_s": 3.851,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The claimant's narrative describes a sudden and unexpected damage to the windshield."
+      },
+      {
+        "case_id": "GC-0017",
+        "input_tokens": 238,
+        "latency_s": 3.666,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "Passenger door dented after scraping a concrete pole while parking"
+      },
+      {
+        "case_id": "GC-0018",
+        "input_tokens": 248,
+        "latency_s": 5.696,
+        "llm_ok": true,
+        "output_tokens": 64,
+        "rationale": "El narrador menciona que los neumáticos estaban pinchados y el espejo retrovisor arrancado, lo que sugiere un robo de vehículo."
+      },
+      {
+        "case_id": "GC-0019",
+        "input_tokens": 236,
+        "latency_s": 3.649,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a flood event that damaged the car's interior."
+      },
+      {
+        "case_id": "GC-0020",
+        "input_tokens": 251,
+        "latency_s": 5.468,
+        "llm_ok": true,
+        "output_tokens": 60,
+        "rationale": "La narrativa describe un impacto de granizada que causó daños en el capó, el techo y el vidrio trasero del vehículo."
+      },
+      {
+        "case_id": "GC-0021",
+        "input_tokens": 242,
+        "latency_s": 4.002,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "Water entered the underground garage during a storm, causing damage to the vehicle."
+      },
+      {
+        "case_id": "GC-0022",
+        "input_tokens": 237,
+        "latency_s": 3.581,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "Graffiti and windshield damage consistent with vandalism"
+      },
+      {
+        "case_id": "GC-0023",
+        "input_tokens": 253,
+        "latency_s": 4.519,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "Los niños patearon el balón contra la ventana, lo que la quebró"
+      },
+      {
+        "case_id": "GC-0024",
+        "input_tokens": 243,
+        "latency_s": 4.005,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes a break-in and stolen items, indicating a theft claim."
+      },
+      {
+        "case_id": "GC-0025",
+        "input_tokens": 238,
+        "latency_s": 3.85,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes hail damage to the car's hood and paint."
+      },
+      {
+        "case_id": "GC-0026",
+        "input_tokens": 245,
+        "latency_s": 3.943,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes a severe storm causing damage to the car's exterior."
+      },
+      {
+        "case_id": "GC-0027",
+        "input_tokens": 238,
+        "latency_s": 4.072,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes a collision at a four-way intersection where another driver ran a stop sign."
+      },
+      {
+        "case_id": "GC-0028",
+        "input_tokens": 246,
+        "latency_s": 4.35,
+        "llm_ok": true,
+        "output_tokens": 47,
+        "rationale": "El alcantarillado se rebosó y el agua rodeó el carro toda la noche"
+      },
+      {
+        "case_id": "GC-0029",
+        "input_tokens": 237,
+        "latency_s": 3.49,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes a rear-end collision at a traffic light."
+      },
+      {
+        "case_id": "GC-0030",
+        "input_tokens": 236,
+        "latency_s": 3.533,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes a flood event affecting the parked car."
+      },
+      {
+        "case_id": "GC-0031",
+        "input_tokens": 239,
+        "latency_s": 3.701,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The narrative describes intentional damage to the vehicle's paint"
+      },
+      {
+        "case_id": "GC-0032",
+        "input_tokens": 245,
+        "latency_s": 4.239,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "El narrador describe una inundación repentina que afectó su vehículo"
+      },
+      {
+        "case_id": "GC-0033",
+        "input_tokens": 242,
+        "latency_s": 4.253,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "La narrativa describe un daño causado por granizada en el vehículo"
+      },
+      {
+        "case_id": "GC-0034",
+        "input_tokens": 250,
+        "latency_s": 4.384,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "El narrante describe un choque trasero mientras estaba detenido en un trancón"
+      },
+      {
+        "case_id": "GC-0035",
+        "input_tokens": 235,
+        "latency_s": 3.662,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "Water from a backed-up storm drain caused the flooding"
+      },
+      {
+        "case_id": "GC-0036",
+        "input_tokens": 246,
+        "latency_s": 4.533,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "El narrador describe un impacto entre vehículos que le causó daño a su carro."
+      },
+      {
+        "case_id": "GC-0037",
+        "input_tokens": 239,
+        "latency_s": 3.683,
+        "llm_ok": true,
+        "output_tokens": 36,
+        "rationale": "The narrative describes a flooded underpass incident."
+      },
+      {
+        "case_id": "GC-0038",
+        "input_tokens": 247,
+        "latency_s": 4.826,
+        "llm_ok": true,
+        "output_tokens": 49,
+        "rationale": "El narrador informa que su vehículo fue robado mientras estaba estacionado frente a su casa."
+      },
+      {
+        "case_id": "GC-0039",
+        "input_tokens": 243,
+        "latency_s": 4.375,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The claimant was involved in a rear-end collision while stopped at a red light."
+      },
+      {
+        "case_id": "GC-0040",
+        "input_tokens": 236,
+        "latency_s": 4.741,
+        "llm_ok": true,
+        "output_tokens": 51,
+        "rationale": "El narrador describe que alguien pintó con aerosol el capó y las puertas con letreros"
+      },
+      {
+        "case_id": "GC-0041",
+        "input_tokens": 236,
+        "latency_s": 4.222,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes a rock thrown up by a dump truck causing damage to the windshield."
+      },
+      {
+        "case_id": "GC-0042",
+        "input_tokens": 239,
+        "latency_s": 4.356,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "The claimant was involved in a rear-end collision with a concrete pillar in a parking garage."
+      },
+      {
+        "case_id": "GC-0043",
+        "input_tokens": 245,
+        "latency_s": 4.232,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes hail damage to the roof and hood of the vehicle."
+      },
+      {
+        "case_id": "GC-0044",
+        "input_tokens": 239,
+        "latency_s": 4.614,
+        "llm_ok": true,
+        "output_tokens": 48,
+        "rationale": "The narrative describes damage to the car's roof, hood, windshield, and body, indicating hail damage."
+      },
+      {
+        "case_id": "GC-0045",
+        "input_tokens": 234,
+        "latency_s": 4.35,
+        "llm_ok": true,
+        "output_tokens": 47,
+        "rationale": "The narrative describes damage to the vehicle, but the claimant does not specify who was responsible."
+      },
+      {
+        "case_id": "GC-0046",
+        "input_tokens": 239,
+        "latency_s": 4.348,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "El narrador describe ser interceptado y tener su vehículo robado bajo amenaza"
+      },
+      {
+        "case_id": "GC-0047",
+        "input_tokens": 237,
+        "latency_s": 5.209,
+        "llm_ok": true,
+        "output_tokens": 55,
+        "rationale": "El narrante describe que alguien vandalizó su vehículo con una llave o objeto metálico mientras estaba estacionado."
+      },
+      {
+        "case_id": "GC-0048",
+        "input_tokens": 248,
+        "latency_s": 5.558,
+        "llm_ok": true,
+        "output_tokens": 58,
+        "rationale": "El sótano del edificio se inundó con el aguacero y el carro estuvo cerca de medio metro bajo el agua varias horas."
+      },
+      {
+        "case_id": "GC-0049",
+        "input_tokens": 248,
+        "latency_s": 4.549,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "The narrative describes the car being stolen, as evidenced by its disappearance from the parking spot."
+      },
+      {
+        "case_id": "GC-0050",
+        "input_tokens": 236,
+        "latency_s": 3.754,
+        "llm_ok": true,
+        "output_tokens": 37,
+        "rationale": "Rear window shattered due to accidental closure of trunk"
+      },
+      {
+        "case_id": "GC-0051",
+        "input_tokens": 245,
+        "latency_s": 5.602,
+        "llm_ok": true,
+        "output_tokens": 56,
+        "rationale": "El narrador describe un incidente de impacto contra un poste en un parqueadero, lo que sugiere una vandelismo."
+      },
+      {
+        "case_id": "GC-0052",
+        "input_tokens": 244,
+        "latency_s": 4.929,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "The narrative describes a hailstorm causing damage to the vehicle's roof and sunroof glass."
+      },
+      {
+        "case_id": "GC-0053",
+        "input_tokens": 241,
+        "latency_s": 5.579,
+        "llm_ok": true,
+        "output_tokens": 54,
+        "rationale": "The narrative describes a collision between two vehicles, with the car behind the narrator's bumper being hit at a speed of approximately 30 mph."
+      },
+      {
+        "case_id": "GC-0054",
+        "input_tokens": 239,
+        "latency_s": 5.034,
+        "llm_ok": true,
+        "output_tokens": 50,
+        "rationale": "El narrante describe que otro carro lo rayó y dejó una nota con su número de teléfono"
+      },
+      {
+        "case_id": "GC-0055",
+        "input_tokens": 251,
+        "latency_s": 6.124,
+        "llm_ok": true,
+        "output_tokens": 61,
+        "rationale": "El granizo dañó el techo y el baúl, y se mencionan fotos del daño y de las bolitas de hielo."
+      },
+      {
+        "case_id": "GC-0056",
+        "input_tokens": 243,
+        "latency_s": 5.54,
+        "llm_ok": true,
+        "output_tokens": 55,
+        "rationale": "El narrador describe golpes en el techo y el capó, lo que sugiere que fue golpeado por granizo."
+      },
+      {
+        "case_id": "GC-0057",
+        "input_tokens": 240,
+        "latency_s": 4.951,
+        "llm_ok": true,
+        "output_tokens": 47,
+        "rationale": "El narrante informa que sus llantas y rines fueron robados del parqueadero"
+      },
+      {
+        "case_id": "GC-0058",
+        "input_tokens": 232,
+        "latency_s": 4.903,
+        "llm_ok": true,
+        "output_tokens": 52,
+        "rationale": "El vidrio se quebró solo cuando cerró el baúl, sin mencionar ningún impacto previo."
+      },
+      {
+        "case_id": "GC-0059",
+        "input_tokens": 249,
+        "latency_s": 5.906,
+        "llm_ok": true,
+        "output_tokens": 61,
+        "rationale": "El narrador describe un tramo inundado de la vía y el motor se apagó, lo que indica una inundación que afectó su vehículo."
+      },
+      {
+        "case_id": "GC-0060",
+        "input_tokens": 244,
+        "latency_s": 4.341,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes a theft of a car from an open lot with limited security coverage."
+      }
+    ],
+    "total": {
+      "cost_usd": 0.0,
+      "input_tokens": 14560,
+      "latency_s": 286.199,
+      "llm_failures": 0,
+      "output_tokens": 2822
+    }
+  },
+  "golden": "v0.jsonl",
+  "mistakes": [
+    {
+      "case_id": "GC-0002",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "vandalism"
+    },
+    {
+      "case_id": "GC-0002",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0005",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "vandalism"
+    },
+    {
+      "case_id": "GC-0005",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0006",
+      "expected": "glass",
+      "field": "claim_type",
+      "predicted": "hail"
+    },
+    {
+      "case_id": "GC-0006",
+      "expected": null,
+      "field": "weather_verdict",
+      "predicted": "inconclusive"
+    },
+    {
+      "case_id": "GC-0006",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0007",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "hail"
+    },
+    {
+      "case_id": "GC-0007",
+      "expected": null,
+      "field": "weather_verdict",
+      "predicted": "inconclusive"
+    },
+    {
+      "case_id": "GC-0007",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0008",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "vandalism"
+    },
+    {
+      "case_id": "GC-0008",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0016",
+      "expected": "glass",
+      "field": "claim_type",
+      "predicted": "hail"
+    },
+    {
+      "case_id": "GC-0016",
+      "expected": null,
+      "field": "weather_verdict",
+      "predicted": "inconclusive"
+    },
+    {
+      "case_id": "GC-0016",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0018",
+      "expected": "vandalism",
+      "field": "claim_type",
+      "predicted": "theft"
+    },
+    {
+      "case_id": "GC-0041",
+      "expected": "glass",
+      "field": "claim_type",
+      "predicted": "hail"
+    },
+    {
+      "case_id": "GC-0041",
+      "expected": null,
+      "field": "weather_verdict",
+      "predicted": "does_not_support"
+    },
+    {
+      "case_id": "GC-0041",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0041",
+      "expected": false,
+      "field": "fraud_flag",
+      "predicted": true
+    },
+    {
+      "case_id": "GC-0041",
+      "expected": [],
+      "field": "fraud_signals",
+      "predicted": [
+        "weather_mismatch"
+      ]
+    },
+    {
+      "case_id": "GC-0051",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "vandalism"
+    },
+    {
+      "case_id": "GC-0051",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    },
+    {
+      "case_id": "GC-0054",
+      "expected": "collision",
+      "field": "claim_type",
+      "predicted": "vandalism"
+    },
+    {
+      "case_id": "GC-0054",
+      "expected": "fast_track",
+      "field": "routing",
+      "predicted": "adjuster_review"
+    }
+  ],
+  "model": "ollama:llama3.2:3b",
+  "overall": {
+    "metrics": {
+      "claim_type_accuracy": 0.8333,
+      "fraud_flag_precision": 0.8571,
+      "fraud_flag_recall": 1.0,
+      "fraud_signals_exact_match": 0.9833,
+      "routing_accuracy": 0.85,
+      "weather_verdict_accuracy": 0.9333
+    },
+    "n": 60
+  },
+  "predictor": "triage-llama3.2-3b"
+}

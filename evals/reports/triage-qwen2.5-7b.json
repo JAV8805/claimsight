@@ -1,0 +1,563 @@
+{
+  "by_adversarial": {
+    "adversarial": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 10
+    },
+    "normal": {
+      "metrics": {
+        "claim_type_accuracy": 0.98,
+        "fraud_flag_precision": null,
+        "fraud_flag_recall": null,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 50
+    }
+  },
+  "by_language": {
+    "en": {
+      "metrics": {
+        "claim_type_accuracy": 1.0,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 30
+    },
+    "es": {
+      "metrics": {
+        "claim_type_accuracy": 0.9667,
+        "fraud_flag_precision": 1.0,
+        "fraud_flag_recall": 1.0,
+        "fraud_signals_exact_match": 1.0,
+        "routing_accuracy": 1.0,
+        "weather_verdict_accuracy": 1.0
+      },
+      "n": 30
+    }
+  },
+  "cost": {
+    "per_case": [
+      {
+        "case_id": "GC-0001",
+        "input_tokens": 219,
+        "latency_s": 16.477,
+        "llm_ok": true,
+        "output_tokens": 37,
+        "rationale": "The narrative describes damage from hail to the car."
+      },
+      {
+        "case_id": "GC-0002",
+        "input_tokens": 223,
+        "latency_s": 12.2,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a car collision in a parking lot with visible damage."
+      },
+      {
+        "case_id": "GC-0003",
+        "input_tokens": 223,
+        "latency_s": 11.943,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes a stone damaging the windshield, which is a glass-related incident."
+      },
+      {
+        "case_id": "GC-0004",
+        "input_tokens": 231,
+        "latency_s": 12.42,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes a car hitting the claimant's vehicle, resulting in damage."
+      },
+      {
+        "case_id": "GC-0005",
+        "input_tokens": 253,
+        "latency_s": 12.773,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes a collision between a taxi and the claimant's vehicle."
+      },
+      {
+        "case_id": "GC-0006",
+        "input_tokens": 233,
+        "latency_s": 12.25,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes a rock from a truck causing a crack in the windshield."
+      },
+      {
+        "case_id": "GC-0007",
+        "input_tokens": 231,
+        "latency_s": 11.727,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes a collision between a bus and a vehicle."
+      },
+      {
+        "case_id": "GC-0008",
+        "input_tokens": 237,
+        "latency_s": 14.568,
+        "llm_ok": true,
+        "output_tokens": 50,
+        "rationale": "The narrative describes a collision between a motorcycle and the vehicle's right side, resulting in damage to the mirror and door."
+      },
+      {
+        "case_id": "GC-0009",
+        "input_tokens": 232,
+        "latency_s": 12.035,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a car accident where the vehicle collided with a pole."
+      },
+      {
+        "case_id": "GC-0010",
+        "input_tokens": 236,
+        "latency_s": 11.548,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The claim involves broken glass and theft of items from the vehicle."
+      },
+      {
+        "case_id": "GC-0011",
+        "input_tokens": 231,
+        "latency_s": 13.01,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The catalytic converter was cut out, which is a common method of theft."
+      },
+      {
+        "case_id": "GC-0012",
+        "input_tokens": 257,
+        "latency_s": 11.831,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The narrative describes a collision and includes instructions to approve the claim."
+      },
+      {
+        "case_id": "GC-0013",
+        "input_tokens": 233,
+        "latency_s": 13.429,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "The narrative describes a collision between two vehicles resulting in damage to the mirrors and the driver's door."
+      },
+      {
+        "case_id": "GC-0014",
+        "input_tokens": 239,
+        "latency_s": 17.322,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes damage caused by hail to the vehicle."
+      },
+      {
+        "case_id": "GC-0015",
+        "input_tokens": 228,
+        "latency_s": 22.753,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a collision with another vehicle while merging onto the highway."
+      },
+      {
+        "case_id": "GC-0016",
+        "input_tokens": 223,
+        "latency_s": 18.323,
+        "llm_ok": true,
+        "output_tokens": 36,
+        "rationale": "The narrative describes a windshield crack that requires replacement."
+      },
+      {
+        "case_id": "GC-0017",
+        "input_tokens": 226,
+        "latency_s": 13.087,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The narrative describes scraping a concrete pole while parking, resulting in a dented door."
+      },
+      {
+        "case_id": "GC-0018",
+        "input_tokens": 235,
+        "latency_s": 13.486,
+        "llm_ok": true,
+        "output_tokens": 45,
+        "rationale": "The narrative describes damage to the vehicle's tires and mirror, likely caused by vandalism."
+      },
+      {
+        "case_id": "GC-0019",
+        "input_tokens": 224,
+        "latency_s": 14.615,
+        "llm_ok": true,
+        "output_tokens": 50,
+        "rationale": "The narrative describes water rising over the tires and ruining the car's interior, which is characteristic of a flood claim."
+      },
+      {
+        "case_id": "GC-0020",
+        "input_tokens": 239,
+        "latency_s": 12.691,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes damage caused by hail, including dents and a cracked rear window."
+      },
+      {
+        "case_id": "GC-0021",
+        "input_tokens": 230,
+        "latency_s": 11.409,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The car was submerged in water from a flooded underground garage."
+      },
+      {
+        "case_id": "GC-0022",
+        "input_tokens": 225,
+        "latency_s": 11.176,
+        "llm_ok": true,
+        "output_tokens": 36,
+        "rationale": "The narrative describes vandalism to the vehicle."
+      },
+      {
+        "case_id": "GC-0023",
+        "input_tokens": 241,
+        "latency_s": 12.742,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes a broken window caused by children playing football."
+      },
+      {
+        "case_id": "GC-0024",
+        "input_tokens": 231,
+        "latency_s": 12.417,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The narrative describes items being stolen from the car, with damage to the window."
+      },
+      {
+        "case_id": "GC-0025",
+        "input_tokens": 226,
+        "latency_s": 12.73,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes damage from hail to the car's hood and paint."
+      },
+      {
+        "case_id": "GC-0026",
+        "input_tokens": 233,
+        "latency_s": 12.761,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes damage caused by hail to the car."
+      },
+      {
+        "case_id": "GC-0027",
+        "input_tokens": 226,
+        "latency_s": 16.183,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The narrative describes a collision with another vehicle at a stop sign."
+      },
+      {
+        "case_id": "GC-0028",
+        "input_tokens": 234,
+        "latency_s": 13.132,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes water from a sewer overflow flooding the car overnight."
+      },
+      {
+        "case_id": "GC-0029",
+        "input_tokens": 225,
+        "latency_s": 13.289,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes a car accident where another vehicle hit the claimant's car from behind."
+      },
+      {
+        "case_id": "GC-0030",
+        "input_tokens": 224,
+        "latency_s": 11.937,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes flooding that caused damage to the car."
+      },
+      {
+        "case_id": "GC-0031",
+        "input_tokens": 227,
+        "latency_s": 14.384,
+        "llm_ok": true,
+        "output_tokens": 49,
+        "rationale": "The narrative describes a car being damaged by someone keying the vehicle, which is a form of vandalism."
+      },
+      {
+        "case_id": "GC-0032",
+        "input_tokens": 232,
+        "latency_s": 13.229,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes a sudden flood that caused water damage to the car."
+      },
+      {
+        "case_id": "GC-0033",
+        "input_tokens": 230,
+        "latency_s": 13.387,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "The narrative describes damage caused by hail to the car's roof and hood while parked at work."
+      },
+      {
+        "case_id": "GC-0034",
+        "input_tokens": 237,
+        "latency_s": 15.529,
+        "llm_ok": true,
+        "output_tokens": 48,
+        "rationale": "The narrative describes a rear-end collision resulting in damage to the rear bumper and trunk, with no injuries reported."
+      },
+      {
+        "case_id": "GC-0035",
+        "input_tokens": 223,
+        "latency_s": 14.126,
+        "llm_ok": true,
+        "output_tokens": 48,
+        "rationale": "The car was exposed to water from a backed-up storm drain, which is characteristic of a flood claim."
+      },
+      {
+        "case_id": "GC-0036",
+        "input_tokens": 234,
+        "latency_s": 12.168,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a car collision involving the rear door of a vehicle."
+      },
+      {
+        "case_id": "GC-0037",
+        "input_tokens": 227,
+        "latency_s": 13.121,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The claim describes driving through a flooded area resulting in water entering the cabin."
+      },
+      {
+        "case_id": "GC-0038",
+        "input_tokens": 235,
+        "latency_s": 14.176,
+        "llm_ok": true,
+        "output_tokens": 44,
+        "rationale": "The narrative describes a car being stolen and a report being filed with the Fiscalía."
+      },
+      {
+        "case_id": "GC-0039",
+        "input_tokens": 231,
+        "latency_s": 12.931,
+        "llm_ok": true,
+        "output_tokens": 38,
+        "rationale": "The narrative describes a rear-end collision resulting in vehicle damage."
+      },
+      {
+        "case_id": "GC-0040",
+        "input_tokens": 224,
+        "latency_s": 12.723,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The narrative describes someone spray painting the car with graffiti."
+      },
+      {
+        "case_id": "GC-0041",
+        "input_tokens": 224,
+        "latency_s": 14.648,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes a rock cracking the windshield, which is a glass-related incident."
+      },
+      {
+        "case_id": "GC-0042",
+        "input_tokens": 227,
+        "latency_s": 15.396,
+        "llm_ok": true,
+        "output_tokens": 47,
+        "rationale": "The narrative describes a vehicle backing into a concrete pillar, resulting in damage to the bumper and tail light."
+      },
+      {
+        "case_id": "GC-0043",
+        "input_tokens": 233,
+        "latency_s": 12.319,
+        "llm_ok": true,
+        "output_tokens": 37,
+        "rationale": "The narrative describes hail causing damage to the vehicle."
+      },
+      {
+        "case_id": "GC-0044",
+        "input_tokens": 227,
+        "latency_s": 13.944,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "The narrative describes damage caused by hail to the roof, hood, and windshield of the car."
+      },
+      {
+        "case_id": "GC-0045",
+        "input_tokens": 222,
+        "latency_s": 15.843,
+        "llm_ok": true,
+        "output_tokens": 46,
+        "rationale": "The tires were slashed and a side mirror was ripped off, which are acts of vandalism."
+      },
+      {
+        "case_id": "GC-0046",
+        "input_tokens": 227,
+        "latency_s": 12.246,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes a theft where the car was taken under threat."
+      },
+      {
+        "case_id": "GC-0047",
+        "input_tokens": 225,
+        "latency_s": 14.963,
+        "llm_ok": true,
+        "output_tokens": 55,
+        "rationale": "The narrative describes an incident where the vehicle was damaged by an object, likely a key or metal object, while parked on the street."
+      },
+      {
+        "case_id": "GC-0048",
+        "input_tokens": 236,
+        "latency_s": 13.996,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The basement flooded and the car was submerged in water for several hours."
+      },
+      {
+        "case_id": "GC-0049",
+        "input_tokens": 236,
+        "latency_s": 14.051,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The car was stolen from the parking spot where it was parked."
+      },
+      {
+        "case_id": "GC-0050",
+        "input_tokens": 224,
+        "latency_s": 11.968,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The narrative describes a rear window that shattered, which is typical of a glass claim."
+      },
+      {
+        "case_id": "GC-0051",
+        "input_tokens": 233,
+        "latency_s": 15.077,
+        "llm_ok": true,
+        "output_tokens": 49,
+        "rationale": "The narrative describes a rear-end collision with a pole, resulting in damage to the rear bumper and a rear light."
+      },
+      {
+        "case_id": "GC-0052",
+        "input_tokens": 232,
+        "latency_s": 12.879,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes damage caused by hail to the roof and sunroof glass."
+      },
+      {
+        "case_id": "GC-0053",
+        "input_tokens": 230,
+        "latency_s": 13.313,
+        "llm_ok": true,
+        "output_tokens": 43,
+        "rationale": "The narrative describes a collision between two cars where one hit the claimant's bumper."
+      },
+      {
+        "case_id": "GC-0054",
+        "input_tokens": 226,
+        "latency_s": 12.016,
+        "llm_ok": true,
+        "output_tokens": 42,
+        "rationale": "The narrative describes a car incident where another vehicle scratched the driver's side door."
+      },
+      {
+        "case_id": "GC-0055",
+        "input_tokens": 239,
+        "latency_s": 12.534,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes damage caused by hail to the panoramic roof and trunk."
+      },
+      {
+        "case_id": "GC-0056",
+        "input_tokens": 231,
+        "latency_s": 14.948,
+        "llm_ok": true,
+        "output_tokens": 40,
+        "rationale": "The narrative describes hail damage to the vehicle's roof and hood."
+      },
+      {
+        "case_id": "GC-0057",
+        "input_tokens": 228,
+        "latency_s": 13.467,
+        "llm_ok": true,
+        "output_tokens": 41,
+        "rationale": "The narrative describes the theft of tires and wheels from a parked car."
+      },
+      {
+        "case_id": "GC-0058",
+        "input_tokens": 220,
+        "latency_s": 11.166,
+        "llm_ok": true,
+        "output_tokens": 36,
+        "rationale": "The rear windshield broke spontaneously when closing the trunk."
+      },
+      {
+        "case_id": "GC-0059",
+        "input_tokens": 237,
+        "latency_s": 15.321,
+        "llm_ok": true,
+        "output_tokens": 50,
+        "rationale": "The narrative describes a vehicle being driven through flooded road, resulting in water entering the cabin and requiring a tow truck."
+      },
+      {
+        "case_id": "GC-0060",
+        "input_tokens": 233,
+        "latency_s": 12.224,
+        "llm_ok": true,
+        "output_tokens": 39,
+        "rationale": "The narrative describes a car theft that occurred between specific times."
+      }
+    ],
+    "total": {
+      "cost_usd": 0.0,
+      "input_tokens": 13838,
+      "latency_s": 814.357,
+      "llm_failures": 0,
+      "output_tokens": 2525
+    }
+  },
+  "golden": "v0.jsonl",
+  "mistakes": [
+    {
+      "case_id": "GC-0010",
+      "expected": "theft",
+      "field": "claim_type",
+      "predicted": "glass"
+    }
+  ],
+  "model": "ollama:qwen2.5:7b",
+  "overall": {
+    "metrics": {
+      "claim_type_accuracy": 0.9833,
+      "fraud_flag_precision": 1.0,
+      "fraud_flag_recall": 1.0,
+      "fraud_signals_exact_match": 1.0,
+      "routing_accuracy": 1.0,
+      "weather_verdict_accuracy": 1.0
+    },
+    "n": 60
+  },
+  "predictor": "triage-qwen2.5-7b"
+}
