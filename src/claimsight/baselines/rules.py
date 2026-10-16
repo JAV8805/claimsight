@@ -18,8 +18,7 @@ from claimsight.evals.schema import (
 from claimsight.evals.vin import VIN_RE
 from claimsight.rules.weather import weather_verdict
 
-# FR-03 says fast track *requires* a VIN match and no fraud; it does not say which claims
-# qualify. The golden labels fast-track only these low-risk types, so the baseline does too.
+# FR-03 (spec v0.6): fast track applies only to collision and glass claims.
 FAST_TRACK_TYPES = frozenset({"collision", "glass"})
 
 
