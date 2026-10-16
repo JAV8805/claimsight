@@ -86,3 +86,7 @@ Decisions that shape the labels (spec v0.5):
 - **Synthetic policies.** Policy records and VINs are invented (real pattern, invented serial); the
   set has no coverage decisions or clause citations yet (L2.2).
 - **Small and not representative.** 60 cases are for regression and rule checks, not for estimating real-world rates.
+- **Label-rule circularity.** Labels were proposed from the same rules the baseline implements, so
+  baseline accuracy measures policy consistency, not real-world accuracy. The informative signal is the
+  language-dependent failures (GC-0009, GC-0012, GC-0053), and routing in GC-0009 and GC-0053 is right
+  for the wrong reason. The golden set must grow with cases rules cannot solve.

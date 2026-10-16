@@ -34,4 +34,8 @@ Read it with the other fields, not alone: a case can be routed correctly for the
 
 ## The rules baseline
 
-`src/claimsight/baselines/rules.py` uses no LLM: `claim_type` is the claimed event; VIN checks follow FR-05; the weather verdict comes from `claimsight.rules.weather` with the case's precipitation; routing follows FR-03. It sets the floor that a model must beat. FR-03 says fast track *requires* a VIN match and no fraud, but not which claims qualify; the baseline fast-tracks only collision and glass, as the golden labels do.
+`src/claimsight/baselines/rules.py` uses no LLM: `claim_type` is the claimed event; VIN checks follow FR-05; the weather verdict comes from `claimsight.rules.weather` with the case's precipitation; routing follows FR-03. It sets the floor that a model must beat. FR-03 (spec v0.6) limits fast track to collision and glass claims with a VIN match and no fraud signals, and the baseline does the same.
+
+## Known limitation: label-rule circularity
+
+The labels were proposed from the same rules the baseline implements, so baseline accuracy measures policy consistency, not real-world accuracy. A high score here shows the code follows the policy; it does not show the policy is right or that the system would do well on real claims. The informative signal is the language-dependent failures (GC-0009, GC-0012, GC-0053), and routing in GC-0009 and GC-0053 is right for the wrong reason. The golden set must grow with cases rules cannot solve.
